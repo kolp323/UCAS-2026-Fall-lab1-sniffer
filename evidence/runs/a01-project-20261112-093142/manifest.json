@@ -4,7 +4,7 @@
   "task": "A01",
   "project_root": "E:\\users\\VisualStudioProject\\lab1-sniffer",
   "source_commit": "a7698080c9d19aea213ea0141b8a4550df12e68c",
-  "source_commit_timing": "created after run from unchanged tested source",
+  "source_commit_timing": "created after run from same source content; Git normalized line endings; working-copy and Git blob hashes distinguished",
   "worktree_dirty_at_run": true,
   "worktree_state_at_run": "unborn Git repository; sources untracked; exact source hashes below",
   "commands": [
@@ -51,15 +51,21 @@
   "source_files": [
     {
       "path": "CMakeLists.txt",
-      "sha256": "39AAD64E96FDC5E83AD3629FFC6EDCD0E390BEFC3749979275D31FCF73CAFF0E"
+      "working_copy_sha256": "39AAD64E96FDC5E83AD3629FFC6EDCD0E390BEFC3749979275D31FCF73CAFF0E",
+      "git_blob_sha256": "a69a7a73c04e856745fafba347eea7ce831e96ad252ff3ca11a9e6955a80eab0",
+      "comparison": "identical after CRLF to LF normalization; raw working-copy and Git hashes recorded separately"
     },
     {
       "path": "probes\\environment\\probe.cpp",
-      "sha256": "4BF975121A2A915EC6B3D4263199C2F278BF15E30E8C4BC35C53D71EE53A87EC"
+      "working_copy_sha256": "4BF975121A2A915EC6B3D4263199C2F278BF15E30E8C4BC35C53D71EE53A87EC",
+      "git_blob_sha256": "3b62f27aedf66f4c9955ba44f0b00d8e5930f853fa5362f2320f6436e98d5a0a",
+      "comparison": "identical after CRLF to LF normalization; raw working-copy and Git hashes recorded separately"
     },
     {
       "path": "probes\\environment\\verify_bytes.py",
-      "sha256": "F9C9F1099D344FDF31FA32792EEA27E80A0CDC3BCCF64DC1BA961FA4F0CC8F94"
+      "working_copy_sha256": "F9C9F1099D344FDF31FA32792EEA27E80A0CDC3BCCF64DC1BA961FA4F0CC8F94",
+      "git_blob_sha256": "827e00b46873e7f7c30ae3ed0a2c084e2f6bc4cce2e74187c5f4104086362790",
+      "comparison": "identical after CRLF to LF normalization; raw working-copy and Git hashes recorded separately"
     }
   ],
   "artifacts": [

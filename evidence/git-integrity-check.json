@@ -1,0 +1,10 @@
+{
+  "outcome": "pass",
+  "verified_entries": 31,
+  "evidence_bytes_preserved_in_git": true,
+  "source_comparison": "Git-normalized source content and raw source hashes explicitly distinguished",
+  "earlier_failures": [
+    "read-only Git ownership check required invocation-local safe.directory, no global config changed",
+    "source raw SHA differed from Git due to CRLF normalization; manifest corrected with separate hashes; original manifest backed up"
+  ]
+}
