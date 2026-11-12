@@ -1,0 +1,7 @@
+适用于 .NET Framework MSBuild 版本 17.14.23+b0019275e
+
+  Checking Build System
+  Building Custom Rule E:/users/VisualStudioProject/lab1-sniffer/CMakeLists.txt
+  probe.cpp
+  lab1_env_probe.vcxproj -> E:\users\VisualStudioProject\lab1-sniffer\build\Release\lab1_env_probe.exe
+  Building Custom Rule E:/users/VisualStudioProject/lab1-sniffer/CMakeLists.txt
