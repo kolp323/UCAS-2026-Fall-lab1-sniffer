@@ -1,5 +1,6 @@
 """Record the real GUI via an isolated harness, then add concise teaching captions."""
-import datetime,hashlib,json,os,shutil,struct,subprocess,sys,uuid
+import datetime,hashlib,json,math,os,shutil,struct,subprocess,sys,uuid
+from bisect import bisect_right
 from pathlib import Path
 from PIL import Image,ImageDraw,ImageFont
 ROOT=Path(__file__).resolve().parents[1]
@@ -20,6 +21,70 @@ CAPTIONS=[
 (78,84,'12  查看全部','切回全部协议，查看所有保留的数据包。'),
 (84,88,'捕获 → 筛选 → 分析 → 保存','捕获、筛选、查看字段，再把数据保存下来。')]
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+FPS = 24
+VIDEO_SECONDS = 88
+
+def ass_time(seconds):
+    cs = round(100 * seconds)
+    return f'{cs//360000}:{cs//6000%60:02d}:{cs//100%60:02d}.{cs%100:02d}'
+
+def pointer_track(path, tour, timeline):
+    """Render the recorded mouse positions at video rate, with a brief click ring."""
+    points = tour['pointer']
+    point_ms = [p['elapsed_ms'] for p in points]
+    click_ms = [p.get('pressed_ms', p['elapsed_ms']) for p in tour['clicks']]
+    frame_ms = [f['elapsed_seconds'] * 1000 for f in timeline]
+    first_ms = frame_ms[0]
+    track = ["""[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+[V4+ Styles]
+Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
+Style: Pointer,Arial,20,&H00FFFFFF,&H00FFFFFF,&H001A2330,&H00000000,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+[Events]
+Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text"""]
+
+    def vector(layer, n, x, y, style, shape):
+        begin, end = ass_time(n/FPS), ass_time((n+1)/FPS)
+        tags = r'{\an7\pos(' + f'{round(x)},{round(y)})' + style + r'\p1}'
+        track.append(f'Dialogue: {layer},{begin},{end},Pointer,,0,0,0,,{tags}{shape}')
+
+    for n in range(math.ceil((VIDEO_SECONDS-first_ms/1000)*FPS)):
+        ms = first_ms + 1000*n/FPS
+        i = max(0, bisect_right(point_ms, ms)-1)
+        a, b = points[i], points[min(i+1, len(points)-1)]
+        span = b['elapsed_ms']-a['elapsed_ms']
+        # Movement is logged at animation ticks. Hold at long rests.
+        weight = (ms-a['elapsed_ms'])/span if 0 < span <= 120 else 0
+        local_x = a['x'] + weight*(b['x']-a['x'])
+        local_y = a['y'] + weight*(b['y']-a['y'])
+        frame = timeline[max(0, bisect_right(frame_ms, ms)-1)]
+        left, top, right, bottom = frame['crop']
+        if not (left <= local_x < right and top <= local_y < bottom):
+            continue
+        origin_x, origin_y = frame['origin']
+        width, height = frame['size']
+        x = origin_x + (local_x-left)*width/(right-left)
+        y = origin_y + (local_y-top)*height/(bottom-top)
+        j = bisect_right(click_ms, ms)-1
+        if j >= 0 and ms-click_ms[j] < 410:
+            t = (ms-click_ms[j])/410
+            radius = round(13+22*t)
+            alpha = int(12+243*t)
+            # Draw a ring with the center transparent to keep the target readable.
+            r = radius
+            k = round(r*0.5523)
+            ring = (f'm {r} 0 b {r+k} 0 {2*r} {r-k} {2*r} {r} '
+                    f'b {2*r} {r+k} {r+k} {2*r} {r} {2*r} '
+                    f'b {r-k} {2*r} 0 {r+k} 0 {r} b 0 {r-k} {r-k} 0 {r} 0')
+            vector(0, n, x-radius, y-radius,
+                   r'\1a&HFF&\3c&H9D6810&\bord3\3a&H'+f'{alpha:02X}&', ring)
+        vector(1, n, x, y, r'\1c&HFFFFFF&\3c&H202932&\bord2.2',
+               'm 0 0 l 1 31 9 23 15 35 21 32 15 20 27 19')
+
+    path.write_text('\n'.join(track)+'\n', encoding='utf-8')
+
 def compose(run,tour,manifest,execute,save):
   (run/'captions.json').write_text(json.dumps(CAPTIONS,ensure_ascii=False,indent=2),encoding='utf-8')
   raw=tour['frames'];composed=run/('composed-'+uuid.uuid4().hex[:8]);composed.mkdir();timeline=[];concat=[]
@@ -28,8 +93,10 @@ def compose(run,tour,manifest,execute,save):
    elapsed=f['elapsed_ms']/1000;cap=next((c for c in CAPTIONS if c[0]<=elapsed<c[1]),CAPTIONS[-1])
    im=Image.new('RGB',(1920,1080),'#edf2f6');d=ImageDraw.Draw(im)
    d.text((48,18),'实验 1A · 网络嗅探器',font=font,fill='#16354b');d.text((1220,25),cap[2],font=small,fill='#246978')
-   img=Image.open(run/f['file']).convert('RGB');zoom=56<=elapsed<72
-   if zoom:img=img.crop((20,560,1260,img.height-33))
+   img=Image.open(run/f['file']).convert('RGB')
+   zoom = 56 <= elapsed < 72
+   crop = (20, tour.get('detail_top', 568)-8, min(1260,img.width), img.height-12) if zoom else (0,0,img.width,img.height)
+   img=img.crop(crop)
    maxw,maxh=(1824,880);scale=min(maxw/img.width,maxh/img.height);size=(round(img.width*scale),round(img.height*scale));img=img.resize(size,Image.Resampling.LANCZOS)
    x=(1920-size[0])//2;y=78+(880-size[1])//2;im.paste(img,(x,y))
    d.rectangle((0,975,1920,1080),fill='#17384b');bbox=d.textbbox((0,0),cap[3],font=subtitle);d.text(((1920-(bbox[2]-bbox[0]))//2,1002),cap[3],font=subtitle,fill='white')
@@ -37,19 +104,40 @@ def compose(run,tour,manifest,execute,save):
    nexttime=raw[j+1]['elapsed_ms']/1000 if j+1<len(raw) else 88
    duration=max(.01,nexttime-elapsed)
    concat.extend(["file '"+dest.as_posix()+"'",'duration '+str(duration)])
-   timeline.append({'frame':j,'source':f['file'],'elapsed_seconds':elapsed,'caption':cap[3],'detail_crop':zoom})
+   timeline.append({'frame':j,'source':f['file'],'elapsed_seconds':elapsed,'caption':cap[3],
+                    'detail_crop':zoom, 'origin':(x,y), 'size':size, 'crop':crop})
   concat.append("file '"+dest.as_posix()+"'")
   listing=run/'composition.ffconcat';listing.write_text('\n'.join(concat),encoding='utf-8')
   (run/'composition.json').write_text(json.dumps(timeline,ensure_ascii=False,indent=2),encoding='utf-8')
-  out=ROOT/'deliverables/lab1A-demo.mp4';old=out.with_name(out.name+'.'+datetime.datetime.now().strftime('%Y%m%d-%H%M%S')+'.bak')
-  if out.exists():shutil.copy2(out,old)
-  execute('encode',[FF,'-y','-f','concat','-safe','0','-i',listing,'-r','24','-c:v','libx264','-preset','fast','-crf','21','-pix_fmt','yuv420p','-movflags','+faststart',out],timeout=180)
+  out=run/'lab1A-demo.mp4'
+  effect=[]
+  if tour.get('pointer'):
+   pointer_path=run/'pointer.ass'
+   pointer_track(pointer_path,tour,timeline)
+   # Pass a repository-relative path to avoid special treatment of drive colons.
+   effect=['-vf','fps=24,ass='+pointer_path.relative_to(ROOT).as_posix()]
+  execute('encode',[FF,'-y','-f','concat','-safe','0','-i',listing,*effect,'-r',str(FPS),
+                    '-c:v','libx264','-preset','fast','-crf','21','-pix_fmt','yuv420p',
+                    '-movflags','+faststart',out],timeout=240)
   probe=subprocess.run([str(FF.with_name('ffprobe.exe')),'-v','error','-show_entries','format=duration,size:stream=codec_name,width,height,r_frame_rate','-of','json',str(out)],capture_output=True,check=True);metadata=json.loads(probe.stdout)
-  (run/'ffprobe.json').write_text(json.dumps(metadata,indent=2));execute('decode',[FF,'-v','error','-i',out,'-f','null','-'])
-  keydir=run/('keyframes-'+uuid.uuid4().hex[:8]);keydir.mkdir();manifest['keyframes_dir']=keydir.name
-  for sec in [4,16,22,33,40,46,59,67,75,82]:
-   idx=min(range(len(raw)),key=lambda j:abs(raw[j]['elapsed_ms']/1000-sec));shutil.copy2(composed/f'frame-{idx:05d}.png',keydir/f'{sec:02d}s.png')
-  manifest.update(outcome='pass',video_path=str(out),video_sha256=sha(out),ffprobe=metadata,frame_count=len(raw),captions=CAPTIONS,gui= {'sent':tour['sent'],'received':tour['received'],'captured':tour['captured']},independent_export='pass',form='Actual GUI widget renders and actual dialog/button/filter/field operations, with teaching captions and detail crops; no compilation-log segments.');save();print(json.dumps(manifest,ensure_ascii=False))
+  (run/'ffprobe.json').write_text(json.dumps(metadata,indent=2))
+  execute('decode',[FF,'-v','error','-xerror','-i',out,'-f','null','-'])
+  keydir=run/'keyframes'/uuid.uuid4().hex[:8];keydir.mkdir(parents=True);manifest['keyframes_dir']=keydir.relative_to(run).as_posix()
+  first=raw[0]['elapsed_ms']/1000
+  samples=[4,16,22,33,40,46,59,67,75,82]
+  if tour.get('clicks'):
+   samples.extend(p.get('pressed_ms',p['elapsed_ms'])/1000-first+0.075 for p in tour['clicks']
+                  if p['action'] in {'choose loopback','click start','confirm export PCAP',
+                                      'display filter HTTP','select field ip.src','select field http.start_line'})
+  for sec in samples:
+   subprocess.run([str(FF),'-v','error','-ss',f'{sec:.3f}','-i',str(out),'-frames:v','1',
+                   str(keydir/f'{sec:06.3f}s.png')],check=True)
+  manifest.update(outcome='pass',video_path=str(out),video_sha256=sha(out),ffprobe=metadata,
+                  frame_count=len(raw),captions=CAPTIONS,
+                  gui={'sent':tour['sent'],'received':tour['received'],'captured':tour['captured']},
+                  independent_export='pass', pointer_clicks=len(tour.get('clicks',[])),
+                  form='GUI widget renders with concise teaching captions and a pointer composed from the mouse events used to operate the widgets.')
+  save();print(json.dumps(manifest,ensure_ascii=False))
 
 def main():
  run=ROOT/'evidence/runs'/('gui-tour-'+datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ')+'-'+uuid.uuid4().hex[:8]);run.mkdir(parents=True)
@@ -57,11 +145,11 @@ def main():
  cmake=f'''cmake_minimum_required(VERSION 3.20)
 project(gui_tour LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
-find_package(Qt5 5.15 REQUIRED COMPONENTS Widgets Network)
+find_package(Qt5 5.15 REQUIRED COMPONENTS Widgets Network Test)
 add_subdirectory("{ROOT.as_posix()}" app EXCLUDE_FROM_ALL)
 add_executable(lab1_gui_tour "{(ROOT/'probes/recording/gui-tour.cpp').as_posix()}")
 target_compile_options(lab1_gui_tour PRIVATE /utf-8 /W4)
-target_link_libraries(lab1_gui_tour PRIVATE lab1_parser Qt5::Widgets Qt5::Network)
+target_link_libraries(lab1_gui_tour PRIVATE lab1_parser Qt5::Widgets Qt5::Network Qt5::Test)
 capture_target(lab1_gui_tour)
 '''
  (work/'CMakeLists.txt').write_text(cmake,encoding='utf-8')
@@ -100,7 +188,7 @@ def recompose(run):
  for name in ['manifest.json','captions.json','composition.ffconcat','composition.json','ffprobe.json']:
   src=run/name
   if src.exists():shutil.copy2(src,src.with_name(src.name+'.'+stamp+'.bak'))
- manifest['recomposition']={'timestamp':stamp,'script_sha256':sha(Path(__file__)),'raw_tour_sha256':sha(run/'tour.json'),'purpose':'Refine two captions and the detail crop; reuse the same actual GUI frames.'}
+ manifest['recomposition']={'timestamp':stamp,'script_sha256':sha(Path(__file__)),'raw_tour_sha256':sha(run/'tour.json'),'purpose':'Rebuild the presentation from the saved GUI frames and input trace.'}
  def save():(run/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
  def execute(name,cmd,timeout=180):
   with (run/('recompose-'+name+'-'+stamp+'.log')).open('wb') as log:

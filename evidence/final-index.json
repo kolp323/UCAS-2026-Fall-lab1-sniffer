@@ -78,6 +78,11 @@
       "run": "gui-tour-20261120T051653Z-699defb6",
       "outcome": "pass",
       "claim": "30 sent/received/captured, exported UDP payloads match independently in TShark; HTTP/IPv6 display filters and byte highlights; full video decode pass"
+    },
+    {
+      "run": "gui-tour-20261120T154705Z-5f37262b",
+      "outcome": "pass",
+      "claim": "21 recorded mouse clicks through the GUI input path; 30 exported UDP payloads match TShark; full video decode pass."
     }
   ],
   "boundaries": [
@@ -88,11 +93,12 @@
   ],
   "new_file_notice": "This index and LICENSE did not previously exist.",
   "current_video": {
-    "run_id": "gui-tour-20261120T051653Z-699defb6",
+    "run_id": "gui-tour-20261120T154705Z-5f37262b",
     "path": "deliverables/lab1A-demo.mp4",
-    "sha256": "6eb29c53c0843c1f5917634c73b509aa3c9f048955e10d2c0f95284fd7230091",
-    "duration_seconds": 87.916667,
-    "description": "GUI feature walkthrough with concise Chinese captions and field detail closeups; actual capture/export/filter/field operations"
+    "sha256": "b1dd405b981a99f28ea64097992d0c44f2bc954b26494c964c81f5d618e20917",
+    "duration_seconds": 87.833333,
+    "description": "GUI feature walkthrough with mouse movement, brief click rings, concise Chinese captions and detail closeups.",
+    "clicks": 21
   },
-  "media_revision": "Current GUI-focused video supersedes the earlier 92-second build-log presentation; earlier evidence and timestamped video backups are retained."
+  "media_revision": "Current GUI walkthrough follows recorded pointer movements and real widget responses. Earlier runs and video backups are retained."
 }

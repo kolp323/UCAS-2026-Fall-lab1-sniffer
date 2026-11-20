@@ -1,0 +1,14 @@
+{
+  "outcome": "pass",
+  "click_count": 21,
+  "loopback_packets": 30,
+  "whole_video_decode": "pass",
+  "timing_review": "Viewed samples during pointer approach, at the press ring and after the UI response for four representative controls. The IPv4 crop shows c0 00 02 01 after the source address click.",
+  "frames": {
+    "Start click": "review-frames/start-click.jpg",
+    "Sample click": "review-frames/sample-click.jpg",
+    "IPv4 bytes after click": "review-frames/ipv4-bytes-after-click.jpg",
+    "HTTP request after click": "review-frames/http-request-after-click.jpg"
+  },
+  "video_sha256": "b1dd405b981a99f28ea64097992d0c44f2bc954b26494c964c81f5d618e20917"
+}
