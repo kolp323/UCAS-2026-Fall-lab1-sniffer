@@ -15,3 +15,8 @@ __pycache__/
 /evidence/runs/complete-demo-*/source/
 /evidence/runs/complete-demo-*/frames/
 /evidence/runs/complete-demo-*/build/
+
+/evidence/runs/gui-tour-*/raw/
+/evidence/runs/gui-tour-*/composed*/
+
+/evidence/runs/gui-tour-*/keyframes/

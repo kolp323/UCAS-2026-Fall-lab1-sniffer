@@ -1,0 +1,31 @@
+适用于 .NET Framework MSBuild 版本 17.14.23+b0019275e
+
+  Checking Build System
+  Building Custom Rule E:/users/VScodeProject/C++/UCAS-2026-Fall_Software-and-system-security/lab1-sniffer/CMakeLists.txt
+  parser.cpp
+  lab1_parser.vcxproj -> E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\tour-c89b2440\b\app\Release\lab1_parser.lib
+  Building Custom Rule E:/users/VScodeProject/C++/UCAS-2026-Fall_Software-and-system-security/lab1-sniffer/build/tour-c89b2440/CMakeLists.txt
+  gui-tour.cpp
+E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\src\gui.cpp(134,75): warning C4458: “data”的声明隐藏了类成员 [E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\tour-c89b2440\b\lab1_gui_tour.vcxproj]
+  (编译源文件“../../../probes/recording/gui-tour.cpp”)
+      E:\Anaconda3\Library\include\qt\QtWidgets\qwidget.h(747,18):
+      参见“QWidget::data”的声明
+  
+E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\src\gui.cpp(136,178): warning C4458: “data”的声明隐藏了类成员 [E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\tour-c89b2440\b\lab1_gui_tour.vcxproj]
+  (编译源文件“../../../probes/recording/gui-tour.cpp”)
+      E:\Anaconda3\Library\include\qt\QtWidgets\qwidget.h(747,18):
+      参见“QWidget::data”的声明
+  
+E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\src\gui.cpp(138,225): warning C4458: “data”的声明隐藏了类成员 [E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\tour-c89b2440\b\lab1_gui_tour.vcxproj]
+  (编译源文件“../../../probes/recording/gui-tour.cpp”)
+      E:\Anaconda3\Library\include\qt\QtWidgets\qwidget.h(747,18):
+      参见“QWidget::data”的声明
+  
+E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\probes\recording\gui-tour.cpp(20,40): error C2666: “QAbstractSocket::bind”: 重载函数具有类似的转换 [E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\tour-c89b2440\b\lab1_gui_tour.vcxproj]
+      E:\Anaconda3\Library\include\qt\QtNetwork\qabstractsocket.h(149,10):
+      可能是“bool QAbstractSocket::bind(quint16,QAbstractSocket::BindMode)”
+      E:\Anaconda3\Library\include\qt\QtNetwork\qabstractsocket.h(148,10):
+      或    “bool QAbstractSocket::bind(const QHostAddress &,quint16,QAbstractSocket::BindMode)”
+      E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\probes\recording\gui-tour.cpp(20,40):
+      尝试匹配参数列表“(QHostAddress::SpecialAddress, int)”时
+  

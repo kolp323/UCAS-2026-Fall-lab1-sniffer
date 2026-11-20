@@ -73,6 +73,11 @@
       "run": "complete-demo-20261120T034212Z-f6a82008",
       "outcome": "fail",
       "reason": "Source archive omitted probes; fixed recorder, not C++"
+    },
+    {
+      "run": "gui-tour-20261120T051653Z-699defb6",
+      "outcome": "pass",
+      "claim": "30 sent/received/captured, exported UDP payloads match independently in TShark; HTTP/IPv6 display filters and byte highlights; full video decode pass"
     }
   ],
   "boundaries": [
@@ -81,5 +86,13 @@
     "Course deadline source PDF p2; course website not checked",
     "Course upload not performed"
   ],
-  "new_file_notice": "This index and LICENSE did not previously exist."
+  "new_file_notice": "This index and LICENSE did not previously exist.",
+  "current_video": {
+    "run_id": "gui-tour-20261120T051653Z-699defb6",
+    "path": "deliverables/lab1A-demo.mp4",
+    "sha256": "6eb29c53c0843c1f5917634c73b509aa3c9f048955e10d2c0f95284fd7230091",
+    "duration_seconds": 87.916667,
+    "description": "GUI feature walkthrough with concise Chinese captions and field detail closeups; actual capture/export/filter/field operations"
+  },
+  "media_revision": "Current GUI-focused video supersedes the earlier 92-second build-log presentation; earlier evidence and timestamped video backups are retained."
 }

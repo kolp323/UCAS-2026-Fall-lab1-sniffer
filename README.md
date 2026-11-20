@@ -47,6 +47,6 @@ CLI：`build/Release/lab1_cli.exe --read fixtures/v2/ethernet.pcap --json 新输
 
 C++实现基线为`9727f836f99928d83611ebc60de5cf4b1e839e3b`；后续提交补充脚本、证据和交付说明。`evidence/final-index.json`是结果索引。`clean-final-9727f83`为同机新源码/新构建目录100项通过；`portable-final-9727f83`为同机隔离PATH启动通过。
 
-`deliverables/lab1A-demo.mp4`是92秒实际执行日志渲染与真实GUI帧演示，包含新目录配置/编译、100项测试、错误过滤拒绝与恢复、依赖隔离部署。不是人工桌面录屏，播放停留不等于执行耗时。生成入口`python scripts/record-complete-demo.py`，保留前两次配置失败与最终成功记录。
+`deliverables/lab1A-demo.mp4`以GUI功能展示为主：选择接口与捕获条件、开始和停止抓包、导出PCAP、打开样本、筛选协议、点击字段定位原始字节，以及阅读HTTP请求行。中文字幕随当前操作解释核心机制。生成入口为`python scripts/record-gui-tour.py`；录制工具复用现有Window实现，实际操作控件、套接字和PCAP文件。构建与测试记录继续保存在实验材料中。
 
 自主源码使用MIT许可，见LICENSE；外部库、课件和参考规范不受此许可覆盖。仓库不附Npcap SDK/驱动或Qt第三方运行库；用官方来源另行取得。演示运行的runtime、重复源码和中间帧只在本机保留；公开证据保留命令、输入归档、日志、时间线、哈希、验证结果和可重生成脚本。性能解析大JSON可由固定PCAP重生成，不重复入库。
