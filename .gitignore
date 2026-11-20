@@ -3,3 +3,10 @@
 /.vs/
 *.user
 *.suo
+/build-old-*/
+/dist/
+/deliverables/
+/.staging/
+__pycache__/
+*.bak
+/evidence/runs/perf-*/parsed-*.json
