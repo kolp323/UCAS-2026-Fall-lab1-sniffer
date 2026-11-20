@@ -2,6 +2,8 @@
 #define NOMINMAX
 #include <winsock2.h>
 #include <windows.h>
+#include <psapi.h>
+#pragma comment(lib,"psapi.lib")
 #include <pcap.h>
 #include <QtWidgets>
 #include <QUdpSocket>
@@ -66,6 +68,9 @@ public:
  quint64 captured=0, oversized=0, heartbeatTicks=0;
  unsigned driverReceived=0,driverDropped=0;
  bool statsAvailable=false;
+ QElapsedTimer heartbeatClock;
+ qint64 lastHeartbeat=0,maxHeartbeatGap=0;
+ QJsonArray resourceTrace;
  QString lastError,highlightedField,highlightedHex;
  int highlightedOffset=-1,highlightedLength=0;
  QFile offlineFile;
@@ -98,7 +103,14 @@ public:
   connect(table->selectionModel(),&QItemSelectionModel::selectionChanged,this,[this]{showSelected();});
   connect(fields,&QTableWidget::cellClicked,this,[this](int row,int){highlightField(row);});
   poll.setInterval(20);connect(&poll,&QTimer::timeout,this,[this]{readLive();});offlinePoll.setInterval(0);connect(&offlinePoll,&QTimer::timeout,this,[this]{readOffline();});
-  uiHeartbeat.setInterval(50);connect(&uiHeartbeat,&QTimer::timeout,this,[this]{++heartbeatTicks;});uiHeartbeat.start();enumerate();updateCounts();
+  heartbeatClock.start();uiHeartbeat.setInterval(50);connect(&uiHeartbeat,&QTimer::timeout,this,[this]{
+   ++heartbeatTicks;qint64 now=heartbeatClock.elapsed();if(cap)maxHeartbeatGap=qMax(maxHeartbeatGap,now-lastHeartbeat);lastHeartbeat=now;
+   PROCESS_MEMORY_COUNTERS memory{};memory.cb=sizeof(memory);bool memOk=GetProcessMemoryInfo(GetCurrentProcess(),&memory,sizeof(memory))!=0;
+   FILETIME creation{},exit{},kernel{},user{};bool cpuOk=GetProcessTimes(GetCurrentProcess(),&creation,&exit,&kernel,&user)!=0;
+   auto ticks=[](const FILETIME& f){return (quint64(f.dwHighDateTime)<<32)|f.dwLowDateTime;};
+   resourceTrace.append(QJsonObject{{"elapsed_ms",double(now)},{"capturing",cap!=nullptr},{"captured",double(captured)},{"retained",model->records.size()},{"retained_raw_bytes",double(model->retainedBytes)},{"evicted",double(model->evicted)},{"working_set_bytes",memOk?double(memory.WorkingSetSize):-1.0},{"cpu_ms",cpuOk?double(ticks(kernel)+ticks(user))/10000.0:-1.0}});
+   if(resourceTrace.size()>2400)resourceTrace.removeFirst();
+  });uiHeartbeat.start();enumerate();updateCounts();
  }
  ~Window(){stopCapture(false);closeOffline();}
  void error(const QString& s){lastError=s;state->setText("ERROR · "+s);state->setStyleSheet("background:#fee9eb;color:#9f2332;padding:9px;border-radius:5px;");qWarning().noquote()<<s;}
@@ -116,7 +128,7 @@ public:
   int active=pcap_activate(c);if(active<0)return fail(QString::fromUtf8(pcap_geterr(c)));
   if(!captureFilter->text().trimmed().isEmpty()){bpf_program f{};QByteArray expr=captureFilter->text().toUtf8();if(pcap_compile(c,&f,expr.constData(),1,PCAP_NETMASK_UNKNOWN)<0)return fail("Invalid capture filter: "+QString::fromUtf8(pcap_geterr(c)));int rc=pcap_setfilter(c,&f);pcap_freecode(&f);if(rc<0)return fail(QString::fromUtf8(pcap_geterr(c)));}
   if(pcap_setnonblock(c,1,err)<0)return fail(QString::fromUtf8(err));
-  cap=c;linktype=pcap_datalink(cap);resetData();startButton->setEnabled(false);stopButton->setEnabled(true);interfaces->setEnabled(false);captureFilter->setEnabled(false);openButton->setEnabled(false);sourceLabel->setText(QString("LIVE · %1 · linktype %2 · BPF: %3").arg(interfaces->currentText()).arg(linktype).arg(captureFilter->text().isEmpty()?"(all)":captureFilter->text()));status("CAPTURING · Bounded nonblocking reads; stop remains available.");poll.start();return true;
+  cap=c;linktype=pcap_datalink(cap);resetData();lastHeartbeat=heartbeatClock.elapsed();maxHeartbeatGap=0;startButton->setEnabled(false);stopButton->setEnabled(true);interfaces->setEnabled(false);captureFilter->setEnabled(false);openButton->setEnabled(false);sourceLabel->setText(QString("LIVE · %1 · linktype %2 · BPF: %3").arg(interfaces->currentText()).arg(linktype).arg(captureFilter->text().isEmpty()?"(all)":captureFilter->text()));status("CAPTURING · Bounded nonblocking reads; stop remains available.");poll.start();return true;
  }
  void stopCapture(bool announce=true){poll.stop();if(cap){pcap_stat s{};statsAvailable=pcap_stats(cap,&s)==0;if(statsAvailable){driverReceived=s.ps_recv;driverDropped=s.ps_drop;}pcap_close(cap);cap=nullptr;if(announce)status("STOPPED · Captured records remain available for inspection and export.");}startButton->setEnabled(true);stopButton->setEnabled(false);interfaces->setEnabled(true);captureFilter->setEnabled(true);openButton->setEnabled(true);updateCounts();}
  void addRecord(QVector<Record>& batch,const pcap_pkthdr* h,const u_char* data){++captured;if(h->caplen>kMaxPacket){++oversized;return;}Record r;r.id=captured;r.header=*h;r.bytes=QByteArray(reinterpret_cast<const char*>(data),int(h->caplen));r.packet=lab1::parsePacket(r.bytes,linktype,h->len);batch.append(std::move(r));}
@@ -147,7 +159,12 @@ bool saveJson(const QString& path,const QJsonObject& o){QSaveFile f(path);if(!f.
 int main(int argc,char** argv){
  wchar_t sys[MAX_PATH]{};GetSystemDirectoryW(sys,MAX_PATH);std::wstring np=std::wstring(sys)+L"\\Npcap";SetDefaultDllDirectories(LOAD_LIBRARY_SEARCH_DEFAULT_DIRS);AddDllDirectory(np.c_str());
  QApplication app(argc,argv);app.setApplicationName("Lab1 Packet Observatory");char pcapError[PCAP_ERRBUF_SIZE]{};if(pcap_init(PCAP_CHAR_ENC_UTF_8,pcapError)!=0){qCritical()<<pcapError;return 2;}
- QCommandLineParser args;args.addHelpOption();args.addOption({"record-frames","Save actual application renders every 100 ms (max 300 frames).","directory"});args.addOption({"demo","Load a fixed PCAP and optionally save an actual GUI render.","pcap"});args.addOption({"screenshot","Save current GUI render after offline load.","png"});args.addOption({"live-demo","Run controlled local UDP capture with rejection/recovery evidence.","directory"});args.addOption({"auto-exit","Quit after this many milliseconds from launch (default 6000 for live demo).","milliseconds"});args.addOption({"display-filter","Set initial retained display protocol.","protocol"});args.addOption({"select-status","After offline load select first row with this parser status.","status"});args.process(app);
+ QCommandLineParser args;args.addHelpOption();args.addOption({"record-frames","Save actual application renders every 100 ms (max 300 frames).","directory"});args.addOption({"demo","Load a fixed PCAP and optionally save an actual GUI render.","pcap"});args.addOption({"screenshot","Save current GUI render after offline load.","png"});args.addOption({"live-count","Number of controlled UDP datagrams, 1 to 5000 (default 10).","count"});args.addOption({"live-demo","Run controlled local UDP capture with rejection/recovery evidence.","directory"});args.addOption({"auto-exit","Quit after this many milliseconds from launch (default 6000 for live demo).","milliseconds"});args.addOption({"display-filter","Set initial retained display protocol.","protocol"});args.addOption({"select-status","After offline load select first row with this parser status.","status"});args.process(app);
+ bool countOk=true;const int liveCount=args.isSet("live-count")?args.value("live-count").toInt(&countOk):10;
+ if(!countOk||liveCount<1||liveCount>5000){qCritical()<<"live-count must be 1 to 5000";return 2;}
+ const int burstSize=liveCount<=10?1:50,burstIntervalMs=liveCount<=10?70:30;
+ const int sendDurationMs=((liveCount+burstSize-1)/burstSize-1)*burstIntervalMs;
+ const int liveFinishMs=qMax(3500,1200+sendDurationMs+1500);
  Window w;w.show();int exitCode=0;if(args.isSet("display-filter")){QString f=args.value("display-filter").toUpper();int ix=w.display->findText(f);if(ix<0){qCritical()<<"Unknown display protocol";return 2;}w.display->setCurrentIndex(ix);}
   if(args.isSet("record-frames")){
   QString dir=QDir(args.value("record-frames")).absolutePath();if(!QDir().mkpath(dir)||QFileInfo::exists(dir+"/frame-00000.png")){qCritical()<<"Use a fresh frame recording directory";return 2;}
@@ -161,22 +178,36 @@ int main(int argc,char** argv){
   QString out=QDir(args.value("live-demo")).absolutePath();if(!QDir().mkpath(out)||QFileInfo::exists(out+"/live-demo.json")||QFileInfo::exists(out+"/live.pcap")){qCritical()<<"Use a fresh live-demo directory";return 2;}
   auto* receiver=new QUdpSocket(&w);auto* sender=new QUdpSocket(&w);
   if(!receiver->bind(QHostAddress(QHostAddress::LocalHost),quint16(0))||!sender->bind(QHostAddress(QHostAddress::LocalHost),quint16(0))){qCritical()<<"Local UDP bind failed";return 2;}
-  auto received=std::make_shared<int>(0);auto payloadOk=std::make_shared<bool>(true);auto rejected=std::make_shared<bool>(false);auto sent=std::make_shared<int>(0);
+  auto received=std::make_shared<int>(0);auto payloadOk=std::make_shared<bool>(true);auto rejected=std::make_shared<bool>(false);auto sent=std::make_shared<int>(0);auto firstSend=std::make_shared<qint64>(-1);auto lastSend=std::make_shared<qint64>(-1);
   const QByteArray payload("LAB1-GUI-LIVE-CONTROLLED");
   QObject::connect(receiver,&QUdpSocket::readyRead,&w,[=]{while(receiver->hasPendingDatagrams()){QByteArray b;b.resize(int(receiver->pendingDatagramSize()));receiver->readDatagram(b.data(),b.size());++*received;if(b!=payload)*payloadOk=false;}});
-  QTimer::singleShot(300,&w,[&,out,receiver,sender,rejected,sent,payload]{
+  QTimer::singleShot(300,&w,[&,out,receiver,sender,rejected,sent,payload,firstSend,lastSend]{
    int found=-1;for(int i=0;i<w.interfaces->count();++i)if(w.interfaces->itemData(i).toString()=="\\Device\\NPF_Loopback")found=i;
    if(found<0){w.error("Loopback interface unavailable");exitCode=1;return;}
    w.interfaces->setCurrentIndex(found);w.captureFilter->setText("udp and (");*rejected=!w.startCapture();w.grab().save(out+"/invalid-filter.png");
-   QTimer::singleShot(800,&w,[&,out,receiver,sender,rejected,sent,payload]{
+   QTimer::singleShot(800,&w,[&,out,receiver,sender,rejected,sent,payload,firstSend,lastSend]{
     w.captureFilter->setText(QString("ip and udp and src host 127.0.0.1 and dst host 127.0.0.1 and src port %1 and dst port %2").arg(sender->localPort()).arg(receiver->localPort()));
     if(!w.startCapture()){exitCode=1;return;}
-    for(int i=0;i<10;++i)QTimer::singleShot(100+i*70,&w,[=]{if(sender->writeDatagram(payload,QHostAddress::LocalHost,receiver->localPort())==payload.size())++*sent;});
+    for(int offset=0;offset<liveCount;offset+=burstSize){int amount=qMin(burstSize,liveCount-offset);int batch=offset/burstSize;QTimer::singleShot(100+batch*burstIntervalMs,&w,[&,sender,receiver,payload,sent,firstSend,lastSend,amount]{
+     qint64 now=w.heartbeatClock.elapsed();if(*firstSend<0)*firstSend=now;
+     for(int j=0;j<amount;++j)if(sender->writeDatagram(payload,QHostAddress::LocalHost,receiver->localPort())==payload.size())++*sent;
+     *lastSend=w.heartbeatClock.elapsed();
+    });}
    });
   });
-  QTimer::singleShot(3500,&w,[&,out,receiver,sender,received,payloadOk,rejected,sent,payload]{w.readLive();QElapsedTimer stop;stop.start();w.stopCapture();qint64 stopMs=stop.elapsed();bool exported=w.exportCapture(out+"/live.pcap");if(w.model->rowCount())w.table->selectRow(0);bool shot=w.grab().save(out+"/live.png");bool pass=*rejected&&*sent==10&&*received==10&&*payloadOk&&w.captured==10&&w.model->records.size()==10&&w.heartbeatTicks>0&&exported&&shot;QJsonObject result{{"outcome",pass?"pass":"fail"},{"sent",*sent},{"socket_received",*received},{"payload_matches",*payloadOk},{"captured",double(w.captured)},{"retained",w.model->records.size()},{"evicted",double(w.model->evicted)},{"invalid_filter_rejected",*rejected},{"stop_ms",double(stopMs)},{"ui_timer_ticks",double(w.heartbeatTicks)},{"driver_stats_available",w.statsAvailable},{"driver_received",double(w.driverReceived)},{"driver_dropped",double(w.driverDropped)},{"source_port",int(sender->localPort())},{"destination_port",int(receiver->localPort())},{"payload_hex",QString::fromLatin1(payload.toHex())},{"linktype",w.linktype},{"pcap_exported",exported},{"gui_render_saved",shot},{"highlighted_field",w.highlightedField},{"highlighted_offset",w.highlightedOffset},{"highlighted_length",w.highlightedLength},{"highlighted_hex",w.highlightedHex},{"capture_library",QString::fromUtf8(pcap_lib_version())},{"last_error",w.lastError},{"boundary","10 self-generated loopback UDP packets; GUI-thread bounded polling; no performance or external-network claim"}};if(!saveJson(out+"/live-demo.json",result))pass=false;if(!pass)exitCode=1;w.status(pass?"LIVE DEMO PASSED · 10 local UDP packets; invalid filter rejected; stop/export completed.":"LIVE DEMO FAILED · Inspect live-demo.json and logs.");});
+  QTimer::singleShot(liveFinishMs,&w,[&,out,receiver,sender,received,payloadOk,rejected,sent,payload,firstSend,lastSend]{
+   w.readLive();QElapsedTimer stop;stop.start();w.stopCapture();qint64 stopMs=stop.elapsed();
+   bool exported=w.exportCapture(out+"/live.pcap");if(w.model->rowCount())w.table->selectRow(0);bool shot=w.grab().save(out+"/live.png");
+   int expectedRetained=qMin(liveCount,kRetainedLimit);
+   bool countsPass=*sent==liveCount&&*received==liveCount&&w.captured==quint64(liveCount)&&w.model->records.size()==expectedRetained&&w.model->evicted==quint64(liveCount-expectedRetained);
+   bool responsePass=stopMs<=200&&w.maxHeartbeatGap<=500;
+   bool pass=*rejected&&countsPass&&responsePass&&*payloadOk&&w.heartbeatTicks>0&&exported&&shot;
+   QJsonObject result{{"outcome",pass?"pass":"fail"},{"expected_count",liveCount},{"sent",*sent},{"socket_received",*received},{"payload_matches",*payloadOk},{"captured",double(w.captured)},{"retained",w.model->records.size()},{"retained_raw_bytes",double(w.model->retainedBytes)},{"evicted",double(w.model->evicted)},{"invalid_filter_rejected",*rejected},{"stop_ms",double(stopMs)},{"stop_threshold_ms",200},{"max_capture_heartbeat_gap_ms",double(w.maxHeartbeatGap)},{"heartbeat_gap_threshold_ms",500},{"responsiveness_pass",responsePass},{"counts_pass",countsPass},{"ui_timer_ticks",double(w.heartbeatTicks)},{"driver_stats_available",w.statsAvailable},{"driver_received",double(w.driverReceived)},{"driver_dropped",double(w.driverDropped)},{"source_port",int(sender->localPort())},{"destination_port",int(receiver->localPort())},{"payload_hex",QString::fromLatin1(payload.toHex())},{"linktype",w.linktype},{"pcap_exported",exported},{"gui_render_saved",shot},{"highlighted_field",w.highlightedField},{"highlighted_offset",w.highlightedOffset},{"highlighted_length",w.highlightedLength},{"highlighted_hex",w.highlightedHex},{"capture_library",QString::fromUtf8(pcap_lib_version())},{"last_error",w.lastError},{"burst_size",burstSize},{"burst_interval_ms",burstIntervalMs},{"nominal_burst_rate_pps",1000.0*burstSize/burstIntervalMs},{"first_send_elapsed_ms",double(*firstSend)},{"last_send_elapsed_ms",double(*lastSend)},{"resource_trace",w.resourceTrace},{"threshold_origin","engineering acceptance choices, not course thresholds or real-time guarantees"},{"boundary","Finite self-generated loopback UDP run; total working set is distinct from retained raw bytes; stop_ms is handler duration, heartbeat covers capture only; no arbitrary-load or external-network claim"}};
+   if(!saveJson(out+"/live-demo.json",result))pass=false;if(!pass)exitCode=1;
+   w.status(pass?QString("LIVE DEMO PASSED · %1 local UDP packets; bounded retention; stop/export completed.").arg(liveCount):"LIVE DEMO FAILED · Inspect live-demo.json and logs.");
+  });
  }
- if(args.isSet("auto-exit")||args.isSet("live-demo")){bool ok=true;int ms=args.isSet("auto-exit")?args.value("auto-exit").toInt(&ok):6000;if(!ok||ms<3000||(args.isSet("live-demo")&&ms<4500)){qCritical()<<"auto-exit must be >=3000 ms, or >=4500 ms for live demo";return 2;}QTimer::singleShot(ms,&app,&QCoreApplication::quit);}
+ if(args.isSet("auto-exit")||args.isSet("live-demo")){bool ok=true;int ms=args.isSet("auto-exit")?args.value("auto-exit").toInt(&ok):qMax(6000,liveFinishMs+1500);if(!ok||ms<3000||(args.isSet("live-demo")&&ms<liveFinishMs+500)){qCritical()<<"auto-exit must be >=3000 ms and at least live finish deadline +500 ms";return 2;}QTimer::singleShot(ms,&app,&QCoreApplication::quit);}
  app.exec();if(args.isSet("demo")&&!w.offlineLoaded)exitCode=1;return exitCode;
 }
 
