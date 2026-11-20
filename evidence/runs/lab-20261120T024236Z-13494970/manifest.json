@@ -1,0 +1,113 @@
+{
+  "run_id": "lab-20261120T024236Z-13494970",
+  "started": "2026-11-20T02:42:36.939301+00:00",
+  "outcome": "fail",
+  "stages": [
+    {
+      "name": "configure",
+      "command": [
+        "cmake",
+        "-S",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer",
+        "-B",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build",
+        "-G",
+        "Visual Studio 17 2022",
+        "-A",
+        "x64",
+        "-DCMAKE_PREFIX_PATH=E:/Anaconda3/Library"
+      ],
+      "outcome": "pass",
+      "exit_code": 0,
+      "seconds": 0.1524259999860078
+    },
+    {
+      "name": "build",
+      "command": [
+        "cmake",
+        "--build",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build",
+        "--config",
+        "Release"
+      ],
+      "outcome": "pass",
+      "exit_code": 0,
+      "seconds": 1.0844460999942385
+    },
+    {
+      "name": "fixtures",
+      "command": [
+        "C:\\Program Files (x86)\\Python\\Python311\\python.exe",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\scripts\\generate-fixtures.py",
+        "--out",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\lab-20261120T024236Z-13494970\\fixtures"
+      ],
+      "outcome": "pass",
+      "exit_code": 0,
+      "seconds": 0.1341076999960933
+    },
+    {
+      "name": "intentional-failure",
+      "command": [
+        "C:\\Program Files (x86)\\Python\\Python311\\python.exe",
+        "-c",
+        "raise SystemExit(7)"
+      ],
+      "outcome": "fail",
+      "exit_code": 7,
+      "seconds": 0.0718131000030553
+    }
+  ],
+  "environment": {
+    "platform": "Windows-10-10.0.26100-SP0",
+    "python": "3.11.8 (tags/v3.11.8:db85d51, Feb  6 2024, 22:03:32) [MSC v.1937 64 bit (AMD64)]",
+    "qt": "5.15.2",
+    "compiler": "MSVC x64",
+    "tshark": "E:\\APP\\Wireshark\\tshark.exe"
+  },
+  "git_commit": "cc9bad605652c3c1b7085c59dff4c849421672c7",
+  "dirty": true,
+  "source_hashes": {
+    "src/cli.cpp": "1a9cab9f2bca2ac838873c55bd5b6c08f32b552773f6bd3d1656c11d9d775289",
+    "src/gui.cpp": "1b84fb9ee85b75e8d9d309b0d070fbf72a9057e25395d6ea2d06680fb2f3439e",
+    "src/parser.cpp": "8d8092dcdc4ad84ee26b7dc798bbe8b98e616588aede2c04f1b71ccd5bbd5caa",
+    "src/parser.h": "e7001ade80f7db946fa961bec28f1e1a87554af37856f50675096dba9a8fd112",
+    "scripts/derive-results.py": "09963282cce393dff4627a3ce8d71c96e6d78b06ded56c5be8dab4b540741a1d",
+    "scripts/generate-fixtures.py": "1b52bc151e9ddbd370fc68c2ad7ea89f6bb2704b923b8054f002eb567b5747c6",
+    "scripts/gui-evidence.py": "07e2f31fb9b82281d9a92829a85d5f850a45a603897994945fdd7b40b3d40f71",
+    "scripts/measure.py": "1e44924aa4f3117f37d8ad184c620a6c2311715aa1b4de4c8e5873c962bb8144",
+    "scripts/package-runtime.py": "a6847ea262a1ff268c83e155ef7213d9266539a1ee73ee029b5c39d621c94630",
+    "scripts/run-lab.ps1": "59dd41381630da136d6b36b2e65e54348a3e62f44a37614a773d6923e2977e04",
+    "scripts/run-lab.py": "7fb40281ffcf1e3b2d2548dbbbbf4223f4178b9406e3a5ccc1bd2247377fa763",
+    "scripts/run-lab.py.20261120-103554.bak": "17de7a20056ba2d428e1be57f20b092925e6f335ec420c5a67a02a7a2e1e8026",
+    "tests/BPF-oracle-audit.md": "b915d4443d607ed67f3dc6a48f46491bf773808c4d806411afaae59fa070046b",
+    "tests/bpf-udp-instructions.txt": "9838c8f62a2dd31683d70332583803d01d26c6ba1e7f901df19da32246821e81",
+    "tests/verify.py": "d0f18d2b37049c784eb5b6e4f7eaee872abd28524fe657d1dce0f68b6c7e0b39"
+  },
+  "input_hashes": {
+    "ethernet.pcap": "73b5fc10438a9efa9111ee30b72a67ec2068729dd5bfeacbd0cfec1aece35c65",
+    "expected.json": "c1de4b05450e105114b1dfed4b4a0075d0c99626dab412e98263fc8b67fd1b9b",
+    "load.pcap": "81cd43abbf7901062a491dec5823cb9e863ad67f5a58389a51c7a9f6bdc0899e",
+    "loopback.pcap": "6afc974c8c1008286fb526f8525e0a6dc1b42cebe712ff0ef2ef8ea7b6a0e81e",
+    "README.md": "2b6d5ddafa438011d6828760ac85607462f62aacf610078c57b8bfb3d0720190",
+    "unsupported.pcap": "c3d4cefa55553806490057a7716e340aee840eccc4c2aa3c82df68ef7934f178"
+  },
+  "artifacts": {
+    "build.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build.stdout.log": "2b18df8f79b73edaa841b796f77fdaa3783da2333b8fe4458146722bb31b7499",
+    "configure.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "configure.stdout.log": "8ec447eef0735e5f7aab8d9c727932e43120a365d69bff81b7bdb092c810b0c9",
+    "fixtures.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "fixtures.stdout.log": "c14e23b8789ea8be469d567f125a364a6ca7c136c44e3d6b8922bd4848ac22b4",
+    "intentional-failure.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "intentional-failure.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "fixtures/ethernet.pcap": "73b5fc10438a9efa9111ee30b72a67ec2068729dd5bfeacbd0cfec1aece35c65",
+    "fixtures/expected.json": "c1de4b05450e105114b1dfed4b4a0075d0c99626dab412e98263fc8b67fd1b9b",
+    "fixtures/load.pcap": "81cd43abbf7901062a491dec5823cb9e863ad67f5a58389a51c7a9f6bdc0899e",
+    "fixtures/loopback.pcap": "6afc974c8c1008286fb526f8525e0a6dc1b42cebe712ff0ef2ef8ea7b6a0e81e",
+    "fixtures/README.md": "2b6d5ddafa438011d6828760ac85607462f62aacf610078c57b8bfb3d0720190",
+    "fixtures/unsupported.pcap": "c3d4cefa55553806490057a7716e340aee840eccc4c2aa3c82df68ef7934f178"
+  },
+  "error": "intentional-failure failed; no fallback binary",
+  "ended": "2026-11-20T02:42:38.616226+00:00"
+}

@@ -1,0 +1,301 @@
+{
+  "files": [
+    {
+      "source": "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\demo-d0d73c1e\\Release\\lab1_sniffer.exe",
+      "destination": "lab1_sniffer.exe",
+      "sha256": "fc886e0dd1d25c688af26bac8f42e07b9953a1e8f2f762b7d7dbe21c6a31f043"
+    },
+    {
+      "source": "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\demo-d0d73c1e\\Release\\lab1_cli.exe",
+      "destination": "lab1_cli.exe",
+      "sha256": "7c0aa944805fb0e52b3ec21c3532efa3444e5434a5446476035781af8d878aee"
+    },
+    {
+      "source": "E:\\Anaconda3\\Library\\plugins\\platforms\\qwindows.dll",
+      "destination": "platforms\\qwindows.dll",
+      "sha256": "a7d0cbb017adf8a3537979a23f49e7818dbce9986779e7a3d1357e722ca9b293"
+    },
+    {
+      "source": "E:\\Anaconda3\\Library\\bin\\Qt5Widgets_conda.dll",
+      "destination": "Qt5Widgets_conda.dll",
+      "sha256": "7ea72d982d6ce320f7ac2dd7291802572e5e32f718cb14028a4a6512ae9d3aa2"
+    },
+    {
+      "source": "E:\\Anaconda3\\Library\\bin\\Qt5Network_conda.dll",
+      "destination": "Qt5Network_conda.dll",
+      "sha256": "b23e11cd7ccdc71e90d15d7b2b45d110001f236937c06635869a7046ff0e505e"
+    },
+    {
+      "source": "E:\\Anaconda3\\Library\\bin\\Qt5Gui_conda.dll",
+      "destination": "Qt5Gui_conda.dll",
+      "sha256": "f5a3f1a17430a6c1019186639cd7cfaf3217bcc9949d2f26f3de3098125e53e2"
+    },
+    {
+      "source": "E:\\Anaconda3\\Library\\bin\\Qt5Core_conda.dll",
+      "destination": "Qt5Core_conda.dll",
+      "sha256": "f1c56285891cccde008a5646e56aed44a9d2574ee3b0e636f0211fe409446a42"
+    },
+    {
+      "source": "E:\\Anaconda3\\Library\\bin\\libpng16.dll",
+      "destination": "libpng16.dll",
+      "sha256": "9cfc6eeee22b3b182911708b5328cfeeb4010a084154fb0bfa1f0ec5e02bbdcd"
+    },
+    {
+      "source": "E:\\Anaconda3\\Library\\bin\\zlib.dll",
+      "destination": "zlib.dll",
+      "sha256": "ab781e8b12674b578eb8db318f933b3d7e9b68eeb67337f259d76d3e7d722ba4"
+    },
+    {
+      "source": "E:\\Anaconda3\\Library\\bin\\libssl-3-x64.dll",
+      "destination": "libssl-3-x64.dll",
+      "sha256": "0e34e725e8b40788fe25aeb600c9af8a0cf210f6a1798089959f22f0c188ee11"
+    },
+    {
+      "source": "E:\\Anaconda3\\Library\\bin\\libcrypto-3-x64.dll",
+      "destination": "libcrypto-3-x64.dll",
+      "sha256": "2f8f0fc6cd3dce9b5f985a90faaa7363767e8db4e71c7fdf4e80cd42d9c3a7d2"
+    },
+    {
+      "source": "E:\\Anaconda3\\Library\\bin\\icuin73.dll",
+      "destination": "icuin73.dll",
+      "sha256": "28497a1beddf5983d0b5cb84c1baaf54ea2a37d554ca6513ee2fa7b5404d4a4a"
+    },
+    {
+      "source": "E:\\Anaconda3\\Library\\bin\\icuuc73.dll",
+      "destination": "icuuc73.dll",
+      "sha256": "ae04ac6bd70177dd7a05b5c3543714a695d8a4eaebd49adb65ae3db2cec29a5c"
+    },
+    {
+      "source": "E:\\Anaconda3\\Library\\bin\\zstd.dll",
+      "destination": "zstd.dll",
+      "sha256": "be5a011e36657a266e96bf287cf4ff806dcec43b5b720bb1e80d10a28f91f294"
+    },
+    {
+      "source": "E:\\Anaconda3\\Library\\bin\\icudt73.dll",
+      "destination": "icudt73.dll",
+      "sha256": "4c1f1ac8d5a2047764ec0a1f4f8f1a227b918c868e55ac02a088ea62cee9ac40"
+    }
+  ],
+  "imports": {
+    "lab1_sniffer.exe": [
+      "Qt5Widgets_conda.dll",
+      "Qt5Network_conda.dll",
+      "Qt5Gui_conda.dll",
+      "Qt5Core_conda.dll",
+      "KERNEL32.dll",
+      "MSVCP140.dll",
+      "VCRUNTIME140.dll",
+      "VCRUNTIME140_1.dll",
+      "api-ms-win-crt-runtime-l1-1-0.dll",
+      "api-ms-win-crt-string-l1-1-0.dll",
+      "api-ms-win-crt-heap-l1-1-0.dll",
+      "api-ms-win-crt-math-l1-1-0.dll",
+      "api-ms-win-crt-stdio-l1-1-0.dll",
+      "api-ms-win-crt-locale-l1-1-0.dll",
+      "wpcap.dll"
+    ],
+    "lab1_cli.exe": [
+      "Qt5Core_conda.dll",
+      "KERNEL32.dll",
+      "MSVCP140.dll",
+      "VCRUNTIME140.dll",
+      "VCRUNTIME140_1.dll",
+      "api-ms-win-crt-runtime-l1-1-0.dll",
+      "api-ms-win-crt-string-l1-1-0.dll",
+      "api-ms-win-crt-heap-l1-1-0.dll",
+      "api-ms-win-crt-math-l1-1-0.dll",
+      "api-ms-win-crt-stdio-l1-1-0.dll",
+      "api-ms-win-crt-locale-l1-1-0.dll",
+      "wpcap.dll"
+    ],
+    "qwindows.dll": [
+      "dwmapi.dll",
+      "IMM32.dll",
+      "OLEAUT32.dll",
+      "WTSAPI32.dll",
+      "libpng16.dll",
+      "zlib.dll",
+      "ole32.dll",
+      "USER32.dll",
+      "GDI32.dll",
+      "Qt5Gui_conda.dll",
+      "Qt5Core_conda.dll",
+      "SHELL32.dll",
+      "WINMM.dll",
+      "MSVCP140.dll",
+      "KERNEL32.dll",
+      "VCRUNTIME140.dll",
+      "VCRUNTIME140_1.dll",
+      "api-ms-win-crt-stdio-l1-1-0.dll",
+      "api-ms-win-crt-string-l1-1-0.dll",
+      "api-ms-win-crt-heap-l1-1-0.dll",
+      "api-ms-win-crt-runtime-l1-1-0.dll",
+      "api-ms-win-crt-math-l1-1-0.dll",
+      "api-ms-win-crt-utility-l1-1-0.dll",
+      "api-ms-win-crt-convert-l1-1-0.dll",
+      "api-ms-win-crt-environment-l1-1-0.dll"
+    ],
+    "Qt5Widgets_conda.dll": [
+      "Qt5Gui_conda.dll",
+      "Qt5Core_conda.dll",
+      "UxTheme.dll",
+      "dwmapi.dll",
+      "SHELL32.dll",
+      "GDI32.dll",
+      "ole32.dll",
+      "USER32.dll",
+      "MSVCP140.dll",
+      "MSVCP140_1.dll",
+      "KERNEL32.dll",
+      "VCRUNTIME140.dll",
+      "VCRUNTIME140_1.dll",
+      "api-ms-win-crt-runtime-l1-1-0.dll",
+      "api-ms-win-crt-string-l1-1-0.dll",
+      "api-ms-win-crt-heap-l1-1-0.dll",
+      "api-ms-win-crt-math-l1-1-0.dll"
+    ],
+    "Qt5Network_conda.dll": [
+      "Qt5Core_conda.dll",
+      "DNSAPI.dll",
+      "IPHLPAPI.DLL",
+      "CRYPT32.dll",
+      "zlib.dll",
+      "ADVAPI32.dll",
+      "libssl-3-x64.dll",
+      "libcrypto-3-x64.dll",
+      "WS2_32.dll",
+      "MSVCP140.dll",
+      "ole32.dll",
+      "KERNEL32.dll",
+      "VCRUNTIME140.dll",
+      "VCRUNTIME140_1.dll",
+      "api-ms-win-crt-runtime-l1-1-0.dll",
+      "api-ms-win-crt-convert-l1-1-0.dll",
+      "api-ms-win-crt-stdio-l1-1-0.dll",
+      "api-ms-win-crt-string-l1-1-0.dll",
+      "api-ms-win-crt-math-l1-1-0.dll",
+      "api-ms-win-crt-heap-l1-1-0.dll"
+    ],
+    "Qt5Gui_conda.dll": [
+      "d3d11.dll",
+      "dxgi.dll",
+      "Qt5Core_conda.dll",
+      "libpng16.dll",
+      "zlib.dll",
+      "GDI32.dll",
+      "ole32.dll",
+      "USER32.dll",
+      "MSVCP140.dll",
+      "KERNEL32.dll",
+      "VCRUNTIME140.dll",
+      "VCRUNTIME140_1.dll",
+      "api-ms-win-crt-heap-l1-1-0.dll",
+      "api-ms-win-crt-runtime-l1-1-0.dll",
+      "api-ms-win-crt-math-l1-1-0.dll",
+      "api-ms-win-crt-string-l1-1-0.dll",
+      "api-ms-win-crt-stdio-l1-1-0.dll",
+      "api-ms-win-crt-utility-l1-1-0.dll",
+      "api-ms-win-crt-environment-l1-1-0.dll",
+      "api-ms-win-crt-locale-l1-1-0.dll"
+    ],
+    "Qt5Core_conda.dll": [
+      "MPR.dll",
+      "USERENV.dll",
+      "VERSION.dll",
+      "zlib.dll",
+      "icuin73.dll",
+      "icuuc73.dll",
+      "zstd.dll",
+      "NETAPI32.dll",
+      "WS2_32.dll",
+      "ADVAPI32.dll",
+      "KERNEL32.dll",
+      "ole32.dll",
+      "SHELL32.dll",
+      "USER32.dll",
+      "WINMM.dll",
+      "MSVCP140.dll",
+      "MSVCP140_1.dll",
+      "VCRUNTIME140.dll",
+      "VCRUNTIME140_1.dll",
+      "api-ms-win-crt-runtime-l1-1-0.dll",
+      "api-ms-win-crt-heap-l1-1-0.dll",
+      "api-ms-win-crt-environment-l1-1-0.dll",
+      "api-ms-win-crt-stdio-l1-1-0.dll",
+      "api-ms-win-crt-time-l1-1-0.dll",
+      "api-ms-win-crt-math-l1-1-0.dll",
+      "api-ms-win-crt-string-l1-1-0.dll",
+      "api-ms-win-crt-utility-l1-1-0.dll",
+      "api-ms-win-crt-filesystem-l1-1-0.dll"
+    ],
+    "libpng16.dll": [
+      "zlib.dll",
+      "VCRUNTIME140.dll",
+      "api-ms-win-crt-heap-l1-1-0.dll",
+      "api-ms-win-crt-stdio-l1-1-0.dll",
+      "api-ms-win-crt-math-l1-1-0.dll",
+      "api-ms-win-crt-runtime-l1-1-0.dll",
+      "api-ms-win-crt-convert-l1-1-0.dll",
+      "api-ms-win-crt-filesystem-l1-1-0.dll",
+      "api-ms-win-crt-time-l1-1-0.dll",
+      "KERNEL32.dll"
+    ],
+    "zlib.dll": [
+      "VCRUNTIME140.dll",
+      "api-ms-win-crt-stdio-l1-1-0.dll",
+      "api-ms-win-crt-heap-l1-1-0.dll",
+      "api-ms-win-crt-convert-l1-1-0.dll",
+      "api-ms-win-crt-runtime-l1-1-0.dll",
+      "KERNEL32.dll"
+    ],
+    "libssl-3-x64.dll": [
+      "libcrypto-3-x64.dll",
+      "KERNEL32.dll",
+      "VCRUNTIME140.dll",
+      "api-ms-win-crt-time-l1-1-0.dll",
+      "api-ms-win-crt-string-l1-1-0.dll",
+      "api-ms-win-crt-utility-l1-1-0.dll",
+      "api-ms-win-crt-runtime-l1-1-0.dll",
+      "api-ms-win-crt-filesystem-l1-1-0.dll",
+      "api-ms-win-crt-convert-l1-1-0.dll",
+      "api-ms-win-crt-stdio-l1-1-0.dll"
+    ],
+    "libcrypto-3-x64.dll": [
+      "WS2_32.dll",
+      "ADVAPI32.dll",
+      "CRYPT32.dll",
+      "USER32.dll",
+      "bcrypt.dll",
+      "KERNEL32.dll",
+      "VCRUNTIME140.dll",
+      "api-ms-win-crt-stdio-l1-1-0.dll",
+      "api-ms-win-crt-convert-l1-1-0.dll",
+      "api-ms-win-crt-string-l1-1-0.dll",
+      "api-ms-win-crt-time-l1-1-0.dll",
+      "api-ms-win-crt-utility-l1-1-0.dll",
+      "api-ms-win-crt-heap-l1-1-0.dll",
+      "api-ms-win-crt-runtime-l1-1-0.dll",
+      "api-ms-win-crt-filesystem-l1-1-0.dll",
+      "api-ms-win-crt-environment-l1-1-0.dll"
+    ],
+    "icuin73.dll": [
+      "icuuc73.dll",
+      "KERNEL32.dll"
+    ],
+    "icuuc73.dll": [
+      "icudt73.dll",
+      "ADVAPI32.dll",
+      "KERNEL32.dll"
+    ],
+    "zstd.dll": [
+      "KERNEL32.dll",
+      "VCRUNTIME140.dll",
+      "api-ms-win-crt-heap-l1-1-0.dll",
+      "api-ms-win-crt-runtime-l1-1-0.dll",
+      "api-ms-win-crt-stdio-l1-1-0.dll",
+      "api-ms-win-crt-utility-l1-1-0.dll",
+      "api-ms-win-crt-time-l1-1-0.dll"
+    ],
+    "icudt73.dll": []
+  }
+}

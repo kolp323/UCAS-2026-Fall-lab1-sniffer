@@ -1,0 +1,81 @@
+{
+  "run_id": "lab-20261120T023522Z-d736b6a2",
+  "started": "2026-11-20T02:35:22.968798+00:00",
+  "outcome": "fail",
+  "stages": [
+    {
+      "name": "configure",
+      "command": [
+        "cmake",
+        "-S",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer",
+        "-B",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build",
+        "-G",
+        "Visual Studio 17 2022",
+        "-A",
+        "x64",
+        "-DCMAKE_PREFIX_PATH=E:/Anaconda3/Library"
+      ],
+      "outcome": "pass",
+      "exit_code": 0,
+      "seconds": 0.14599579999048728
+    },
+    {
+      "name": "build",
+      "command": [
+        "cmake",
+        "--build",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build",
+        "--config",
+        "Release"
+      ],
+      "outcome": "pass",
+      "exit_code": 0,
+      "seconds": 4.9734939000045415
+    },
+    {
+      "name": "fixtures",
+      "command": [
+        "C:\\Program Files (x86)\\Python\\Python311\\python.exe",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\scripts\\generate-fixtures.py",
+        "--out",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\fixtures"
+      ],
+      "outcome": "fail",
+      "exit_code": 1,
+      "seconds": 0.10298769999644719
+    }
+  ],
+  "environment": {
+    "platform": "Windows-10-10.0.26100-SP0",
+    "python": "3.11.8 (tags/v3.11.8:db85d51, Feb  6 2024, 22:03:32) [MSC v.1937 64 bit (AMD64)]",
+    "qt": "5.15.2",
+    "compiler": "MSVC x64",
+    "tshark": "E:\\APP\\Wireshark\\tshark.exe"
+  },
+  "git_commit": "cc9bad605652c3c1b7085c59dff4c849421672c7",
+  "dirty": true,
+  "source_hashes": {
+    "src/cli.cpp": "b2a605112039372e63d84bcd694331ef8c5b5a4d8193701d7470c643d2ca53a3",
+    "src/gui.cpp": "27b0fcd287c4886c9e20dabab8ca85409d04da96b87d461a891e5630a2e08b69",
+    "src/parser.cpp": "8d8092dcdc4ad84ee26b7dc798bbe8b98e616588aede2c04f1b71ccd5bbd5caa",
+    "src/parser.h": "e7001ade80f7db946fa961bec28f1e1a87554af37856f50675096dba9a8fd112",
+    "scripts/generate-fixtures.py": "643a563b4c333b34f594bfbf66ed8fc0b759d929bf7c9f42c08d17e322e28571",
+    "scripts/measure.py": "1e44924aa4f3117f37d8ad184c620a6c2311715aa1b4de4c8e5873c962bb8144",
+    "scripts/run-lab.ps1": "59dd41381630da136d6b36b2e65e54348a3e62f44a37614a773d6923e2977e04",
+    "scripts/run-lab.py": "17de7a20056ba2d428e1be57f20b092925e6f335ec420c5a67a02a7a2e1e8026",
+    "tests/verify.py": "24313068fc64fbc311383b0edd1719f06a5971555ba0d24fd19e0ff7b0c6b3a8"
+  },
+  "input_hashes": {},
+  "artifacts": {
+    "build.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build.stdout.log": "fff60103664407a4e52d2e44c51020db1442fc68283e8f463d6cb6f49a82bdc2",
+    "configure.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "configure.stdout.log": "8ec447eef0735e5f7aab8d9c727932e43120a365d69bff81b7bdb092c810b0c9",
+    "fixtures.stderr.log": "e4d8531e40093f3a3a319ebbdad9f868d0a095c08fc757f8e573af890eec2de9",
+    "fixtures.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "error": "fixtures failed; no fallback binary",
+  "ended": "2026-11-20T02:35:28.433079+00:00"
+}

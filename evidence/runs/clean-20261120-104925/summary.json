@@ -1,0 +1,13 @@
+{
+  "fresh_build": true,
+  "source": "git archive HEAD",
+  "shared_dependencies": [
+    "Qt5 Anaconda",
+    "MSVC2022",
+    "NpcapSDK1.17"
+  ],
+  "commit": "809a907d30d3d33e1190ffec835a05881411d78b",
+  "outcome": "pass",
+  "new_operating_system": false,
+  "checks": "100 assertions; see checks/results.json"
+}

@@ -1,0 +1,85 @@
+{
+  "created_utc": "2026-11-20T03:47:39.854696+00:00",
+  "implementation_commit": "9727f836f99928d83611ebc60de5cf4b1e839e3b",
+  "repository": "https://github.com/kolp323/UCAS-2026-Fall-lab1-sniffer",
+  "scope": "1A; Windows same-machine tests; no full stream reconstruction or TLS decryption",
+  "results": [
+    {
+      "run": "clean-final-9727f83",
+      "outcome": "pass",
+      "claim": "Final C++ source exported and rebuilt in a new directory; 100 regression checks pass; not new OS"
+    },
+    {
+      "run": "portable-final-9727f83",
+      "outcome": "pass",
+      "claim": "Same-machine isolated PATH GUI and CLI; Npcap and VC runtime remain prerequisites"
+    },
+    {
+      "run": "stress-20261120-105412",
+      "outcome": "pass",
+      "claim": "3 finite 3000-datagram runs, retained2000/evicted1000, stop5/3/5ms AFTER input ends; no arbitrary sustained-overload claim"
+    },
+    {
+      "run": "visual-20261120T024203Z-3f5e5ed1",
+      "outcome": "pass",
+      "claim": "Actual GUI renders and loopback10; fixed offline5000 -> retained2000/evicted3000"
+    },
+    {
+      "run": "perf-20261120T023937Z-a8e44a33",
+      "outcome": "pass",
+      "claim": "Pilot+3 full CLI process measurements; startup/JSON included; not wire throughput"
+    },
+    {
+      "run": "automation-audit-20261120-114509",
+      "outcome": "pass",
+      "claim": "Controlled parent/child timeout cleanup; chart rederivation preserves source CSV and 3 formal results"
+    },
+    {
+      "run": "complete-demo-20261120T034251Z-79a1dc40",
+      "outcome": "pass",
+      "claim": "92s actual log rendering + sourced GUI clip; full decode check; not human desktop recording"
+    },
+    {
+      "run": "lab-20261120T023522Z-d736b6a2",
+      "outcome": "fail",
+      "reason": "Existing fixture directory refused; preserved"
+    },
+    {
+      "run": "lab-20261120T023554Z-8adb0339",
+      "outcome": "fail",
+      "reason": "Incorrect expected BPF set; audited against raw bytes and compiled instructions"
+    },
+    {
+      "run": "lab-20261120T024236Z-13494970",
+      "outcome": "intentional-fail",
+      "reason": "Exit7 propagation validated; not normal successful run"
+    },
+    {
+      "run": "lab-20261120T034510Z-28267ac3",
+      "outcome": "intentional-fail",
+      "reason": "Timeout stage124 and workflow1; no later stages"
+    },
+    {
+      "run": "gui-20261120-103718",
+      "outcome": "partial",
+      "reason": "Live test passed; desktop window recording failed, not used as final video"
+    },
+    {
+      "run": "complete-demo-20261120T034108Z-c4e217e9",
+      "outcome": "fail",
+      "reason": "Deep build path configure failure; preserved"
+    },
+    {
+      "run": "complete-demo-20261120T034212Z-f6a82008",
+      "outcome": "fail",
+      "reason": "Source archive omitted probes; fixed recorder, not C++"
+    }
+  ],
+  "boundaries": [
+    "All generated traffic is synthetic or owned loopback; no external-network certification",
+    "Evidence does not establish student mastery",
+    "Course deadline source PDF p2; course website not checked",
+    "Course upload not performed"
+  ],
+  "new_file_notice": "This index and LICENSE did not previously exist."
+}

@@ -1,0 +1,39 @@
+{
+  "run_id": "complete-demo-20261120T034212Z-f6a82008",
+  "source_commit": "9727f836f99928d83611ebc60de5cf4b1e839e3b",
+  "source_archive_sha256": "4670f39319197742b5e46dc2d0a5983c7c342fd9233c8070d24f02f95097a8ae",
+  "started": "2026-11-20T03:42:12.342857+00:00",
+  "outcome": "fail",
+  "video_kind": "Contemporaneous automated stdout rendering plus prior actual GUI QWidget frames. Not human desktop recording. Reading holds stretch playback relative to execution time.",
+  "gui_clip_source": "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\visual-20261120T024203Z-3f5e5ed1\\automated-live-demo.mp4",
+  "gui_clip_sha256": "f78c08cbcc4c421e8714f54be38bc13890673b27cf8b23e1465791f001988584",
+  "fresh_build_directory": "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\demo-a70ce0c2",
+  "error": "RuntimeError('configure failed; no fallback binaries')",
+  "ended": "2026-11-20T03:42:16.246380+00:00",
+  "stages": [
+    {
+      "name": "configure",
+      "title": "01 / 从空目录配置构建",
+      "command": [
+        "cmake",
+        "-S",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\complete-demo-20261120T034212Z-f6a82008\\source",
+        "-B",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\demo-a70ce0c2",
+        "-G",
+        "Visual Studio 17 2022",
+        "-A",
+        "x64",
+        "-DCMAKE_PREFIX_PATH=E:/Anaconda3/Library",
+        "-DNPCAP_SDK_DIR=E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\.deps\\npcap-sdk-1.17"
+      ],
+      "started": "2026-11-20T03:42:12.407963+00:00",
+      "expected_exit": 0,
+      "outcome": "fail",
+      "exit_code": 1,
+      "seconds": 3.789221600003657,
+      "ended": "2026-11-20T03:42:16.198404+00:00"
+    }
+  ],
+  "frame_timeline": "frame-timeline.json"
+}

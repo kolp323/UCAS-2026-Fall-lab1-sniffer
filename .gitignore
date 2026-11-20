@@ -10,3 +10,8 @@
 __pycache__/
 *.bak
 /evidence/runs/perf-*/parsed-*.json
+
+/evidence/runs/complete-demo-*/runtime/
+/evidence/runs/complete-demo-*/source/
+/evidence/runs/complete-demo-*/frames/
+/evidence/runs/complete-demo-*/build/

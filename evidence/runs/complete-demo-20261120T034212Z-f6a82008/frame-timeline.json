@@ -1,0 +1,242 @@
+[
+  {
+    "frame": 0,
+    "stage": "00 / 明确证据和边界",
+    "mode": "reading-hold",
+    "wall_elapsed_seconds": 0.06443269998999313,
+    "rendered_log_lines": 5,
+    "status": "说明 · 接下来实际执行"
+  },
+  {
+    "frame": 1,
+    "stage": "00 / 明确证据和边界",
+    "mode": "reading-hold",
+    "wall_elapsed_seconds": 0.06537699999171309,
+    "status": "说明 · 接下来实际执行"
+  },
+  {
+    "frame": 2,
+    "stage": "00 / 明确证据和边界",
+    "mode": "reading-hold",
+    "wall_elapsed_seconds": 0.06580939999548718,
+    "status": "说明 · 接下来实际执行"
+  },
+  {
+    "frame": 3,
+    "stage": "00 / 明确证据和边界",
+    "mode": "reading-hold",
+    "wall_elapsed_seconds": 0.06651799999235664,
+    "status": "说明 · 接下来实际执行"
+  },
+  {
+    "frame": 4,
+    "stage": "00 / 明确证据和边界",
+    "mode": "reading-hold",
+    "wall_elapsed_seconds": 0.06695369999215472,
+    "status": "说明 · 接下来实际执行"
+  },
+  {
+    "frame": 5,
+    "stage": "00 / 明确证据和边界",
+    "mode": "reading-hold",
+    "wall_elapsed_seconds": 0.06731980000040494,
+    "status": "说明 · 接下来实际执行"
+  },
+  {
+    "frame": 6,
+    "stage": "00 / 明确证据和边界",
+    "mode": "reading-hold",
+    "wall_elapsed_seconds": 0.06780999999318738,
+    "status": "说明 · 接下来实际执行"
+  },
+  {
+    "frame": 7,
+    "stage": "00 / 明确证据和边界",
+    "mode": "reading-hold",
+    "wall_elapsed_seconds": 0.06850779999513179,
+    "status": "说明 · 接下来实际执行"
+  },
+  {
+    "frame": 8,
+    "stage": "00 / 明确证据和边界",
+    "mode": "reading-hold",
+    "wall_elapsed_seconds": 0.06894489999103826,
+    "status": "说明 · 接下来实际执行"
+  },
+  {
+    "frame": 9,
+    "stage": "00 / 明确证据和边界",
+    "mode": "reading-hold",
+    "wall_elapsed_seconds": 0.06928609999886248,
+    "status": "说明 · 接下来实际执行"
+  },
+  {
+    "frame": 10,
+    "stage": "00 / 明确证据和边界",
+    "mode": "reading-hold",
+    "wall_elapsed_seconds": 0.06959220000135247,
+    "status": "说明 · 接下来实际执行"
+  },
+  {
+    "frame": 11,
+    "stage": "00 / 明确证据和边界",
+    "mode": "reading-hold",
+    "wall_elapsed_seconds": 0.0702434999984689,
+    "status": "说明 · 接下来实际执行"
+  },
+  {
+    "frame": 12,
+    "stage": "00 / 明确证据和边界",
+    "mode": "reading-hold",
+    "wall_elapsed_seconds": 0.07069110000156797,
+    "status": "说明 · 接下来实际执行"
+  },
+  {
+    "frame": 13,
+    "stage": "00 / 明确证据和边界",
+    "mode": "reading-hold",
+    "wall_elapsed_seconds": 0.07110699999611825,
+    "status": "说明 · 接下来实际执行"
+  },
+  {
+    "frame": 14,
+    "stage": "01 / 从空目录配置构建",
+    "mode": "live",
+    "wall_elapsed_seconds": 0.1159571999887703,
+    "rendered_log_lines": 0,
+    "status": "运行中"
+  },
+  {
+    "frame": 15,
+    "stage": "01 / 从空目录配置构建",
+    "mode": "live",
+    "wall_elapsed_seconds": 0.6516105999908177,
+    "rendered_log_lines": 0,
+    "status": "运行中"
+  },
+  {
+    "frame": 16,
+    "stage": "01 / 从空目录配置构建",
+    "mode": "live",
+    "wall_elapsed_seconds": 1.199850899996818,
+    "rendered_log_lines": 0,
+    "status": "运行中"
+  },
+  {
+    "frame": 17,
+    "stage": "01 / 从空目录配置构建",
+    "mode": "live",
+    "wall_elapsed_seconds": 1.7369917999894824,
+    "rendered_log_lines": 0,
+    "status": "运行中"
+  },
+  {
+    "frame": 18,
+    "stage": "01 / 从空目录配置构建",
+    "mode": "live",
+    "wall_elapsed_seconds": 2.275231099993107,
+    "rendered_log_lines": 2,
+    "status": "运行中"
+  },
+  {
+    "frame": 19,
+    "stage": "01 / 从空目录配置构建",
+    "mode": "live",
+    "wall_elapsed_seconds": 2.8142147999897134,
+    "rendered_log_lines": 2,
+    "status": "运行中"
+  },
+  {
+    "frame": 20,
+    "stage": "01 / 从空目录配置构建",
+    "mode": "live",
+    "wall_elapsed_seconds": 3.3603194000024814,
+    "rendered_log_lines": 18,
+    "status": "运行中"
+  },
+  {
+    "frame": 21,
+    "stage": "01 / 从空目录配置构建",
+    "mode": "reading-hold",
+    "wall_elapsed_seconds": 3.9050560999894515,
+    "rendered_log_lines": 20,
+    "status": "失败 · 保留证据"
+  },
+  {
+    "frame": 22,
+    "stage": "01 / 从空目录配置构建",
+    "mode": "reading-hold",
+    "wall_elapsed_seconds": 3.9060805999906734,
+    "status": "失败 · 保留证据"
+  },
+  {
+    "frame": 23,
+    "stage": "01 / 从空目录配置构建",
+    "mode": "reading-hold",
+    "wall_elapsed_seconds": 3.906539299990982,
+    "status": "失败 · 保留证据"
+  },
+  {
+    "frame": 24,
+    "stage": "01 / 从空目录配置构建",
+    "mode": "reading-hold",
+    "wall_elapsed_seconds": 3.9069186999986414,
+    "status": "失败 · 保留证据"
+  },
+  {
+    "frame": 25,
+    "stage": "01 / 从空目录配置构建",
+    "mode": "reading-hold",
+    "wall_elapsed_seconds": 3.9072532999998657,
+    "status": "失败 · 保留证据"
+  },
+  {
+    "frame": 26,
+    "stage": "01 / 从空目录配置构建",
+    "mode": "reading-hold",
+    "wall_elapsed_seconds": 3.907595999990008,
+    "status": "失败 · 保留证据"
+  },
+  {
+    "frame": 27,
+    "stage": "01 / 从空目录配置构建",
+    "mode": "reading-hold",
+    "wall_elapsed_seconds": 3.907915999996476,
+    "status": "失败 · 保留证据"
+  },
+  {
+    "frame": 28,
+    "stage": "01 / 从空目录配置构建",
+    "mode": "reading-hold",
+    "wall_elapsed_seconds": 3.90822389999812,
+    "status": "失败 · 保留证据"
+  },
+  {
+    "frame": 29,
+    "stage": "01 / 从空目录配置构建",
+    "mode": "reading-hold",
+    "wall_elapsed_seconds": 3.9085281000006944,
+    "status": "失败 · 保留证据"
+  },
+  {
+    "frame": 30,
+    "stage": "01 / 从空目录配置构建",
+    "mode": "reading-hold",
+    "wall_elapsed_seconds": 3.908835900001577,
+    "status": "失败 · 保留证据"
+  },
+  {
+    "frame": 31,
+    "stage": "01 / 从空目录配置构建",
+    "mode": "reading-hold",
+    "wall_elapsed_seconds": 3.9091380999889225,
+    "status": "失败 · 保留证据"
+  },
+  {
+    "frame": 32,
+    "stage": "01 / 从空目录配置构建",
+    "mode": "reading-hold",
+    "wall_elapsed_seconds": 3.909462600000552,
+    "status": "失败 · 保留证据"
+  }
+]

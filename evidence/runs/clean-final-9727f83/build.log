@@ -1,0 +1,28 @@
+适用于 .NET Framework MSBuild 版本 17.14.23+b0019275e
+
+  Checking Build System
+  Building Custom Rule E:/users/VScodeProject/C++/UCAS-2026-Fall_Software-and-system-security/lab1-sniffer/build/clean-final/source/CMakeLists.txt
+  parser.cpp
+  lab1_parser.vcxproj -> E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\clean-final\build\Release\lab1_parser.lib
+  Building Custom Rule E:/users/VScodeProject/C++/UCAS-2026-Fall_Software-and-system-security/lab1-sniffer/build/clean-final/source/CMakeLists.txt
+  cli.cpp
+  lab1_cli.vcxproj -> E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\clean-final\build\Release\lab1_cli.exe
+  Building Custom Rule E:/users/VScodeProject/C++/UCAS-2026-Fall_Software-and-system-security/lab1-sniffer/build/clean-final/source/CMakeLists.txt
+  probe.cpp
+  lab1_env_probe.vcxproj -> E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\clean-final\build\Release\lab1_env_probe.exe
+  Building Custom Rule E:/users/VScodeProject/C++/UCAS-2026-Fall_Software-and-system-security/lab1-sniffer/build/clean-final/source/CMakeLists.txt
+  gui.cpp
+E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\clean-final\source\src\gui.cpp(134,75): warning C4458: “data”的声明隐藏了类成员 [E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\clean-final\build\lab1_sniffer.vcxproj]
+      E:\Anaconda3\Library\include\qt\QtWidgets\qwidget.h(747,18):
+      参见“QWidget::data”的声明
+  
+E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\clean-final\source\src\gui.cpp(136,178): warning C4458: “data”的声明隐藏了类成员 [E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\clean-final\build\lab1_sniffer.vcxproj]
+      E:\Anaconda3\Library\include\qt\QtWidgets\qwidget.h(747,18):
+      参见“QWidget::data”的声明
+  
+E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\clean-final\source\src\gui.cpp(138,225): warning C4458: “data”的声明隐藏了类成员 [E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\clean-final\build\lab1_sniffer.vcxproj]
+      E:\Anaconda3\Library\include\qt\QtWidgets\qwidget.h(747,18):
+      参见“QWidget::data”的声明
+  
+  lab1_sniffer.vcxproj -> E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\clean-final\build\Release\lab1_sniffer.exe
+  Building Custom Rule E:/users/VScodeProject/C++/UCAS-2026-Fall_Software-and-system-security/lab1-sniffer/build/clean-final/source/CMakeLists.txt

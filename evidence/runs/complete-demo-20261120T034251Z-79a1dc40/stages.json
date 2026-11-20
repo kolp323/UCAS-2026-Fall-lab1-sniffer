@@ -1,0 +1,140 @@
+[
+  {
+    "name": "configure",
+    "title": "01 / 从空目录配置构建",
+    "command": [
+      "cmake",
+      "-S",
+      "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\complete-demo-20261120T034251Z-79a1dc40\\source",
+      "-B",
+      "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\demo-d0d73c1e",
+      "-G",
+      "Visual Studio 17 2022",
+      "-A",
+      "x64",
+      "-DCMAKE_PREFIX_PATH=E:/Anaconda3/Library",
+      "-DNPCAP_SDK_DIR=E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\.deps\\npcap-sdk-1.17"
+    ],
+    "started": "2026-11-20T03:42:51.315305+00:00",
+    "expected_exit": 0,
+    "outcome": "pass",
+    "exit_code": 0,
+    "seconds": 3.794069900002796,
+    "ended": "2026-11-20T03:42:55.110070+00:00"
+  },
+  {
+    "name": "build",
+    "title": "02 / 实际编译与链接",
+    "command": [
+      "cmake",
+      "--build",
+      "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\demo-d0d73c1e",
+      "--config",
+      "Release"
+    ],
+    "started": "2026-11-20T03:42:55.172231+00:00",
+    "expected_exit": 0,
+    "outcome": "pass",
+    "exit_code": 0,
+    "seconds": 13.19784969999455,
+    "ended": "2026-11-20T03:43:08.370407+00:00"
+  },
+  {
+    "name": "fixtures",
+    "title": "03 / 生成固定输入",
+    "command": [
+      "C:\\Program Files (x86)\\Python\\Python311\\python.exe",
+      "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\complete-demo-20261120T034251Z-79a1dc40\\source\\scripts\\generate-fixtures.py",
+      "--out",
+      "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\complete-demo-20261120T034251Z-79a1dc40\\fixtures"
+    ],
+    "started": "2026-11-20T03:43:08.429973+00:00",
+    "expected_exit": 0,
+    "outcome": "pass",
+    "exit_code": 0,
+    "seconds": 1.0882038999989163,
+    "ended": "2026-11-20T03:43:09.519166+00:00"
+  },
+  {
+    "name": "regression",
+    "title": "04 / 执行独立验收",
+    "command": [
+      "C:\\Program Files (x86)\\Python\\Python311\\python.exe",
+      "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\complete-demo-20261120T034251Z-79a1dc40\\source\\tests\\verify.py",
+      "--exe",
+      "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\demo-d0d73c1e\\Release\\lab1_cli.exe",
+      "--fixtures",
+      "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\complete-demo-20261120T034251Z-79a1dc40\\fixtures",
+      "--out",
+      "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\complete-demo-20261120T034251Z-79a1dc40\\checks",
+      "--tshark",
+      "E:\\APP\\Wireshark\\tshark.exe"
+    ],
+    "started": "2026-11-20T03:43:09.583841+00:00",
+    "expected_exit": 0,
+    "outcome": "pass",
+    "exit_code": 0,
+    "seconds": 2.7013283999986015,
+    "ended": "2026-11-20T03:43:12.285738+00:00"
+  },
+  {
+    "name": "negative",
+    "title": "05 / 故意提交错误过滤式",
+    "command": [
+      "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\demo-d0d73c1e\\Release\\lab1_cli.exe",
+      "--read",
+      "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\complete-demo-20261120T034251Z-79a1dc40\\fixtures\\ethernet.pcap",
+      "--capture-filter",
+      "udp and (",
+      "--json",
+      "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\complete-demo-20261120T034251Z-79a1dc40\\invalid-filter.json"
+    ],
+    "started": "2026-11-20T03:43:12.338451+00:00",
+    "expected_exit": 2,
+    "outcome": "pass",
+    "exit_code": 2,
+    "seconds": 1.086752000002889,
+    "ended": "2026-11-20T03:43:13.425787+00:00"
+  },
+  {
+    "name": "recovery",
+    "title": "06 / 修正后重新运行",
+    "command": [
+      "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\demo-d0d73c1e\\Release\\lab1_cli.exe",
+      "--read",
+      "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\complete-demo-20261120T034251Z-79a1dc40\\fixtures\\ethernet.pcap",
+      "--capture-filter",
+      "udp",
+      "--json",
+      "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\complete-demo-20261120T034251Z-79a1dc40\\corrected-filter.json"
+    ],
+    "started": "2026-11-20T03:43:13.473140+00:00",
+    "expected_exit": 0,
+    "outcome": "pass",
+    "exit_code": 0,
+    "seconds": 0.5430419000040274,
+    "ended": "2026-11-20T03:43:14.016996+00:00"
+  },
+  {
+    "name": "deploy",
+    "title": "07 / 实际部署与隔离路径验证",
+    "command": [
+      "C:\\Program Files (x86)\\Python\\Python311\\python.exe",
+      "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\complete-demo-20261120T034251Z-79a1dc40\\source\\scripts\\package-runtime.py",
+      "--build",
+      "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\demo-d0d73c1e\\Release",
+      "--out",
+      "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\complete-demo-20261120T034251Z-79a1dc40\\runtime",
+      "--evidence",
+      "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\complete-demo-20261120T034251Z-79a1dc40\\deployment",
+      "--fixture",
+      "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\complete-demo-20261120T034251Z-79a1dc40\\fixtures\\ethernet.pcap"
+    ],
+    "started": "2026-11-20T03:43:14.070291+00:00",
+    "expected_exit": 0,
+    "outcome": "pass",
+    "exit_code": 0,
+    "seconds": 8.657312799987267,
+    "ended": "2026-11-20T03:43:22.728274+00:00"
+  }
+]

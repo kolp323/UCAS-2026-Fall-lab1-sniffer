@@ -1,0 +1,755 @@
+{
+  "schema_version": 1,
+  "outcome": "pass",
+  "passed": 100,
+  "failed": 0,
+  "tests": [
+    {
+      "name": "ethernet.pcap.input-hash",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "ethernet-pcap.exit",
+      "outcome": "pass",
+      "detail": "expected 0 actual 0"
+    },
+    {
+      "name": "ethernet.pcap.count",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "ipv4-udp",
+      "outcome": "pass",
+      "detail": "{}"
+    },
+    {
+      "name": "ipv4-udp.field-spans",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "http-nonstandard-port",
+      "outcome": "pass",
+      "detail": "{}"
+    },
+    {
+      "name": "http-nonstandard-port.field-spans",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "port80-not-http",
+      "outcome": "pass",
+      "detail": "{}"
+    },
+    {
+      "name": "port80-not-http.field-spans",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "icmp4",
+      "outcome": "pass",
+      "detail": "{}"
+    },
+    {
+      "name": "icmp4.field-spans",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "ipv6-udp",
+      "outcome": "pass",
+      "detail": "{}"
+    },
+    {
+      "name": "ipv6-udp.field-spans",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "ipv6-tcp",
+      "outcome": "pass",
+      "detail": "{}"
+    },
+    {
+      "name": "ipv6-tcp.field-spans",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "icmp6",
+      "outcome": "pass",
+      "detail": "{}"
+    },
+    {
+      "name": "icmp6.field-spans",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "vlan42",
+      "outcome": "pass",
+      "detail": "{}"
+    },
+    {
+      "name": "vlan42.field-spans",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "ipv4-fragment",
+      "outcome": "pass",
+      "detail": "{}"
+    },
+    {
+      "name": "ipv4-fragment.field-spans",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "truncated-ip-payload",
+      "outcome": "pass",
+      "detail": "{}"
+    },
+    {
+      "name": "truncated-ip-payload.field-spans",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "invalid-ip-ihl",
+      "outcome": "pass",
+      "detail": "{}"
+    },
+    {
+      "name": "invalid-ip-ihl.field-spans",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "invalid-udp-length",
+      "outcome": "pass",
+      "detail": "{}"
+    },
+    {
+      "name": "invalid-udp-length.field-spans",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "invalid-tcp-offset",
+      "outcome": "pass",
+      "detail": "{}"
+    },
+    {
+      "name": "invalid-tcp-offset.field-spans",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "http-split-header",
+      "outcome": "pass",
+      "detail": "{}"
+    },
+    {
+      "name": "http-split-header.field-spans",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "ipv6-hop-udp",
+      "outcome": "pass",
+      "detail": "{}"
+    },
+    {
+      "name": "ipv6-hop-udp.field-spans",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "ipv6-fragment",
+      "outcome": "pass",
+      "detail": "{}"
+    },
+    {
+      "name": "ipv6-fragment.field-spans",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "ipv6-esp-unknown",
+      "outcome": "pass",
+      "detail": "{}"
+    },
+    {
+      "name": "ipv6-esp-unknown.field-spans",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "short-ethernet",
+      "outcome": "pass",
+      "detail": "{}"
+    },
+    {
+      "name": "short-ethernet.field-spans",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "ipv6-bad-extension-length",
+      "outcome": "pass",
+      "detail": "{}"
+    },
+    {
+      "name": "ipv6-bad-extension-length.field-spans",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "arp-unsupported",
+      "outcome": "pass",
+      "detail": "{}"
+    },
+    {
+      "name": "arp-unsupported.field-spans",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "loopback.pcap.input-hash",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "loopback-pcap.exit",
+      "outcome": "pass",
+      "detail": "expected 0 actual 0"
+    },
+    {
+      "name": "loopback.pcap.count",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "loopback-ipv4-udp",
+      "outcome": "pass",
+      "detail": "{}"
+    },
+    {
+      "name": "loopback-ipv4-udp.field-spans",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "loopback-ipv6-udp",
+      "outcome": "pass",
+      "detail": "{}"
+    },
+    {
+      "name": "loopback-ipv6-udp.field-spans",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "unsupported.pcap.input-hash",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "unsupported-pcap.exit",
+      "outcome": "pass",
+      "detail": "expected 0 actual 0"
+    },
+    {
+      "name": "unsupported.pcap.count",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "unsupported-linktype",
+      "outcome": "pass",
+      "detail": "{}"
+    },
+    {
+      "name": "unsupported-linktype.field-spans",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "load.pcap.input-hash",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "display-IPV4.exit",
+      "outcome": "pass",
+      "detail": "expected 0 actual 0"
+    },
+    {
+      "name": "display-IPV4.membership",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "display-IPV6.exit",
+      "outcome": "pass",
+      "detail": "expected 0 actual 0"
+    },
+    {
+      "name": "display-IPV6.membership",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "display-TCP.exit",
+      "outcome": "pass",
+      "detail": "expected 0 actual 0"
+    },
+    {
+      "name": "display-TCP.membership",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "display-UDP.exit",
+      "outcome": "pass",
+      "detail": "expected 0 actual 0"
+    },
+    {
+      "name": "display-UDP.membership",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "display-ICMP.exit",
+      "outcome": "pass",
+      "detail": "expected 0 actual 0"
+    },
+    {
+      "name": "display-ICMP.membership",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "display-ICMPV6.exit",
+      "outcome": "pass",
+      "detail": "expected 0 actual 0"
+    },
+    {
+      "name": "display-ICMPV6.membership",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "display-HTTP.exit",
+      "outcome": "pass",
+      "detail": "expected 0 actual 0"
+    },
+    {
+      "name": "display-HTTP.membership",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "capture-udp.independent-byte-predicate",
+      "outcome": "pass",
+      "detail": "[1, 5, 9, 10, 11, 12, 16]"
+    },
+    {
+      "name": "capture-udp.exit",
+      "outcome": "pass",
+      "detail": "expected 0 actual 0"
+    },
+    {
+      "name": "capture-udp.membership",
+      "outcome": "pass",
+      "detail": "[1, 5, 9, 10, 11, 12, 16]"
+    },
+    {
+      "name": "invalid-bpf.exit",
+      "outcome": "pass",
+      "detail": "expected 2 actual 2"
+    },
+    {
+      "name": "invalid-display.exit",
+      "outcome": "pass",
+      "detail": "expected 2 actual 2"
+    },
+    {
+      "name": "bounded-output.exit",
+      "outcome": "pass",
+      "detail": "expected 3 actual 3"
+    },
+    {
+      "name": "limit-visible",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "missing-file.exit",
+      "outcome": "pass",
+      "detail": "expected 2 actual 2"
+    },
+    {
+      "name": "invalid-pcap.exit",
+      "outcome": "pass",
+      "detail": "expected 2 actual 2"
+    },
+    {
+      "name": "prefix-sweep.exit",
+      "outcome": "pass",
+      "detail": "expected 0 actual 0"
+    },
+    {
+      "name": "all-prefixes-truncated",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "prefix-fields-bounded",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "random-safety.exit",
+      "outcome": "pass",
+      "detail": "expected 0 actual 0"
+    },
+    {
+      "name": "random-1000-safe-spans",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "ethernet.pcap.tshark-exit",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "ethernet.pcap.tshark-frame-1",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "ethernet.pcap.tshark-frame-2",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "ethernet.pcap.tshark-frame-3",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "ethernet.pcap.tshark-frame-4",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "ethernet.pcap.tshark-frame-5",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "ethernet.pcap.tshark-frame-6",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "ethernet.pcap.tshark-frame-7",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "ethernet.pcap.tshark-frame-8",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "ethernet.pcap.tshark-frame-14",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "ethernet.pcap.tshark-frame-15",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "loopback.pcap.tshark-exit",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "loopback.pcap.tshark-frame-1",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "loopback.pcap.tshark-frame-2",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "raw-first-frame-layout",
+      "outcome": "pass",
+      "detail": ""
+    },
+    {
+      "name": "output-overwrite-refused",
+      "outcome": "pass",
+      "detail": ""
+    }
+  ],
+  "commands": [
+    {
+      "name": "ethernet-pcap",
+      "command": [
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\build\\Release\\lab1_cli.exe",
+        "--read",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\source\\fixtures\\v2\\ethernet.pcap",
+        "--json",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\clean-final-9727f83\\checks\\ethernet-pcap.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.18164949999481905
+    },
+    {
+      "name": "loopback-pcap",
+      "command": [
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\build\\Release\\lab1_cli.exe",
+        "--read",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\source\\fixtures\\v2\\loopback.pcap",
+        "--json",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\clean-final-9727f83\\checks\\loopback-pcap.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.03405520001251716
+    },
+    {
+      "name": "unsupported-pcap",
+      "command": [
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\build\\Release\\lab1_cli.exe",
+        "--read",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\source\\fixtures\\v2\\unsupported.pcap",
+        "--json",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\clean-final-9727f83\\checks\\unsupported-pcap.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.03238230000715703
+    },
+    {
+      "name": "display-IPV4",
+      "command": [
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\build\\Release\\lab1_cli.exe",
+        "--read",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\source\\fixtures\\v2\\ethernet.pcap",
+        "--json",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\clean-final-9727f83\\checks\\display-IPV4.json",
+        "--display-filter",
+        "IPV4"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.038257799998973496
+    },
+    {
+      "name": "display-IPV6",
+      "command": [
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\build\\Release\\lab1_cli.exe",
+        "--read",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\source\\fixtures\\v2\\ethernet.pcap",
+        "--json",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\clean-final-9727f83\\checks\\display-IPV6.json",
+        "--display-filter",
+        "IPV6"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.035955599989392795
+    },
+    {
+      "name": "display-TCP",
+      "command": [
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\build\\Release\\lab1_cli.exe",
+        "--read",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\source\\fixtures\\v2\\ethernet.pcap",
+        "--json",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\clean-final-9727f83\\checks\\display-TCP.json",
+        "--display-filter",
+        "TCP"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.03559080000559334
+    },
+    {
+      "name": "display-UDP",
+      "command": [
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\build\\Release\\lab1_cli.exe",
+        "--read",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\source\\fixtures\\v2\\ethernet.pcap",
+        "--json",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\clean-final-9727f83\\checks\\display-UDP.json",
+        "--display-filter",
+        "UDP"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.03446510000503622
+    },
+    {
+      "name": "display-ICMP",
+      "command": [
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\build\\Release\\lab1_cli.exe",
+        "--read",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\source\\fixtures\\v2\\ethernet.pcap",
+        "--json",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\clean-final-9727f83\\checks\\display-ICMP.json",
+        "--display-filter",
+        "ICMP"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.03648650000104681
+    },
+    {
+      "name": "display-ICMPV6",
+      "command": [
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\build\\Release\\lab1_cli.exe",
+        "--read",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\source\\fixtures\\v2\\ethernet.pcap",
+        "--json",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\clean-final-9727f83\\checks\\display-ICMPV6.json",
+        "--display-filter",
+        "ICMPV6"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.03415839999797754
+    },
+    {
+      "name": "display-HTTP",
+      "command": [
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\build\\Release\\lab1_cli.exe",
+        "--read",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\source\\fixtures\\v2\\ethernet.pcap",
+        "--json",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\clean-final-9727f83\\checks\\display-HTTP.json",
+        "--display-filter",
+        "HTTP"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.03251489999820478
+    },
+    {
+      "name": "capture-udp",
+      "command": [
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\build\\Release\\lab1_cli.exe",
+        "--read",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\source\\fixtures\\v2\\ethernet.pcap",
+        "--json",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\clean-final-9727f83\\checks\\capture-udp.json",
+        "--capture-filter",
+        "udp"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.05648769999970682
+    },
+    {
+      "name": "invalid-bpf",
+      "command": [
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\build\\Release\\lab1_cli.exe",
+        "--read",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\source\\fixtures\\v2\\ethernet.pcap",
+        "--json",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\clean-final-9727f83\\checks\\invalid-bpf.json",
+        "--capture-filter",
+        "udp and and"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.03546460000507068
+    },
+    {
+      "name": "invalid-display",
+      "command": [
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\build\\Release\\lab1_cli.exe",
+        "--read",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\source\\fixtures\\v2\\ethernet.pcap",
+        "--json",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\clean-final-9727f83\\checks\\invalid-display.json",
+        "--display-filter",
+        "invented"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.025832800005446188
+    },
+    {
+      "name": "bounded-output",
+      "command": [
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\build\\Release\\lab1_cli.exe",
+        "--read",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\source\\fixtures\\v2\\ethernet.pcap",
+        "--json",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\clean-final-9727f83\\checks\\bounded-output.json",
+        "--limit",
+        "1"
+      ],
+      "exit_code": 3,
+      "elapsed_seconds": 0.031064700000570156
+    },
+    {
+      "name": "missing-file",
+      "command": [
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\build\\Release\\lab1_cli.exe",
+        "--read",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\clean-final-9727f83\\checks\\absent.pcap",
+        "--json",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\clean-final-9727f83\\checks\\missing-file.json"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.030980499999714084
+    },
+    {
+      "name": "invalid-pcap",
+      "command": [
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\build\\Release\\lab1_cli.exe",
+        "--read",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\clean-final-9727f83\\checks\\invalid.pcap",
+        "--json",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\clean-final-9727f83\\checks\\invalid-pcap.json"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.03217180000501685
+    },
+    {
+      "name": "prefix-sweep",
+      "command": [
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\build\\Release\\lab1_cli.exe",
+        "--read",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\clean-final-9727f83\\checks\\prefixes.pcap",
+        "--json",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\clean-final-9727f83\\checks\\prefix-sweep.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.038035899997339584
+    },
+    {
+      "name": "random-safety",
+      "command": [
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\clean-final\\build\\Release\\lab1_cli.exe",
+        "--read",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\clean-final-9727f83\\checks\\random.pcap",
+        "--json",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\clean-final-9727f83\\checks\\random-safety.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.11459300000569783
+    }
+  ],
+  "boundaries": [
+    "only declared structural parse scope",
+    "no checksum correctness claim",
+    "1000 random packets are a safety corpus, not proof against all malformed inputs",
+    "offline filters are not live-capture throughput",
+    "HTTP is complete-header heuristic without stream reassembly"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "outcome": "pass",
+  "retained_exports_tshark_checked": 3,
+  "declared_bounds_checked": true,
+  "rows": [
+    {
+      "repeat": 1,
+      "sent": 3000,
+      "captured": 3000,
+      "retained": 2000,
+      "evicted": 1000,
+      "stop_ms": 5,
+      "max_heartbeat_gap_ms": 76,
+      "send_span_ms": 1780,
+      "driver_drop": 0,
+      "pcap_sha256": "beeb7356e8afb7d0c702d9da4799d6cabc5274b68f4322169f47ec655f41a1f1"
+    },
+    {
+      "repeat": 2,
+      "sent": 3000,
+      "captured": 3000,
+      "retained": 2000,
+      "evicted": 1000,
+      "stop_ms": 3,
+      "max_heartbeat_gap_ms": 78,
+      "send_span_ms": 1769,
+      "driver_drop": 0,
+      "pcap_sha256": "9c71bb48e6797f3b54e3634587ed0329a01ed44d69fd18610bb84506e2afe37a"
+    },
+    {
+      "repeat": 3,
+      "sent": 3000,
+      "captured": 3000,
+      "retained": 2000,
+      "evicted": 1000,
+      "stop_ms": 5,
+      "max_heartbeat_gap_ms": 77,
+      "send_span_ms": 1787,
+      "driver_drop": 0,
+      "pcap_sha256": "d3eb12959b42729ab9c7e7053e1a833d0580b516d7354b631533e2b6d755f7bd"
+    }
+  ],
+  "source": "summary.json and each live.pcap",
+  "boundary": "Finite bursts only;2000 retained packet exports per run, not full3000 archive"
+}

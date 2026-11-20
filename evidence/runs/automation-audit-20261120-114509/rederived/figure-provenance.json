@@ -1,0 +1,36 @@
+{
+  "input": "measurements.csv",
+  "input_sha256": "dda8af2cfabb0b23a2be4519687d7d97049a74a538626d4484d22ab5ae251c4d",
+  "generator": "scripts/derive-results.py",
+  "formal_processes": 3,
+  "pilot_excluded_from_chart_but_preserved": true,
+  "numeric_values": [
+    {
+      "repeat": "1",
+      "phase": "formal",
+      "wall_seconds": "0.732839000003878",
+      "peak_sampled_rss_bytes": "67072000",
+      "exit_code": "0",
+      "read_count": "6000",
+      "outcome": "pass"
+    },
+    {
+      "repeat": "2",
+      "phase": "formal",
+      "wall_seconds": "0.7762844999961089",
+      "peak_sampled_rss_bytes": "65265664",
+      "exit_code": "0",
+      "read_count": "6000",
+      "outcome": "pass"
+    },
+    {
+      "repeat": "3",
+      "phase": "formal",
+      "wall_seconds": "0.7058679000037955",
+      "peak_sampled_rss_bytes": "65253376",
+      "exit_code": "0",
+      "read_count": "6000",
+      "outcome": "pass"
+    }
+  ]
+}

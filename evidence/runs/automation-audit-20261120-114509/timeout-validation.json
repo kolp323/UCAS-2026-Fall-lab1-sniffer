@@ -1,0 +1,28 @@
+{
+  "outcome": "pass",
+  "command": [
+    "pwsh",
+    "-NoProfile",
+    "-File",
+    "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\scripts\\run-lab.ps1",
+    "-InjectTimeout"
+  ],
+  "entry_exit_code": 1,
+  "failed_experiment_run": "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\lab-20261120T034510Z-28267ac3",
+  "owned_pids": {
+    "parent_pid": 34656,
+    "child_pid": 44116
+  },
+  "checks": {
+    "entry_nonzero": true,
+    "manifest_fail": true,
+    "timeout_stage_124": true,
+    "only_timeout_stage_ran": true,
+    "parent_alive_when_tree_kill_started": true,
+    "taskkill_success": true,
+    "parent_ended": true,
+    "child_ended": true,
+    "cleanup_stdout_preserved": true
+  },
+  "boundary": "Controlled own parent and child were terminated on timeout. Not proof of every possible detached child/job configuration."
+}

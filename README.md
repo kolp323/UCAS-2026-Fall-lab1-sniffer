@@ -13,7 +13,7 @@ cmake --build build --config Release
 ./scripts/run-lab.ps1 -Live
 ```
 
-`run-lab`每次创建新运行目录，保存构建日志、固定输入、回归与可选真实回环抓包；失败不会运行旧二进制。`-InjectFailure`预期失败并退出非零，用于验证失败可见性。脚本需Python3；性能脚本还需psutil/matplotlib。图表可单独由`derive-results.py --run 已有perf目录`重生成，不触发抓包。固定样本不可覆盖，使用`generate-fixtures.py --out 新目录`。
+`run-lab`每次创建新运行目录，保存构建日志、固定输入、回归与可选真实回环抓包；失败不会运行旧二进制。`-InjectFailure`预期失败并退出非零，用于验证失败可见性。`-InjectTimeout`用受控父子进程验证Windows超时清理，阶段退出124、总流程失败；清理只针对本次PID进程树，不保证特殊脱离进程。脚本需Python3；性能脚本还需psutil/matplotlib。图表可单独由`derive-results.py --run 已有perf目录`重生成，不触发抓包。固定样本不可覆盖，使用`generate-fixtures.py --out 新目录`。
 
 ## 操作与职责
 
@@ -41,4 +41,12 @@ CLI：`build/Release/lab1_cli.exe --read fixtures/v2/ethernet.pcap --json 新输
 
 ## 提交边界
 
-当前姓名、学号、远程Git地址待用户提供。源码保留本地完整Git历史。课程p2–3要求报告、视频、源码与Git链接、未加密ZIP；PPT是额外展示。正式打包须替换身份并补仓库链接，不能将本地路径当远程URL。截止据PDF为2026-11-24 23:55，课程网站未复核。dist仅本机依赖隔离验证；正式源码包不附第三方驱动或未完整附许可的运行库。
+公开源码与完整Git历史：[GitHub仓库](https://github.com/kolp323/UCAS-2026-Fall-lab1-sniffer)。实名报告与提交包在本机deliverables目录；不把学生身份写入公开示例配置。课程p2–3要求报告、视频、源码与Git链接、未加密ZIP；PPT是额外展示。报告已使用用户提供的身份与真实Git链接。最终提交包按课件p3命名，课程平台提交需另行操作。截止据PDF为2026-11-24 23:55，课程网站未复核。dist仅本机依赖隔离验证；正式源码包不附第三方驱动或未完整附许可的运行库。
+
+## 最终验证与演示
+
+C++实现基线为`9727f836f99928d83611ebc60de5cf4b1e839e3b`；后续提交补充脚本、证据和交付说明。`evidence/final-index.json`是结果索引。`clean-final-9727f83`为同机新源码/新构建目录100项通过；`portable-final-9727f83`为同机隔离PATH启动通过。
+
+`deliverables/lab1A-demo.mp4`是92秒实际执行日志渲染与真实GUI帧演示，包含新目录配置/编译、100项测试、错误过滤拒绝与恢复、依赖隔离部署。不是人工桌面录屏，播放停留不等于执行耗时。生成入口`python scripts/record-complete-demo.py`，保留前两次配置失败与最终成功记录。
+
+自主源码使用MIT许可，见LICENSE；外部库、课件和参考规范不受此许可覆盖。仓库不附Npcap SDK/驱动或Qt第三方运行库；用官方来源另行取得。演示运行的runtime、重复源码和中间帧只在本机保留；公开证据保留命令、输入归档、日志、时间线、哈希、验证结果和可重生成脚本。性能解析大JSON可由固定PCAP重生成，不重复入库。

@@ -1,0 +1,20 @@
+适用于 .NET Framework MSBuild 版本 17.14.23+b0019275e
+
+  lab1_parser.vcxproj -> E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\Release\lab1_parser.lib
+  cli.cpp
+  lab1_cli.vcxproj -> E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\Release\lab1_cli.exe
+  lab1_env_probe.vcxproj -> E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\Release\lab1_env_probe.exe
+  gui.cpp
+E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\src\gui.cpp(122,75): warning C4458: “data”的声明隐藏了类成员 [E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\lab1_sniffer.vcxproj]
+      E:\Anaconda3\Library\include\qt\QtWidgets\qwidget.h(747,18):
+      参见“QWidget::data”的声明
+  
+E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\src\gui.cpp(124,178): warning C4458: “data”的声明隐藏了类成员 [E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\lab1_sniffer.vcxproj]
+      E:\Anaconda3\Library\include\qt\QtWidgets\qwidget.h(747,18):
+      参见“QWidget::data”的声明
+  
+E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\src\gui.cpp(126,225): warning C4458: “data”的声明隐藏了类成员 [E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\lab1_sniffer.vcxproj]
+      E:\Anaconda3\Library\include\qt\QtWidgets\qwidget.h(747,18):
+      参见“QWidget::data”的声明
+  
+  lab1_sniffer.vcxproj -> E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\Release\lab1_sniffer.exe
