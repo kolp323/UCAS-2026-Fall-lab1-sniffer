@@ -33,6 +33,18 @@ struct Reader {
         if(!request.match(line).hasMatch()&&!response.match(line).hasMatch())return;
         const int headerEnd=payload.indexOf("\r\n\r\n");
         if(headerEnd<0){p.info="HTTP-like start line, incomplete headers; identification pending";return;}
+        static const QRegularExpression headerName("^[!#$%&'*+.^_`|~0-9a-zA-Z-]+$");
+        for(int start=lineEnd+2;start<headerEnd;){
+            const int end=payload.indexOf("\r\n",start);
+            if(end<0||end>headerEnd)return;
+            const int colon=payload.indexOf(':',start);
+            if(colon<0||colon>=end||!headerName.match(QString::fromLatin1(payload.mid(start,colon-start))).hasMatch())return;
+            for(int i=colon+1;i<end;++i){
+                const auto c=static_cast<unsigned char>(payload.at(i));
+                if((c<32&&c!=9)||c==127)return;
+            }
+            start=end+2;
+        }
         p.protocol="HTTP";p.info=line;
         field("http.start_line",line,o,lineEnd);
         number("http.header_bytes",headerEnd+4,o,headerEnd+4);
@@ -73,6 +85,8 @@ Packet parsePacket(const QByteArray& bytes,int linktype,unsigned originalLength)
         next=r.u8(off+9);r.number("ip.protocol",next,off+9,1);
         const unsigned frag=r.be16(off+6);
         r.number("ip.fragment_offset",frag&8191,off+6,2);
+        r.number("ip.mf",(frag>>13)&1,off+6,2);
+        r.number("ip.df",(frag>>14)&1,off+6,2);
         if(!r.need(off,static_cast<int>(total),2147483647,"IPv4 packet"))return r.p;
         end=off+static_cast<int>(total);off+=static_cast<int>(ihl);
         if(frag&0x3fff){r.p.fragmented=true;r.p.status="fragment";r.p.info="IPv4 fragment; transport not parsed without reassembly";return r.p;}
@@ -83,7 +97,8 @@ Packet parsePacket(const QByteArray& bytes,int linktype,unsigned originalLength)
         unsigned plen=r.be16(off+4);next=r.u8(off+6);
         r.p.src=r.ip6(off+8);r.p.dst=r.ip6(off+24);
         r.number("ipv6.payload_length",plen,off+4,2);r.field("ipv6.src",r.p.src,off+8,16);r.field("ipv6.dst",r.p.dst,off+24,16);
-        if(plen==0&&r.size()>off+40){r.p.status="unsupported";r.p.info="IPv6 jumbogram not supported";return r.p;}
+        r.number("ipv6.next_header",next,off+6,1);
+        if(plen==0&&next==0&&r.size()>off+40){r.p.status="unsupported";r.p.info="Zero-length IPv6 payload with Hop-by-Hop header; jumbograms not supported";return r.p;}
         if(!r.need(off,40+static_cast<int>(plen),2147483647,"IPv6 packet"))return r.p;
         end=off+40+static_cast<int>(plen);off+=40;
         int extensionCount=0;
@@ -91,9 +106,18 @@ Packet parsePacket(const QByteArray& bytes,int linktype,unsigned originalLength)
             if(++extensionCount>8){r.p.status="unsupported";r.p.info="IPv6 extension count exceeds limit 8";return r.p;}
             if(!r.need(off,2,end,"IPv6 extension"))return r.p;
             unsigned following=r.u8(off);int length=next==44?8:(next==51?(r.u8(off+1)+2)*4:(r.u8(off+1)+1)*8);
+            if(next==51&&(length<12||length%8!=0))return r.bad("Invalid IPv6 AH length or alignment");
             if(!r.need(off,length,end,"IPv6 extension length"))return r.p;
             r.number("ipv6.extension_type",next,off,length);
-            if(next==44&&(r.be16(off+2)&0xfff9)){r.p.fragmented=true;r.p.status="fragment";r.p.info="IPv6 fragment; transport not parsed without reassembly";return r.p;}
+            if(next==44){
+                const unsigned bits=r.be16(off+2);
+                r.number("ipv6.fragment.offset",bits>>3,off+2,2);
+                r.number("ipv6.fragment.more",bits&1,off+2,2);
+                r.number("ipv6.fragment.reserved_octet",r.u8(off+1),off+1,1);
+                r.number("ipv6.fragment.reserved_bits",(bits>>1)&3,off+2,2);
+                r.number("ipv6.fragment.id",r.be32(off+4),off+4,4);
+                if(bits&0xfff9){r.p.fragmented=true;r.p.status="fragment";r.p.info="IPv6 fragment; transport not parsed without reassembly";return r.p;}
+            }
             next=following;off+=length;
         }
         if(next==59){r.p.info="IPv6 No Next Header";return r.p;}
@@ -107,7 +131,9 @@ Packet parsePacket(const QByteArray& bytes,int linktype,unsigned originalLength)
         if(!r.need(off,header,end,"TCP options"))return r.p;
         r.p.srcPort=r.be16(off);r.p.dstPort=r.be16(off+2);
         r.number("tcp.srcport",r.p.srcPort,off,2);r.number("tcp.dstport",r.p.dstPort,off+2,2);
-        r.number("tcp.seq",r.be32(off+4),off+4,4);r.number("tcp.ack",r.be32(off+8),off+8,4);
+        r.p.tcpSeq=r.be32(off+4);r.p.tcpAck=r.be32(off+8);
+        r.p.tcpFlags=r.u8(off+13);r.p.tcpPayloadBytes=end-off-header;
+        r.number("tcp.seq",r.p.tcpSeq,off+4,4);r.number("tcp.ack",r.p.tcpAck,off+8,4);
         r.number("tcp.header_bytes",header,off+12,1);r.number("tcp.flags",r.u8(off+13),off+13,1);
         if(end>off+header)r.field("tcp.payload",r.b.mid(off+header,qMin(64,end-off-header)).toHex(' '),off+header,end-off-header);
         r.http(off+header,end-off-header);

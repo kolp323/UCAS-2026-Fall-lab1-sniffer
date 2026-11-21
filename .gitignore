@@ -21,3 +21,7 @@ __pycache__/
 
 /evidence/runs/gui-tour-*/keyframes/
 /evidence/runs/gui-tour-*/lab1A-demo.mp4
+/evidence/runs/review-*/byte-capacity.pcap
+/evidence/runs/review-*/retained-byte-capacity.pcap
+/evidence/runs/review-*/ready
+/evidence/runs/review-*/done

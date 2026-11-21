@@ -14,6 +14,8 @@
 #include <QElapsedTimer>
 #include <memory>
 #include "parser.h"
+#include "display_filter.h"
+#include "tcp_flow.h"
 
 namespace {
 constexpr int kRetainedLimit=2000;
@@ -26,6 +28,7 @@ public:
  QVector<Record> records;
  QVector<int> visible;
  QString filter="ALL";
+ lab1::DisplayPredicate predicate;
  quint64 evicted=0;
  qint64 retainedBytes=0;
  explicit PacketModel(QObject* p):QAbstractTableModel(p){}
@@ -47,7 +50,7 @@ public:
    case 7:return r.packet.info;default:return {};
   }
  }
- void rebuild(){visible.clear();for(int i=0;i<records.size();++i)if(lab1::matchesDisplayFilter(records[i].packet,filter))visible.append(i);}
+ void rebuild(){visible.clear();for(int i=0;i<records.size();++i)if((!predicate||predicate(records[i].packet))&&lab1::matchesDisplayFilter(records[i].packet,filter))visible.append(i);}
  void reset(){beginResetModel();records.clear();visible.clear();evicted=0;retainedBytes=0;endResetModel();}
  void setFilter(const QString& f){beginResetModel();filter=f;rebuild();endResetModel();}
  void append(QVector<Record>& rows){if(rows.isEmpty())return;beginResetModel();for(auto& r:rows){retainedBytes+=r.bytes.size();records.append(std::move(r));}int excess=0;while(records.size()-excess>kRetainedLimit || retainedBytes>kRawBytesLimit){retainedBytes-=records[excess].bytes.size();++excess;}if(excess>0){records.erase(records.begin(),records.begin()+excess);evicted+=excess;}rebuild();endResetModel();}
@@ -56,7 +59,8 @@ class Window : public QMainWindow {
 public:
  PacketModel* model;
  QComboBox *interfaces,*display;
- QLineEdit *captureFilter;
+ QLineEdit *captureFilter,*displayExpression;
+ QPushButton *applyExpression,*flowButton;
  QPushButton *startButton,*stopButton,*openButton,*saveButton;
  QLabel *state,*counts,*sourceLabel;
  QTableView* table;
@@ -87,9 +91,23 @@ public:
   auto* captureRow=new QHBoxLayout;interfaces=new QComboBox;interfaces->setMinimumWidth(280);captureFilter=new QLineEdit;captureFilter->setPlaceholderText("Capture BPF, e.g. udp or tcp port 80 (empty = all)");
   startButton=new QPushButton("Start capture");stopButton=new QPushButton("Stop");stopButton->setEnabled(false);
   captureRow->addWidget(interfaces,2);captureRow->addWidget(captureFilter,3);captureRow->addWidget(startButton);captureRow->addWidget(stopButton);layout->addLayout(captureRow);
-  auto* viewRow=new QHBoxLayout;viewRow->addWidget(new QLabel("Display protocol"));display=new QComboBox;display->addItems({"ALL","ETHERNET","IPV4","IPV6","TCP","UDP","ICMP","ICMPV6","HTTP"});viewRow->addWidget(display);viewRow->addStretch();openButton=new QPushButton("Open PCAP / PCAPNG");saveButton=new QPushButton("Export retained PCAP");viewRow->addWidget(openButton);viewRow->addWidget(saveButton);layout->addLayout(viewRow);
-  sourceLabel=new QLabel("No source loaded. Choose an interface or open a fixed sample.");sourceLabel->setWordWrap(true);layout->addWidget(sourceLabel);
-  state=new QLabel("READY · Capture filter selects incoming packets; display filter only changes the retained view.");state->setWordWrap(true);state->setStyleSheet("background:#e8eff5;color:#17314b;padding:9px;border-radius:5px;");layout->addWidget(state);
+  auto* viewRow=new QHBoxLayout;
+  viewRow->addWidget(new QLabel("Display"));
+  display=new QComboBox;
+  display->addItems({"ALL","ETHERNET","IPV4","IPV6","TCP","UDP","ICMP","ICMPV6","HTTP"});
+  displayExpression=new QLineEdit;
+  displayExpression->setMaxLength(512);
+  displayExpression->setPlaceholderText("HTTP OR (UDP AND udp.dstport == 53)");
+  displayExpression->setToolTip("AND / OR / NOT, parentheses, == / !=. Combines with protocol selection.");
+  applyExpression=new QPushButton("Apply");
+  flowButton=new QPushButton("TCP flow");
+  openButton=new QPushButton("Open PCAP / PCAPNG");
+  saveButton=new QPushButton("Export retained PCAP");
+  viewRow->addWidget(display);viewRow->addWidget(displayExpression,1);
+  viewRow->addWidget(applyExpression);viewRow->addWidget(flowButton);
+  viewRow->addWidget(openButton);viewRow->addWidget(saveButton);layout->addLayout(viewRow);
+  sourceLabel=new QLabel("No source loaded. Choose an interface or open a fixed sample.");sourceLabel->setTextFormat(Qt::PlainText);sourceLabel->setWordWrap(true);layout->addWidget(sourceLabel);
+  state=new QLabel("READY · Capture filter selects incoming packets; display filter only changes the retained view.");state->setTextFormat(Qt::PlainText);state->setWordWrap(true);state->setStyleSheet("background:#e8eff5;color:#17314b;padding:9px;border-radius:5px;");layout->addWidget(state);
   counts=new QLabel;layout->addWidget(counts);
   model=new PacketModel(this);table=new QTableView;table->setModel(model);table->setSelectionBehavior(QAbstractItemView::SelectRows);table->setSelectionMode(QAbstractItemView::SingleSelection);table->setAlternatingRowColors(true);table->setSortingEnabled(false);table->verticalHeader()->hide();table->verticalHeader()->setDefaultSectionSize(24);table->horizontalHeader()->setStretchLastSection(true);table->setColumnWidth(0,55);table->setColumnWidth(1,150);table->setColumnWidth(2,150);table->setColumnWidth(3,90);table->setColumnWidth(4,65);table->setColumnWidth(5,95);table->setColumnWidth(6,120);
   auto* split=new QSplitter(Qt::Vertical);split->addWidget(table);
@@ -98,6 +116,9 @@ public:
   setStyleSheet("QMainWindow,QWidget{background:#f7f9fc;color:#1c3044;font-family:'Segoe UI';font-size:12px;} QPushButton{background:#e3ebf4;border:1px solid #bdccdc;border-radius:4px;padding:7px 12px;} QPushButton:disabled{color:#9aa4b0;} QLineEdit,QComboBox{background:white;border:1px solid #bdccdc;border-radius:4px;padding:6px;} QTableView,QPlainTextEdit{background:white;alternate-background-color:#eef4f8;border:1px solid #c9d5e2;} QHeaderView::section{background:#e6edf5;padding:6px;border:0;font-weight:600;}");
   connect(startButton,&QPushButton::clicked,this,[this]{startCapture();});connect(stopButton,&QPushButton::clicked,this,[this]{stopCapture();});
   connect(display,&QComboBox::currentTextChanged,this,[this](const QString& s){model->setFilter(s);clearDetails();if(model->rowCount())table->selectRow(0);updateCounts();});
+  connect(applyExpression,&QPushButton::clicked,this,[this]{applyDisplayExpression();});
+  connect(displayExpression,&QLineEdit::returnPressed,this,[this]{applyDisplayExpression();});
+  connect(flowButton,&QPushButton::clicked,this,[this]{showFlow();});
   connect(openButton,&QPushButton::clicked,this,[this]{auto p=QFileDialog::getOpenFileName(this,"Open fixed capture",QString(),"Captures (*.pcap *.pcapng);;All files (*)");if(!p.isEmpty())openCapture(p);});
   connect(saveButton,&QPushButton::clicked,this,[this]{auto p=QFileDialog::getSaveFileName(this,"Export retained packets",QString(),"PCAP (*.pcap)");if(!p.isEmpty())exportCapture(p);});
   connect(table->selectionModel(),&QItemSelectionModel::selectionChanged,this,[this]{showSelected();});
@@ -115,6 +136,61 @@ public:
  ~Window(){stopCapture(false);closeOffline();}
  void error(const QString& s){lastError=s;state->setText("ERROR · "+s);state->setStyleSheet("background:#fee9eb;color:#9f2332;padding:9px;border-radius:5px;");qWarning().noquote()<<s;}
  void status(const QString& s){state->setStyleSheet("background:#e8eff5;color:#17314b;padding:9px;border-radius:5px;");state->setText(s);}
+ bool applyDisplayExpression(){
+  QString why;
+  auto compiled=lab1::compileDisplayFilter(displayExpression->text(),why);
+  if(!compiled){error("Display expression: "+why+". Previous expression retained.");return false;}
+  model->predicate=std::move(compiled);
+  model->setFilter(display->currentText());
+  clearDetails();
+  if(model->rowCount())table->selectRow(0);
+  updateCounts();
+  status(displayExpression->text().trimmed().isEmpty()?"DISPLAY · Protocol selection only.":"DISPLAY · "+displayExpression->text());
+  return true;
+ }
+ lab1::TcpFlow selectedFlow() const {
+  const auto index=table->currentIndex();
+  if(!index.isValid()||index.row()>=model->visible.size())return {};
+  QVector<lab1::FlowSegment> input;
+  input.reserve(model->records.size());
+  for(const auto& r:model->records){
+   const auto time=qint64(r.header.ts.tv_sec)*1000000+r.header.ts.tv_usec;
+   input.append({r.id,time,&r.packet});
+  }
+  return lab1::followTcp(input,model->records[model->visible[index.row()]].id);
+ }
+ void showFlow(){
+  const auto flow=selectedFlow();
+  if(flow.rows.isEmpty()){error("Select a complete TCP packet to inspect its flow.");return;}
+  QDialog dialog(this);
+  dialog.setWindowTitle("TCP flow · retained capture window");
+  dialog.resize(1050,460);
+  auto* layout=new QVBoxLayout(&dialog);
+  auto* label=new QLabel(QString("A  %1   ·   B  %2\nA → B   %3 packets / %4 payload bytes    |    B → A   %5 packets / %6 payload bytes\n%7")
+                          .arg(flow.endpoint[0],flow.endpoint[1]).arg(flow.counts[0]).arg(flow.bytes[0])
+                          .arg(flow.counts[1]).arg(flow.bytes[1]).arg(flow.state));
+  label->setTextFormat(Qt::PlainText);
+  layout->addWidget(label);
+  auto* rows=new QTableWidget(flow.rows.size(),8);
+  rows->setHorizontalHeaderLabels({"No.","Time (ms)","Direction","Flags","Seq","Ack","Payload B","Event"});
+  rows->setEditTriggers(QAbstractItemView::NoEditTriggers);
+  rows->setSelectionBehavior(QAbstractItemView::SelectRows);
+  for(int i=0;i<flow.rows.size();++i){
+   const auto& r=flow.rows[i];
+   const QStringList cells={QString::number(r.id),QString::number((r.micros-flow.rows.first().micros)/1000.0,'f',3),
+     r.direction==0?"A → B":"B → A",lab1::tcpFlags(r.flags),QString::number(r.seq),
+     QString::number(r.ack),QString::number(r.payloadBytes),r.event};
+   for(int j=0;j<cells.size();++j)rows->setItem(i,j,new QTableWidgetItem(cells[j]));
+  }
+  rows->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+  rows->horizontalHeader()->setStretchLastSection(true);
+  layout->addWidget(rows);
+  layout->addWidget(new QLabel("Payload counts include repeated segments. Events describe flags and acknowledgments in this window."));
+  auto* close=new QPushButton("Close");
+  layout->addWidget(close,0,Qt::AlignRight);
+  connect(close,&QPushButton::clicked,&dialog,&QDialog::accept);
+  dialog.exec();
+ }
  void clearDetails(){fields->setRowCount(0);hex->clear();hex->setExtraSelections({});highlightedField.clear();highlightedHex.clear();highlightedOffset=-1;highlightedLength=0;}
  void updateCounts(){counts->setText(QString("Read: %1    Retained: %2    Displayed: %3    Evicted: %4    Oversize rejected: %5    Driver received/drop: %6").arg(captured).arg(model->records.size()).arg(model->rowCount()).arg(model->evicted).arg(oversized).arg(statsAvailable?QString("%1 / %2").arg(driverReceived).arg(driverDropped):"not available / offline"));}
  void enumerate(){interfaces->clear();char err[PCAP_ERRBUF_SIZE]{};pcap_if_t* list=nullptr;if(pcap_findalldevs(&list,err)!=0){error(QString::fromUtf8(err));return;}for(auto* d=list;d;d=d->next){interfaces->addItem(d->description?QString::fromUtf8(d->description):QString::fromUtf8(d->name),QString::fromUtf8(d->name));}pcap_freealldevs(list);if(interfaces->count()==0)error("No capture interfaces. Check Npcap and permissions.");}

@@ -3,6 +3,7 @@
 #include <windows.h>
 #include <pcap.h>
 #include "parser.h"
+#include "display_filter.h"
 #include <QCoreApplication>
 #include <QCommandLineParser>
 #include <QJsonDocument>
@@ -15,13 +16,15 @@
 int main(int argc,char** argv){
     QCoreApplication app(argc,argv); QCommandLineParser args;args.addHelpOption();
     args.addOption({"read","Read saved PCAP","path"});args.addOption({"json","Output JSON path","path"});
-    args.addOption({"capture-filter","libpcap BPF filter","expression"});args.addOption({"display-filter","ALL IPV4 IPV6 TCP UDP ICMP ICMPV6 HTTP ETHERNET","name","ALL"});
+    args.addOption({"capture-filter","libpcap BPF filter","expression"});args.addOption({"display-filter","Display expression: protocol names, field comparisons, AND/OR/NOT","expression","ALL"});
     args.addOption({"limit","Maximum emitted packets (1..100000)","count","100000"});args.process(app);
     if(!args.isSet("read")){std::cerr<<"--read is required\n";return 2;}
     bool ok=false;int limit=args.value("limit").toInt(&ok);
     if(!ok||limit<1||limit>100000){std::cerr<<"Invalid limit\n";return 2;}
-    const QString filter=args.value("display-filter").toUpper();
-    if(!QStringList{"ALL","IPV4","IPV6","TCP","UDP","ICMP","ICMPV6","HTTP","ETHERNET"}.contains(filter)){std::cerr<<"Invalid display filter\n";return 2;}
+    const QString filter=args.value("display-filter");
+    QString error;
+    const auto matches=lab1::compileDisplayFilter(filter,error);
+    if(!matches){std::cerr<<error.toStdString()<<'\n';return 2;}
     wchar_t sys[MAX_PATH];GetSystemDirectoryW(sys,MAX_PATH);std::wstring dir=std::wstring(sys)+L"\\Npcap";
     SetDefaultDllDirectories(LOAD_LIBRARY_SEARCH_DEFAULT_DIRS);if(!AddDllDirectory(dir.c_str())){std::cerr<<"Npcap DLL directory unavailable\n";return 2;}
     char err[PCAP_ERRBUF_SIZE]{};pcap_init(PCAP_CHAR_ENC_UTF_8,err);
@@ -42,7 +45,7 @@ int main(int argc,char** argv){
         if(read>=limit){limited=true;limitReason="record_limit";break;}++read;
         if(hdr->caplen>65535){std::cerr<<"Packet exceeds 65535-byte safety limit\n";return 2;}
         const auto packet=lab1::parsePacket(QByteArray(reinterpret_cast<const char*>(bytes),static_cast<int>(hdr->caplen)),link,hdr->len);
-        if(!lab1::matchesDisplayFilter(packet,filter))continue;
+        if(!matches(packet))continue;
         auto obj=lab1::packetJson(packet);obj["number"]=read;obj["caplen"]=static_cast<int>(hdr->caplen);obj["wirelen"]=static_cast<int>(hdr->len);
         obj["timestamp"]=QString::number(hdr->ts.tv_sec)+"."+QString("%1").arg(hdr->ts.tv_usec,6,10,QChar('0'));const qint64 rowBytes=QJsonDocument(obj).toJson(QJsonDocument::Compact).size()+1;if(jsonBytes+rowBytes>jsonBudget){limited=true;limitReason="json_budget";break;}jsonBytes+=rowBytes;rows.append(obj);
     }

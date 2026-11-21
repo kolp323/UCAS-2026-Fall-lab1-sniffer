@@ -5,12 +5,21 @@ def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
 def execute(args):
     run=ROOT/'evidence/runs'/('lab-'+datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ')+'-'+uuid.uuid4().hex[:8])
     run.mkdir(parents=True,exist_ok=False)
-    env=os.environ.copy(); env['PATH']=r'E:\Anaconda3\Library\bin;'+env['PATH'];env['QT_QPA_PLATFORM_PLUGIN_PATH']=r'E:\Anaconda3\Library\plugins\platforms';env['QT_QPA_PLATFORM']='windows'
+    env=os.environ.copy()
+    qt=Path(env['LAB1_QT_ROOT']).resolve() if env.get('LAB1_QT_ROOT') else None
+    if qt:
+        env['PATH']=str(qt/'bin')+os.pathsep+env['PATH']
+        env['QT_QPA_PLATFORM_PLUGIN_PATH']=str(qt/'plugins/platforms')
+    build=Path(env.get('LAB1_BUILD_DIR',ROOT/'build')).resolve()
+    tshark=env.get('LAB1_TSHARK','tshark')
+    prefix=['-DCMAKE_PREFIX_PATH='+str(qt)] if qt else []
+    sdk=['-DNPCAP_SDK_DIR='+str(Path(env['LAB1_NPCAP_SDK']).resolve())] if env.get('LAB1_NPCAP_SDK') else []
     git=['git','-c','safe.directory='+str(ROOT),'-C',str(ROOT)]
-    m={'run_id':run.name,'started':datetime.datetime.now(datetime.timezone.utc).isoformat(),'outcome':'incomplete','stages':[],'environment':{'platform':platform.platform(),'python':sys.version,'qt':'5.15.2','compiler':'MSVC x64','tshark':r'E:\APP\Wireshark\tshark.exe'},'git_commit':subprocess.check_output(git+['rev-parse','HEAD']).decode().strip(),'dirty':bool(subprocess.check_output(git+['status','--porcelain'])),'source_hashes':{},'input_hashes':{},'artifacts':{}}
+    m={'run_id':run.name,'started':datetime.datetime.now(datetime.timezone.utc).isoformat(),'outcome':'incomplete','stages':[],'environment':{'platform':platform.platform(),'python':sys.version,'qt':'5.15.2','compiler':'MSVC x64','tshark':tshark},'git_commit':subprocess.check_output(git+['rev-parse','HEAD']).decode().strip(),'dirty':bool(subprocess.check_output(git+['status','--porcelain'])),'source_hashes':{},'input_hashes':{},'artifacts':{}}
     for d in ['src','scripts','tests']:
         for f in (ROOT/d).rglob('*'):
-            if f.is_file() and '__pycache__' not in str(f):m['source_hashes'][f.relative_to(ROOT).as_posix()]=sha(f)
+            if f.is_file() and f.suffix!='.bak' and '__pycache__' not in str(f):m['source_hashes'][f.relative_to(ROOT).as_posix()]=sha(f)
+    m['source_hashes']['CMakeLists.txt']=sha(ROOT/'CMakeLists.txt')
     def save(): (run/'manifest.json').write_text(json.dumps(m,ensure_ascii=False,indent=2),encoding='utf8')
     def stage(name,cmd,timeout=180):
         start=time.perf_counter(); r={'name':name,'command':[str(x) for x in cmd],'outcome':'incomplete'};m['stages'].append(r);save()
@@ -52,15 +61,15 @@ def execute(args):
             # This test creates only a disposable parent and child, then deliberately times out.
             parent_code="import subprocess,sys,os,json,time; from pathlib import Path; child=subprocess.Popen([sys.executable,'-c','import time;time.sleep(60)']); Path(sys.argv[1]).write_text(json.dumps({'parent_pid':os.getpid(),'child_pid':child.pid}),encoding='utf-8'); time.sleep(60)"
             stage('intentional-timeout',[sys.executable,'-c',parent_code,run/'timeout-owned-pids.json'],2)
-        stage('configure',['cmake','-S',ROOT,'-B',ROOT/'build','-G','Visual Studio 17 2022','-A','x64','-DCMAKE_PREFIX_PATH=E:/Anaconda3/Library'])
-        stage('build',['cmake','--build',ROOT/'build','--config','Release'])
+        stage('configure',['cmake','-S',ROOT,'-B',build,'-G','Visual Studio 17 2022','-A','x64',*prefix,*sdk])
+        stage('build',['cmake','--build',build,'--config','Release'])
         stage('fixtures',[sys.executable,ROOT/'scripts/generate-fixtures.py','--out',run/'fixtures'])
         for f in (run/'fixtures').glob('*'):
             if f.is_file():m['input_hashes'][f.name]=sha(f)
         if args.inject_failure:stage('intentional-failure',[sys.executable,'-c','raise SystemExit(7)'])
-        stage('regression',[sys.executable,ROOT/'tests/verify.py','--exe',ROOT/'build/Release/lab1_cli.exe','--fixtures',run/'fixtures','--out',run/'checks','--tshark',r'E:\APP\Wireshark\tshark.exe'])
+        stage('regression',[sys.executable,ROOT/'tests/verify.py','--exe',build/'Release/lab1_cli.exe','--fixtures',run/'fixtures','--out',run/'checks','--tshark',tshark])
         if args.live:
-            stage('live',[ROOT/'build/Release/lab1_sniffer.exe','--live-demo',run/'live'],30)
+            stage('live',[build/'Release/lab1_sniffer.exe','--live-demo',run/'live'],30)
         m['outcome']='pass'
     except Exception as e:m['outcome']='fail';m['error']=str(e)
     finally:

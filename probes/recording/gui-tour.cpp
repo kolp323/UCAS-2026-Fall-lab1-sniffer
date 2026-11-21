@@ -22,7 +22,8 @@ int main(int argc, char** argv) {
  char err[PCAP_ERRBUF_SIZE]{};
  if (pcap_init(PCAP_CHAR_ENC_UTF_8, err) != 0) return 2;
  const QString out = app.arguments().value(1), sample = app.arguments().value(2);
- if (out.isEmpty() || sample.isEmpty()) return 2;
+ const QString liveSample=app.arguments().value(3), serverPort=app.arguments().value(4);
+ if (out.isEmpty() || sample.isEmpty() || liveSample.isEmpty() || serverPort.isEmpty()) return 2;
  QDir().mkpath(out + "/raw");
 
  Window w;
@@ -294,13 +295,33 @@ int main(int argc, char** argv) {
  at(76800, [&] { check("four IPv6 rows", w.model->rowCount() == 4); });
  at(78300, [&] { filter("ALL"); });
  at(81800, [&] { check("all ten sample rows", w.model->rowCount() == 10); });
- at(88000, [&] {
+ at(84000, [&] { dialog(w.openButton, liveSample, "open real TCP capture", false); });
+ at(88700, [&] {
+  check("real capture loaded", w.offlineLoaded && w.model->records.size()>=22);
+  click("focus display expression",w.displayExpression,QPoint(90,w.displayExpression->height()/2),[&]{
+   const QString expression="HTTP AND (IPV4 OR IPV6) AND tcp.dstport == "+serverPort;
+   type(w.displayExpression,expression,[&]{button("apply compound display filter",w.applyExpression);});
+  });
+ });
+ at(94000, [&] {
+  check("compound expression selects one request",w.model->rowCount()==1);
+  check("flow has observed close",w.selectedFlow().state=="Close exchange observed");
+  click("show TCP flow",w.flowButton,w.flowButton->rect().center(),{},[&]{
+   at(350,[&]{
+    auto* d=qobject_cast<QDialog*>(QApplication::activeModalWidget());
+    check("TCP flow dialog displayed",d && d->windowTitle().startsWith("TCP flow"));
+    if(d){d->resize(1220,510);d->move(w.mapToGlobal(QPoint(110,185)));}
+   });
+  });
+ });
+ at(107000, [&] {
+  if(auto* d=qobject_cast<QDialog*>(QApplication::activeModalWidget()))d->accept();
   record.stop();
   QMetaObject::invokeMethod(worker, [] {}, Qt::BlockingQueuedConnection);
   frameWriter.quit();
   frameWriter.wait();
   check("save all frames", failedSaves.load() == 0);
-  check("all twenty-one clicks recorded", clicks.size() == 21);
+  check("all twenty-seven clicks recorded", clicks.size() == 27);
   const int detailTop = w.fields->mapTo(&w, QPoint()).y();
   saveJson(out+"/tour.json", QJsonObject{{"outcome", failed ? "fail" : "pass"},
    {"sent", sent}, {"received", received}, {"captured", double(liveCaptured)}, {"payloads_hex", sentPayloads},

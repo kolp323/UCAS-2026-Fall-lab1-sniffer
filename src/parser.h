@@ -8,6 +8,9 @@ struct Field { QString name,value; int offset=0,length=0; };
 struct Packet {
     QString protocol="Unknown",src,dst,status="valid",info,network,transport;
     int srcPort=-1,dstPort=-1,ipVersion=0;
+    quint32 tcpSeq=0,tcpAck=0;
+    unsigned tcpFlags=0;
+    int tcpPayloadBytes=0;
     bool fragmented=false;
     QVector<Field> fields;
 };

@@ -4,7 +4,8 @@ from bisect import bisect_right
 from pathlib import Path
 from PIL import Image,ImageDraw,ImageFont
 ROOT=Path(__file__).resolve().parents[1]
-FF=Path(r'E:\ffmpeg\bin\ffmpeg.exe')
+FF=Path(shutil.which(os.environ.get('LAB1_FFMPEG','ffmpeg')) or os.environ.get('LAB1_FFMPEG','ffmpeg'))
+TS=os.environ.get('LAB1_TSHARK','tshark')
 CAPTIONS=[
 (0,6,'01  选择接口','选择回环接口，观察本机程序之间的通信。'),
 (6,12,'02  设置捕获条件','设置 UDP 端口条件，筛选这次通信。'),
@@ -19,10 +20,12 @@ CAPTIONS=[
 (64,72,'10  阅读应用数据','请求行包含方法、路径和 HTTP 版本。'),
 (72,78,'11  查看 IPv6','切换到 IPv6，查看不同的网络层格式。'),
 (78,84,'12  查看全部','切回全部协议，查看所有保留的数据包。'),
-(84,88,'捕获 → 筛选 → 分析 → 保存','捕获、筛选、查看字段，再把数据保存下来。')]
+(84,89,'13  打开回环实验记录','打开实际抓到的 TCP、HTTP 和 ICMP 报文。'),
+(89,94,'14  组合显示条件','组合协议、IP 版本和目标端口，保留指定的 HTTP 请求。'),
+(94,101,'15  查看双向 TCP 流','从一个报文找到同一连接的双方、方向和载荷字节数。'),
+(101,107,'15  阅读连接过程','按时间看握手、数据段和连接关闭。')]
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 FPS = 24
-VIDEO_SECONDS = 88
 
 def ass_time(seconds):
     cs = round(100 * seconds)
@@ -50,7 +53,7 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text"""]
         tags = r'{\an7\pos(' + f'{round(x)},{round(y)})' + style + r'\p1}'
         track.append(f'Dialogue: {layer},{begin},{end},Pointer,,0,0,0,,{tags}{shape}')
 
-    for n in range(math.ceil((VIDEO_SECONDS-first_ms/1000)*FPS)):
+    for n in range(math.ceil((round(tour['duration_ms']/1000)-first_ms/1000)*FPS)):
         ms = first_ms + 1000*n/FPS
         i = max(0, bisect_right(point_ms, ms)-1)
         a, b = points[i], points[min(i+1, len(points)-1)]
@@ -86,11 +89,13 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text"""]
     path.write_text('\n'.join(track)+'\n', encoding='utf-8')
 
 def compose(run,tour,manifest,execute,save):
-  (run/'captions.json').write_text(json.dumps(CAPTIONS,ensure_ascii=False,indent=2),encoding='utf-8')
+  duration_seconds = round(tour['duration_ms']/1000)
+  captions = CAPTIONS if duration_seconds>=100 else CAPTIONS[:13]+[(84,88,'捕获 → 筛选 → 分析 → 保存','捕获、筛选、查看字段，再把数据保存下来。')]
+  (run/'captions.json').write_text(json.dumps(captions,ensure_ascii=False,indent=2),encoding='utf-8')
   raw=tour['frames'];composed=run/('composed-'+uuid.uuid4().hex[:8]);composed.mkdir();timeline=[];concat=[]
-  font=ImageFont.truetype(r'C:\Windows\Fonts\msyh.ttc',34);small=ImageFont.truetype(r'C:\Windows\Fonts\msyh.ttc',25);subtitle=ImageFont.truetype(r'C:\Windows\Fonts\msyh.ttc',37)
+  font=ImageFont.truetype(str(Path(os.environ.get('SYSTEMROOT',r'C:\Windows'))/'Fonts/msyh.ttc'),34);small=ImageFont.truetype(str(Path(os.environ.get('SYSTEMROOT',r'C:\Windows'))/'Fonts/msyh.ttc'),25);subtitle=ImageFont.truetype(str(Path(os.environ.get('SYSTEMROOT',r'C:\Windows'))/'Fonts/msyh.ttc'),37)
   for j,f in enumerate(raw):
-   elapsed=f['elapsed_ms']/1000;cap=next((c for c in CAPTIONS if c[0]<=elapsed<c[1]),CAPTIONS[-1])
+   elapsed=f['elapsed_ms']/1000;cap=next((c for c in captions if c[0]<=elapsed<c[1]),captions[-1])
    im=Image.new('RGB',(1920,1080),'#edf2f6');d=ImageDraw.Draw(im)
    d.text((48,18),'实验 1A · 网络嗅探器',font=font,fill='#16354b');d.text((1220,25),cap[2],font=small,fill='#246978')
    img=Image.open(run/f['file']).convert('RGB')
@@ -101,7 +106,7 @@ def compose(run,tour,manifest,execute,save):
    x=(1920-size[0])//2;y=78+(880-size[1])//2;im.paste(img,(x,y))
    d.rectangle((0,975,1920,1080),fill='#17384b');bbox=d.textbbox((0,0),cap[3],font=subtitle);d.text(((1920-(bbox[2]-bbox[0]))//2,1002),cap[3],font=subtitle,fill='white')
    dest=composed/f'frame-{j:05d}.png';im.save(dest,compress_level=3)
-   nexttime=raw[j+1]['elapsed_ms']/1000 if j+1<len(raw) else 88
+   nexttime=raw[j+1]['elapsed_ms']/1000 if j+1<len(raw) else duration_seconds
    duration=max(.01,nexttime-elapsed)
    concat.extend(["file '"+dest.as_posix()+"'",'duration '+str(duration)])
    timeline.append({'frame':j,'source':f['file'],'elapsed_seconds':elapsed,'caption':cap[3],
@@ -124,7 +129,7 @@ def compose(run,tour,manifest,execute,save):
   execute('decode',[FF,'-v','error','-xerror','-i',out,'-f','null','-'])
   keydir=run/'keyframes'/uuid.uuid4().hex[:8];keydir.mkdir(parents=True);manifest['keyframes_dir']=keydir.relative_to(run).as_posix()
   first=raw[0]['elapsed_ms']/1000
-  samples=[4,16,22,33,40,46,59,67,75,82]
+  samples=[4,16,22,33,40,46,59,67,75,82]+([93.6,98.5,104] if duration_seconds>=100 else [])
   if tour.get('clicks'):
    samples.extend(p.get('pressed_ms',p['elapsed_ms'])/1000-first+0.075 for p in tour['clicks']
                   if p['action'] in {'choose loopback','click start','confirm export PCAP',
@@ -133,13 +138,13 @@ def compose(run,tour,manifest,execute,save):
    subprocess.run([str(FF),'-v','error','-ss',f'{sec:.3f}','-i',str(out),'-frames:v','1',
                    str(keydir/f'{sec:06.3f}s.png')],check=True)
   manifest.update(outcome='pass',video_path=str(out),video_sha256=sha(out),ffprobe=metadata,
-                  frame_count=len(raw),captions=CAPTIONS,
+                  frame_count=len(raw),captions=captions,
                   gui={'sent':tour['sent'],'received':tour['received'],'captured':tour['captured']},
                   independent_export='pass', pointer_clicks=len(tour.get('clicks',[])),
                   form='GUI widget renders with concise teaching captions and a pointer composed from the mouse events used to operate the widgets.')
   save();print(json.dumps(manifest,ensure_ascii=False))
 
-def main():
+def main(review):
  run=ROOT/'evidence/runs'/('gui-tour-'+datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ')+'-'+uuid.uuid4().hex[:8]);run.mkdir(parents=True)
  work=ROOT/'build'/('tour-'+uuid.uuid4().hex[:8]);work.mkdir()
  cmake=f'''cmake_minimum_required(VERSION 3.20)
@@ -153,7 +158,13 @@ target_link_libraries(lab1_gui_tour PRIVATE lab1_parser Qt5::Widgets Qt5::Networ
 capture_target(lab1_gui_tour)
 '''
  (work/'CMakeLists.txt').write_text(cmake,encoding='utf-8')
- env=os.environ.copy();env['PATH']=r'E:\Anaconda3\Library\bin;'+env['PATH'];env['QT_QPA_PLATFORM_PLUGIN_PATH']=r'E:\Anaconda3\Library\plugins\platforms';env['QT_QPA_PLATFORM']='windows'
+ env=os.environ.copy()
+ qt=Path(env['LAB1_QT_ROOT']).resolve() if env.get('LAB1_QT_ROOT') else None
+ if qt:
+  env['PATH']=str(qt/'bin')+os.pathsep+env['PATH']
+  env['QT_QPA_PLATFORM_PLUGIN_PATH']=str(qt/'plugins/platforms')
+ prefixes=['-DCMAKE_PREFIX_PATH='+str(qt)] if qt else []
+ sdk=Path(env.get('LAB1_NPCAP_SDK',ROOT/'.deps/npcap-sdk-1.17')).resolve()
  manifest={'run_id':run.name,'outcome':'incomplete','gui_source_sha256':sha(ROOT/'src/gui.cpp'),'harness_sha256':sha(ROOT/'probes/recording/gui-tour.cpp'),'script_sha256':sha(Path(__file__)),'production_gui_unchanged':True,'commands':[]}
  def save(): (run/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
  def execute(name,cmd,timeout=180):
@@ -163,7 +174,7 @@ capture_target(lab1_gui_tour)
   manifest['commands'][-1]['exit_code']=cp.returncode;save()
   if cp.returncode:raise RuntimeError(name+' failed')
  try:
-  execute('configure',['cmake','-S',work,'-B',work/'b','-G','Visual Studio 17 2022','-A','x64','-DCMAKE_PREFIX_PATH=E:/Anaconda3/Library','-DNPCAP_SDK_DIR='+str(ROOT/'.deps/npcap-sdk-1.17')])
+  execute('configure',['cmake','-S',work,'-B',work/'b','-G','Visual Studio 17 2022','-A','x64',*prefixes,'-DNPCAP_SDK_DIR='+str(sdk)])
   execute('build',['cmake','--build',work/'b','--config','Release','--target','lab1_gui_tour'])
   data=(ROOT/'fixtures/v2/ethernet.pcap').read_bytes();expected=json.loads((ROOT/'fixtures/v2/expected.json').read_text());selected=[f['number'] for f in expected['files']['ethernet.pcap']['frames'] if f['expected'].get('status')=='valid']
   records=[];pos=24;i=1
@@ -174,9 +185,17 @@ capture_target(lab1_gui_tour)
   assert len(records)==10
   sample=run/'protocol-demo.pcap';sample.write_bytes(data[:24]+b''.join(records))
   manifest['sample']={'source':'fixtures/v2/ethernet.pcap','source_sha256':hashlib.sha256(data).hexdigest(),'source_frames':selected,'sha256':sha(sample),'count':len(records)};save()
-  execute('gui',[work/'b/Release/lab1_gui_tour.exe',run,sample],timeout=120)
+  real=run/'local-protocols.pcap'
+  review=Path(review).resolve()
+  verified=json.loads((review/'results.json').read_text(encoding='utf-8'))
+  assert verified['outcome']=='pass'
+  shutil.copy2(review/real.name,real)
+  server_port=json.loads((review/'socket-oracle.json').read_text(encoding='utf-8'))[0]['server']
+  assert sha(real)==verified['sha256'][real.name]
+  manifest['real_input']={'run':review.name,'sha256':sha(real),'server_port':server_port};save()
+  execute('gui',[work/'b/Release/lab1_gui_tour.exe',run,sample,real,str(server_port)],timeout=145)
   tour=json.loads((run/'tour.json').read_text(encoding='utf-8'));assert tour['outcome']=='pass'
-  check=subprocess.run([r'E:\APP\Wireshark\tshark.exe','-r',str(run/'live-export.pcap'),'-T','fields','-e','udp.payload'],capture_output=True,check=True)
+  check=subprocess.run([TS,'-r',str(run/'live-export.pcap'),'-T','fields','-e','udp.payload'],capture_output=True,check=True)
   payloads=check.stdout.decode().splitlines();assert payloads==tour['payloads_hex'] and len(payloads)==30
   (run/'independent-export-check.json').write_text(json.dumps({'outcome':'pass','tshark_payload_count':len(payloads),'payloads_match_in_order':True,'pcap_sha256':sha(run/'live-export.pcap')},indent=2))
   compose(run,tour,manifest,execute,save)
@@ -198,4 +217,6 @@ def recompose(run):
  compose(run,tour,manifest,execute,save)
 if __name__=='__main__':
  if len(sys.argv)==3 and sys.argv[1]=='--recompose':recompose(sys.argv[2])
- else:main()
+ else:
+  if len(sys.argv)!=3 or sys.argv[1]!='--review':sys.exit("Usage: record-gui-tour.py --review <passing live review directory>")
+  main(sys.argv[2])

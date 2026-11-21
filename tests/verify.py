@@ -11,7 +11,9 @@ def pcap_write(path,frames,link=1):
 
 def main(a):
     a.out.mkdir(parents=True,exist_ok=False)
-    env=os.environ.copy();env['PATH']=r'E:\Anaconda3\Library\bin;'+env.get('PATH','')
+    env=os.environ.copy()
+    if env.get('LAB1_QT_ROOT'):
+        env['PATH']=str(Path(env['LAB1_QT_ROOT'])/'bin')+os.pathsep+env.get('PATH','')
     tests=[]; commands=[]
     def check(name,condition,detail=''):
         tests.append({'name':name,'outcome':'pass' if condition else 'fail','detail':detail})
@@ -44,6 +46,19 @@ def main(a):
         for filt,expected in oracle['display_sets'].items():
             result=cli('display-'+filt,a.fixtures/'ethernet.pcap',['--display-filter',filt])
             if result:check('display-'+filt+'.membership',[p['number'] for p in result['packets']]==expected)
+        # Enumerated from the fixture design, including the intentionally missing port fields.
+        expression_sets=[
+            ('expr-precedence','HTTP OR UDP AND udp.dstport == 5300 AND NOT IPV6',[1,2,8]),
+            ('expr-grouped','(HTTP OR TCP) AND NOT HTTP AND tcp.dstport == 80',[3]),
+            ('expr-negation','IPV4 AND NOT (UDP OR TCP) AND status != malformed',[4,9,10]),
+            ('expr-v6-address','UDP AND IPV6 AND src == 2001:db8::1',[5,15]),
+            ('expr-missing-field','udp.dstport != 5300',[]),
+        ]
+        for name,expression,expected in expression_sets:
+            result=cli(name,a.fixtures/'ethernet.pcap',['--display-filter',expression])
+            if result:check(name+'.membership',[p['number'] for p in result['packets']]==expected)
+        for i,bad in enumerate(['HTTP AND (','TCP OR OR UDP','udp.dstport == 65536','X == 1','NOT '*25+'HTTP']):
+            cli('invalid-expression-'+str(i),a.fixtures/'ethernet.pcap',['--display-filter',bad],2)
         bpf=oracle['capture_bpf']
         # Independently hand-evaluate the observed Ethernet BPF branches, never parser output.
         pcap_bytes=(a.fixtures/'ethernet.pcap').read_bytes();pos=24;frame_id=0;manual=[]
@@ -63,6 +78,34 @@ def main(a):
         if result:check('limit-visible',result['complete'] is False and len(result['packets'])==1)
         cli('missing-file',a.out/'absent.pcap',expected_rc=2)
         corrupt=a.out/'invalid.pcap';corrupt.write_bytes(b'not-a-pcap');cli('invalid-pcap',corrupt,expected_rc=2)
+        # Independently construct boundary cases from IPv6 and UDP header layouts.
+        mac=b'\0'*12
+        base=bytes.fromhex('6000000000003b40')+bytes.fromhex('20010db8000000000000000000000001')+bytes.fromhex('20010db8000000000000000000000002')
+        def v6(next_header, payload, padding=b''):
+            return mac+b'\x86\xdd'+base[:4]+struct.pack('!HBB',len(payload),next_header,64)+base[8:]+payload+padding
+        udp=struct.pack('!HHHH',10000,5300,8,0)
+        frag=struct.pack('!BBHI',17,9,6,0x11223344)
+        ipv6_frames=[
+            v6(59,b'',b'\0'*10),
+            v6(44,frag+udp),
+            v6(44,struct.pack('!BBHI',17,8,0x000f,77)+udp),
+            v6(51,bytes([17,1])+b'\0'*10+udp),
+            v6(51,bytes([17,2])+b'\0'*14+udp),
+            v6(17,struct.pack('!HHHH',10000,5300,9,0)),
+        ]
+        f=a.out/'header-boundaries.pcap'
+        pcap_write(f,[(p,len(p)) for p in ipv6_frames])
+        parsed_edge=cli('header-boundaries',f)
+        if parsed_edge:
+            rows=parsed_edge['packets']
+            check('ipv6-length-fragment-ah-udp-statuses',[r['status'] for r in rows]==['valid','valid','fragment','malformed','valid','malformed'])
+            fields={item['name']:item for item in rows[1]['fields']}
+            check('ipv6-reserved-bits-ignored-for-atomic-fragment',
+                  rows[1]['protocol']=='UDP' and fields['ipv6.fragment.reserved_octet']['value']=='9' and
+                  fields['ipv6.fragment.reserved_bits']['value']=='3' and
+                  fields['ipv6.fragment.id']['value']==str(0x11223344) and fields['ipv6.fragment.id']['offset']==58)
+            check('ipv6-non-atomic-fragment-does-not-claim-port',rows[2]['srcPort']==-1 and rows[2]['fragmented'])
+            check('all-new-field-spans-bounded',all(f['offset']+f['length']<=r['caplen'] for r in rows for f in r['fields']))
         # Every proper prefix of a valid non-padded UDP Ethernet packet must be truncated.
         raw=(a.fixtures/'ethernet.pcap').read_bytes();n=struct.unpack_from('<I',raw,32)[0];frame=raw[40:40+n]
         prefixes=[(frame[:i],len(frame)) for i in range(len(frame))]
