@@ -45,8 +45,12 @@ def main(a):
                 z.writestr(src+item.filename,source.read(item))
         z.write(bundle,src+'history.bundle')
         z.writestr(src+'submission-manifest.json',json.dumps(manifest,ensure_ascii=False,indent=2))
-        for p in [ROOT/'deliverables/lab1A-report.md',ROOT/'deliverables/README.md',*sorted((ROOT/'deliverables/authoring').glob('*'))]:
-            if p.is_file() and not p.name.endswith('.bak'):z.write(p,src+'report-sources/'+p.relative_to(ROOT/'deliverables').as_posix())
+        authoring=ROOT/'deliverables/authoring'
+        report_sources=[ROOT/'deliverables/lab1A-report.md',ROOT/'deliverables/README.md',
+                        *sorted(authoring.glob('*')), *sorted((authoring/'figures').glob('*'))]
+        for p in report_sources:
+            if p.is_file() and not p.name.endswith('.bak'):
+                z.write(p,src+'report-sources/'+p.relative_to(ROOT/'deliverables').as_posix())
         z.write(report,top+'/'+base+'_ex1A_report.pdf')
         z.write(video,top+'/'+base+'_ex1A_play.mp4')
     with zipfile.ZipFile(dest) as z:
