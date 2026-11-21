@@ -274,7 +274,7 @@ int main(int argc, char** argv) {
   note("capture stopped");
  });
  at(31200, [&] { dialog(w.saveButton, out+"/live-export.pcap", "export PCAP", true); });
- at(35900, [&] {
+ at(36700, [&] {
   check("export exists", QFileInfo::exists(out+"/live-export.pcap"));
   note("export completed");
  });

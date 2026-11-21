@@ -1,6 +1,6 @@
 {
   "created_utc": "2026-11-20T03:47:39.854696+00:00",
-  "implementation_commit": "9727f836f99928d83611ebc60de5cf4b1e839e3b",
+  "implementation_commit": "4dbed349019bfda270c255a383980639f3d79e11",
   "repository": "https://github.com/kolp323/UCAS-2026-Fall-lab1-sniffer",
   "scope": "1A; Windows same-machine tests; no full stream reconstruction or TLS decryption",
   "results": [
@@ -83,6 +83,36 @@
       "run": "gui-tour-20261120T154705Z-5f37262b",
       "outcome": "pass",
       "claim": "21 recorded mouse clicks through the GUI input path; 30 exported UDP payloads match TShark; full video decode pass."
+    },
+    {
+      "run": "lab-20261121T020736Z-3d27c844",
+      "outcome": "pass",
+      "claim": "Fresh build of implementation 4dbed34; 120 regression assertions and the original live UDP check."
+    },
+    {
+      "run": "review-20261121-live-01",
+      "outcome": "fail",
+      "reason": "Winsock rejected MSG_WAITALL on this timed socket. Replaced the sender-side read with a receive_exact loop."
+    },
+    {
+      "run": "review-20261121-final",
+      "outcome": "pass",
+      "claim": "37 real loopback TCP/ICMP packets; independent payload, header and flow review. Three live stops, count and raw byte boundaries."
+    },
+    {
+      "run": "review-20261121-portable",
+      "outcome": "pass",
+      "claim": "Final GUI/CLI launch with PATH limited to System32; Qt modules loaded inside package."
+    },
+    {
+      "run": "gui-tour-20261121T020457Z-43e32a5c",
+      "outcome": "fail",
+      "reason": "Recording asserted export before the Save click completed. Failed trace retained."
+    },
+    {
+      "run": "gui-tour-20261121T020853Z-fbfdac85",
+      "outcome": "pass",
+      "claim": "Final GUI recording, composed from 27 generated mouse clicks. Loopback export independently verified, final capture file replayed for flow."
     }
   ],
   "boundaries": [
@@ -93,12 +123,22 @@
   ],
   "new_file_notice": "This index and LICENSE did not previously exist.",
   "current_video": {
-    "run_id": "gui-tour-20261120T154705Z-5f37262b",
+    "run_id": "gui-tour-20261121T020853Z-fbfdac85",
     "path": "deliverables/lab1A-demo.mp4",
-    "sha256": "b1dd405b981a99f28ea64097992d0c44f2bc954b26494c964c81f5d618e20917",
-    "duration_seconds": 87.833333,
-    "description": "GUI feature walkthrough with mouse movement, brief click rings, concise Chinese captions and detail closeups.",
-    "clicks": 21
+    "sha256": "5f33ef2a3870a0e24e1503580fbc6c4c49df4c021b7b10e4447471a1c834f80f",
+    "duration_seconds": 106.791667,
+    "clicks": 27,
+    "description": "Actual GUI interaction includes compound filtering and the bidirectional flow window."
   },
-  "media_revision": "Current GUI walkthrough follows recorded pointer movements and real widget responses. Earlier runs and video backups are retained."
+  "media_revision": "Current GUI walkthrough follows recorded pointer movements and real widget responses. Earlier runs and video backups are retained.",
+  "previous_implementation_commit": "9727f836f99928d83611ebc60de5cf4b1e839e3b",
+  "updated_utc": "2026-11-21T02:14:40.527916+00:00",
+  "current_validation": {
+    "regression": "lab-20261121T020736Z-3d27c844/checks/results.json",
+    "local_protocols_gui_and_limits": "review-20261121-final/results.json",
+    "gui_trials_and_flows": "review-20261121-final/gui-review.json",
+    "independent_icmp": "review-20261121-final/icmp-oracle.json",
+    "same_machine_isolated_runtime": "review-20261121-portable/result.json",
+    "course_coverage": "docs/lab1a-coverage.md"
+  }
 }

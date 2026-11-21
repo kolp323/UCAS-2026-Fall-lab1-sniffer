@@ -6,9 +6,9 @@ import argparse,datetime,hashlib,json,os,queue,shutil,subprocess,sys,textwrap,th
 from pathlib import Path
 from PIL import Image,ImageDraw,ImageFont
 ROOT=Path(__file__).resolve().parents[1]
-FFMPEG=Path(r'E:\ffmpeg\bin\ffmpeg.exe')
+FFMPEG=Path(shutil.which(os.environ.get('LAB1_FFMPEG','ffmpeg')) or os.environ.get('LAB1_FFMPEG','ffmpeg'))
 FFPROBE=FFMPEG.with_name('ffprobe.exe')
-FONT=Path(r'C:\Windows\Fonts\msyh.ttc')
+FONT=Path(os.environ.get('SYSTEMROOT',r'C:\Windows'))/'Fonts/msyh.ttc'
 
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def stamp():return datetime.datetime.now(datetime.timezone.utc).isoformat()
@@ -21,7 +21,12 @@ def main(a):
     archive=run/'source.zip';subprocess.run(git+['archive','--format=zip','-o',str(archive),commit,'CMakeLists.txt','src','probes','tests','scripts'],check=True)
     source=run/'source';source.mkdir()
     with zipfile.ZipFile(archive) as z:z.extractall(source)
-    env=os.environ.copy();env['PATH']=r'E:\Anaconda3\Library\bin;'+env['PATH'];env['QT_QPA_PLATFORM_PLUGIN_PATH']=r'E:\Anaconda3\Library\plugins\platforms';env['QT_QPA_PLATFORM']='windows'
+    env=os.environ.copy()
+    if env.get('LAB1_QT_ROOT'):
+        qt=Path(env['LAB1_QT_ROOT']).resolve()
+        env['PATH']=str(qt/'bin')+os.pathsep+env['PATH']
+        env['QT_QPA_PLATFORM_PLUGIN_PATH']=str(qt/'plugins/platforms')
+    prefix=['-DCMAKE_PREFIX_PATH='+str(qt)] if env.get('LAB1_QT_ROOT') else []
     start=time.perf_counter();timeline=[];stages=[];frame_index=0
     titlefont=ImageFont.truetype(str(FONT),30);bodyfont=ImageFont.truetype(str(FONT),19);logfont=ImageFont.truetype(str(FONT),17);small=ImageFont.truetype(str(FONT),16)
     def render(title,why,command,output,status='运行中',mode='live'):
@@ -94,10 +99,10 @@ def main(a):
             'Full commands, original output and real elapsed times remain in the evidence directory.'
         ],'说明 · 接下来实际执行',7)
         build=ROOT/'build'/('demo-'+uuid.uuid4().hex[:8]);manifest['fresh_build_directory']=str(build);fixture=run/'fixtures';checks=run/'checks'
-        stage('configure','01 / 从空目录配置构建','识别编译器和 Qt / Npcap，明确环境，而不是复用旧缓存。',['cmake','-S',source,'-B',build,'-G','Visual Studio 17 2022','-A','x64','-DCMAKE_PREFIX_PATH=E:/Anaconda3/Library','-DNPCAP_SDK_DIR='+str(ROOT/'.deps/npcap-sdk-1.17')])
+        stage('configure','01 / 从空目录配置构建','识别编译器和 Qt / Npcap，明确环境，而不是复用旧缓存。',['cmake','-S',source,'-B',build,'-G','Visual Studio 17 2022','-A','x64',*prefix,'-DNPCAP_SDK_DIR='+str(Path(env.get('LAB1_NPCAP_SDK',ROOT/'.deps/npcap-sdk-1.17')).resolve())])
         stage('build','02 / 实际编译与链接','从源码生成 GUI 和 CLI；编译失败就停止，不回退旧程序。',['cmake','--build',build,'--config','Release'])
         stage('fixtures','03 / 生成固定输入','样本与独立预期一起生成；保存输入哈希，避免只挑成功报文。',[sys.executable,source/'scripts/generate-fixtures.py','--out',fixture])
-        stage('regression','04 / 执行独立验收','固定预期 + TShark + 原始字节；过滤、边界、异常必须同时检查。',[sys.executable,source/'tests/verify.py','--exe',build/'Release/lab1_cli.exe','--fixtures',fixture,'--out',checks,'--tshark',r'E:\APP\Wireshark\tshark.exe'])
+        stage('regression','04 / 执行独立验收','固定预期 + TShark + 原始字节；过滤、边界、异常必须同时检查。',[sys.executable,source/'tests/verify.py','--exe',build/'Release/lab1_cli.exe','--fixtures',fixture,'--out',checks,'--tshark',env.get('LAB1_TSHARK','tshark')])
         stage('negative','05 / 故意提交错误过滤式','预期非零退出是正确拒绝；保留错误输出，不能改断言掩盖失败。',[build/'Release/lab1_cli.exe','--read',fixture/'ethernet.pcap','--capture-filter','udp and (','--json',run/'invalid-filter.json'],expected=2)
         stage('recovery','06 / 修正后重新运行','将过滤式修正为 udp；使用新的结果路径，避免覆盖旧证据。',[build/'Release/lab1_cli.exe','--read',fixture/'ethernet.pcap','--capture-filter','udp','--json',run/'corrected-filter.json'])
         stage('deploy','07 / 实际部署与隔离路径验证','收集必需 DLL，在仅 System32 PATH 下运行，检查加载模块路径。',[sys.executable,source/'scripts/package-runtime.py','--build',build/'Release','--out',run/'runtime','--evidence',run/'deployment','--fixture',fixture/'ethernet.pcap'],timeout=120)

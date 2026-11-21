@@ -1,4 +1,4 @@
-import json,subprocess,hashlib,csv
+import json,subprocess,hashlib,csv,os
 from pathlib import Path
 import matplotlib
 matplotlib.use('Agg')
@@ -9,7 +9,7 @@ fig,axes=plt.subplots(1,2,figsize=(10,4))
 for i,x in enumerate(s['runs']):
     assert x['counts_pass'] and x['responsiveness_pass'] and x['process_exit']==0
     packet_file=r/f'repeat-{i+1}/live.pcap'
-    cp=subprocess.run([r'E:\APP\Wireshark\tshark.exe','-r',str(packet_file),'-T','fields','-e','udp.payload'],capture_output=True,check=True)
+    cp=subprocess.run([os.environ.get('LAB1_TSHARK','tshark'),'-r',str(packet_file),'-T','fields','-e','udp.payload'],capture_output=True,check=True)
     payloads=cp.stdout.decode().splitlines();assert len(payloads)==2000 and all(p==x['payload_hex'] for p in payloads)
     (r/f'export-check-{i+1}.txt').write_text(f'TShark: {len(payloads)} retained packets; all payloads equal controlled input. Full observed3000 not all retained.\n')
     trace=x['resource_trace']; t=[v['elapsed_ms']/1000 for v in trace]

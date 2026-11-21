@@ -12,11 +12,16 @@ assert records
 fixture=run/'load.pcap';fixture.write_bytes(data[:24]+b''.join(records[i%len(records)] for i in range(6000)))
 config={'metric':'offline CLI full-process elapsed including JSON serialization; not wire capture rate','packets_per_run':6000,'formal_independent_processes':3,'pilot_processes':1,'timeout_seconds':30,'sampling_seconds':0.02,'threshold_source':'engineering guardrail 30s, not course requirement','fixture_sha256':hashlib.sha256(fixture.read_bytes()).hexdigest(),'platform':platform.platform(),'cpu':platform.processor(),'memory_bytes':psutil.virtual_memory().total}
 (run/'config.json').write_text(json.dumps(config,indent=2))
-env=os.environ.copy();env['PATH']=r'E:\Anaconda3\Library\bin;'+env['PATH'];rows=[];samples=[]
+env=os.environ.copy()
+if env.get('LAB1_QT_ROOT'):
+    qt=Path(env['LAB1_QT_ROOT']).resolve()
+    env['PATH']=str(qt/'bin')+os.pathsep+env['PATH']
+    env['QT_QPA_PLATFORM_PLUGIN_PATH']=str(qt/'plugins/platforms')
+rows=[];samples=[]
 for i in range(4):
     out=run/f'parsed-{i}.json';start=time.perf_counter()
     with (run/f'stderr-{i}.log').open('wb') as err:
-        proc=subprocess.Popen([str(ROOT/'build/Release/lab1_cli.exe'),'--read',str(fixture),'--json',str(out)],env=env,stderr=err,stdout=subprocess.DEVNULL)
+        proc=subprocess.Popen([str(Path(env.get('LAB1_BUILD_DIR',ROOT/'build')).resolve()/'Release/lab1_cli.exe'),'--read',str(fixture),'--json',str(out)],env=env,stderr=err,stdout=subprocess.DEVNULL)
         ps=psutil.Process(proc.pid);peak=0
         while proc.poll() is None:
             try:

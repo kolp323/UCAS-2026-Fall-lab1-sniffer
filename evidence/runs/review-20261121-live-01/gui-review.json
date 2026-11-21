@@ -1,0 +1,233 @@
+{
+    "byte_retained": 279,
+    "checks": [
+        {
+            "name": "Npcap loopback available",
+            "pass": true
+        },
+        {
+            "name": "live capture opens",
+            "pass": true
+        },
+        {
+            "name": "traffic sender finished",
+            "pass": true
+        },
+        {
+            "name": "export live",
+            "pass": true
+        },
+        {
+            "name": "one HTTP request IPv4",
+            "pass": true
+        },
+        {
+            "name": "observed bidirectional TCP open and close IPv4",
+            "pass": false
+        },
+        {
+            "name": "expression screenshot",
+            "pass": true
+        },
+        {
+            "name": "invalid filter preserves the last result",
+            "pass": true
+        },
+        {
+            "name": "visible flow dialog",
+            "pass": true
+        },
+        {
+            "name": "one HTTP request IPv6",
+            "pass": false
+        },
+        {
+            "name": "observed bidirectional TCP open and close IPv6",
+            "pass": false
+        },
+        {
+            "name": "owned UDP sink binds",
+            "pass": true
+        },
+        {
+            "name": "repeated start",
+            "pass": true
+        },
+        {
+            "name": "stop during input keeps capture frozen",
+            "pass": true
+        },
+        {
+            "name": "repeated start",
+            "pass": true
+        },
+        {
+            "name": "stop during input keeps capture frozen",
+            "pass": true
+        },
+        {
+            "name": "repeated start",
+            "pass": true
+        },
+        {
+            "name": "stop during input keeps capture frozen",
+            "pass": true
+        },
+        {
+            "name": "idle stop",
+            "pass": true
+        },
+        {
+            "name": "count-capacity.pcap completion",
+            "pass": true
+        },
+        {
+            "name": "2000 packet limit",
+            "pass": true
+        },
+        {
+            "name": "byte-capacity.pcap completion",
+            "pass": true
+        },
+        {
+            "name": "16 MiB byte limit",
+            "pass": true
+        },
+        {
+            "name": "export is independent of display expression",
+            "pass": true
+        },
+        {
+            "name": "broken-record.pcap completion",
+            "pass": true
+        }
+    ],
+    "count_retained": 2000,
+    "flow_ipv4": {
+        "a": "127.0.0.1:11594",
+        "b": "127.0.0.1:14120",
+        "packets": [
+            3,
+            3
+        ],
+        "payload_bytes": [
+            38,
+            0
+        ],
+        "rows": [
+            {
+                "ack": 0,
+                "direction": 0,
+                "elapsed_us": 0,
+                "event": "SYN",
+                "flags": 2,
+                "id": 1,
+                "payload_bytes": 0,
+                "seq": 991718916
+            },
+            {
+                "ack": 991718917,
+                "direction": 1,
+                "elapsed_us": 72,
+                "event": "SYN acknowledged",
+                "flags": 18,
+                "id": 2,
+                "payload_bytes": 0,
+                "seq": 3158886440
+            },
+            {
+                "ack": 3158886441,
+                "direction": 0,
+                "elapsed_us": 132,
+                "event": "Handshake observed",
+                "flags": 16,
+                "id": 3,
+                "payload_bytes": 0,
+                "seq": 991718917
+            },
+            {
+                "ack": 3158886441,
+                "direction": 0,
+                "elapsed_us": 367,
+                "event": "",
+                "flags": 24,
+                "id": 4,
+                "payload_bytes": 38,
+                "seq": 991718917
+            },
+            {
+                "ack": 991718955,
+                "direction": 1,
+                "elapsed_us": 427,
+                "event": "",
+                "flags": 16,
+                "id": 5,
+                "payload_bytes": 0,
+                "seq": 3158886441
+            },
+            {
+                "ack": 991718955,
+                "direction": 1,
+                "elapsed_us": 524,
+                "event": "RST observed",
+                "flags": 20,
+                "id": 6,
+                "payload_bytes": 0,
+                "seq": 3158886441
+            }
+        ],
+        "state": "Reset observed"
+    },
+    "flow_ipv6": {
+        "a": "",
+        "b": "",
+        "packets": [
+            0,
+            0
+        ],
+        "payload_bytes": [
+            0,
+            0
+        ],
+        "rows": [
+        ],
+        "state": "Handshake not observed"
+    },
+    "live_packets": 6,
+    "live_retained": 6,
+    "npcap": "Npcap version 1.83, based on libpcap version 1.10.5",
+    "outcome": "fail",
+    "raw_bytes_retained": 16740000,
+    "stop_trials": [
+        {
+            "driver_drop": 0,
+            "driver_stats_available": true,
+            "max_heartbeat_gap_ms": 74,
+            "read_after_wait": 516,
+            "read_at_stop": 516,
+            "sent_after_wait": 612,
+            "sent_at_stop": 524,
+            "stop_ms": 3.0441
+        },
+        {
+            "driver_drop": 0,
+            "driver_stats_available": true,
+            "max_heartbeat_gap_ms": 78,
+            "read_after_wait": 491,
+            "read_at_stop": 491,
+            "sent_after_wait": 580,
+            "sent_at_stop": 495,
+            "stop_ms": 3.7084
+        },
+        {
+            "driver_drop": 0,
+            "driver_stats_available": true,
+            "max_heartbeat_gap_ms": 78,
+            "read_after_wait": 319,
+            "read_at_stop": 319,
+            "sent_after_wait": 339,
+            "sent_at_stop": 322,
+            "stop_ms": 5.4715
+        }
+    ]
+}

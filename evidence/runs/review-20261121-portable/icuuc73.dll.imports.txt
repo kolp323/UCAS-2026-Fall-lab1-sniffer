@@ -1,0 +1,23 @@
+Microsoft (R) COFF/PE Dumper Version 14.44.35219.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\review-portable\icuuc73.dll
+
+File Type: DLL
+
+  Image has the following dependencies:
+
+    icudt73.dll
+    ADVAPI32.dll
+    KERNEL32.dll
+
+  Summary
+
+        B000 .data
+        1000 .gehcont
+       16000 .pdata
+       C4000 .rdata
+        4000 .reloc
+        1000 .rsrc
+      1BE000 .text

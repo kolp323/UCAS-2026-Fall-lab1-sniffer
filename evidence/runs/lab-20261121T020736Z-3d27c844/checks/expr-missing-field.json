@@ -1,0 +1,1 @@
+{"capture_filter":"","complete":true,"display_filter":"udp.dstport != 5300","displayed_count":0,"elapsed_ms":0,"input":"E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\lab-20261121T020736Z-3d27c844\\fixtures\\ethernet.pcap","json_budget_bytes":67108864,"limit_reason":"","linktype":1,"packets":[],"read_count":20}

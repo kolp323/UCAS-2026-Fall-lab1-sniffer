@@ -1,0 +1,75 @@
+{
+  "run_id": "gui-tour-20261121T020457Z-43e32a5c",
+  "outcome": "fail",
+  "gui_source_sha256": "3bd635aeeb146058710555b3dfef25d2a7e06c1adfa40c66c97a1983c1fc714f",
+  "harness_sha256": "b62807f1edefee492408aafaaf60d8ba0d3a1a723d9637248a3f3ccd459f3a50",
+  "script_sha256": "994373f5831f7f24f85d8baf00d2e6375cd4f1f8ef19dcfe23bc4eee16e841eb",
+  "production_gui_unchanged": true,
+  "commands": [
+    {
+      "name": "configure",
+      "argv": [
+        "cmake",
+        "-S",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\tour-f354ef91",
+        "-B",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\tour-f354ef91\\b",
+        "-G",
+        "Visual Studio 17 2022",
+        "-A",
+        "x64",
+        "-DCMAKE_PREFIX_PATH=E:\\Anaconda3\\Library",
+        "-DNPCAP_SDK_DIR=E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\.deps\\npcap-sdk-1.17"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "build",
+      "argv": [
+        "cmake",
+        "--build",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\tour-f354ef91\\b",
+        "--config",
+        "Release",
+        "--target",
+        "lab1_gui_tour"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "gui",
+      "argv": [
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\tour-f354ef91\\b\\Release\\lab1_gui_tour.exe",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\gui-tour-20261121T020457Z-43e32a5c",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\gui-tour-20261121T020457Z-43e32a5c\\protocol-demo.pcap",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\gui-tour-20261121T020457Z-43e32a5c\\local-protocols.pcap",
+        "5579"
+      ],
+      "exit_code": 1
+    }
+  ],
+  "sample": {
+    "source": "fixtures/v2/ethernet.pcap",
+    "source_sha256": "73b5fc10438a9efa9111ee30b72a67ec2068729dd5bfeacbd0cfec1aece35c65",
+    "source_frames": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      14,
+      15
+    ],
+    "sha256": "979946343fa2f3f0ad4c04f8125c8a70a4c9fee4576ec0bb821be744ea781920",
+    "count": 10
+  },
+  "real_input": {
+    "run": "review-20261121-live-02",
+    "sha256": "6a4015fc3807274baef31626071f6001ce06822a5b5754813a51c5b4dd6bb59e",
+    "server_port": 5579
+  },
+  "error": "gui failed"
+}

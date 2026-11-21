@@ -1,0 +1,22 @@
+{
+  "outcome": "fail",
+  "checks": {},
+  "commands": [
+    [
+      "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\review-final\\Release\\lab1_review.exe",
+      "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\review-20261121-live-01",
+      "(tcp and (port 14120 or port 14121)) or (icmp and host 127.0.0.1) or (icmp6 and host ::1)",
+      "14120",
+      "14121"
+    ]
+  ],
+  "error": "OSError(10045, '参考的对象类型不支持尝试的操作。', None, 10045, None)",
+  "commit": "aeaba0336822af38a39db7fc82e2ec76b10b6b20",
+  "sha256": {
+    "broken-record.pcap": "78160ab3f28434b655a6f40b7a4c8eff260bf229841897b1ff423fb4514ecce3",
+    "byte-capacity.pcap": "0aa9c7a6ffaccded7486d81375696eafbbe3a8f352f30cc569a557afbb85b7aa",
+    "count-capacity.pcap": "f0bf0ae30dbcf2927698b552f2cb3e616ce7b447dd8013a463662cb9170359d5",
+    "local-protocols.pcap": "12128ee92a2feb318eca21d5a1b28407587129d607edadcf6b56f5ea3efa4e12",
+    "retained-byte-capacity.pcap": "6905507eb3ea10b2d30508eeccb14b3a27e1363ce5e186f931cf51a71f651545"
+  }
+}

@@ -6,16 +6,19 @@ from pathlib import Path
 import psutil
 
 def main(a):
+    for name in ('out','evidence','fixture','build'):
+        setattr(a,name,getattr(a,name).resolve())
+    qt=Path(a.qt_root).resolve()
     a.out.mkdir(parents=True,exist_ok=False);a.evidence.mkdir(parents=True,exist_ok=False)
-    dllroot=Path(r'E:\Anaconda3\Library\bin');sysroot=Path(os.environ.get('SYSTEMROOT',r'C:\Windows'))
-    dumpbin=Path(r'C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\Hostx64\x64\dumpbin.exe')
+    dllroot=qt/'bin';sysroot=Path(os.environ.get('SYSTEMROOT',r'C:\Windows'))
+    dumpbin=a.dumpbin
     queue=[];manifest=[];visited=set();imports={}
     def copy(src,dest):
         dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(src,dest)
         manifest.append({'source':str(src),'destination':str(dest.relative_to(a.out)),'sha256':hashlib.sha256(dest.read_bytes()).hexdigest()})
         queue.append(dest)
     for name in ['lab1_sniffer.exe','lab1_cli.exe']:copy(a.build/name,a.out/name)
-    copy(Path(r'E:\Anaconda3\Library\plugins\platforms\qwindows.dll'),a.out/'platforms/qwindows.dll')
+    copy(qt/'plugins/platforms/qwindows.dll',a.out/'platforms/qwindows.dll')
     while queue:
         binary=queue.pop(0)
         if binary.name.lower() in visited:continue
@@ -60,10 +63,13 @@ The smoke test runs on the SAME computer with PATH restricted to Windows System3
     cli=subprocess.run([str(a.out/'lab1_cli.exe'),'--read',str(a.fixture),'--json',str(a.evidence/'portable-cli.json')],env=env,cwd=a.out,capture_output=True,text=True,errors='replace',timeout=20)
     (a.evidence/'cli.stderr.log').write_text(cli.stderr,encoding='utf-8')
     qt_loaded=[x for x in modules if Path(x).name.lower().startswith('qt5')]
-    foreign=[x for x in modules if 'anaconda' in x.lower()]
+    foreign=[x for x in qt_loaded if not Path(x).is_relative_to(a.out)]
     pic_report=screenshot.with_suffix(screenshot.suffix+'.json')
     gui_report=json.loads(pic_report.read_text(encoding='utf-8')) if pic_report.exists() else {}
-    result={'outcome':'pass' if code==0 and cli.returncode==0 and screenshot.exists() and gui_report.get('loaded')==20 and len(qt_loaded)>=4 and not foreign else 'fail','gui_exit_code':code,'cli_exit_code':cli.returncode,'elapsed_seconds':time.time()-started,'path':env['PATH'],'plugin_path':env['QT_QPA_PLATFORM_PLUGIN_PATH'],'loaded_module_count':len(modules),'qt_module_paths':qt_loaded,'anaconda_modules':foreign,'gui':gui_report,'package_file_count':len(manifest),'boundary':'Same machine with isolated runtime paths; Npcap and VC runtime installed. No clean OS, architecture portability, distribution licensing or full interactive GUI certification.'}
+    result={'outcome':'pass' if code==0 and cli.returncode==0 and screenshot.exists() and gui_report.get('loaded')==20 and len(qt_loaded)>=4 and not foreign else 'fail','gui_exit_code':code,'cli_exit_code':cli.returncode,'elapsed_seconds':time.time()-started,'path':env['PATH'],'plugin_path':env['QT_QPA_PLATFORM_PLUGIN_PATH'],'loaded_module_count':len(modules),'qt_module_paths':qt_loaded,'external_qt_modules':foreign,'gui':gui_report,'package_file_count':len(manifest),'boundary':'Same machine with isolated runtime paths; Npcap and VC runtime installed. No clean OS, architecture portability, distribution licensing or full interactive GUI certification.'}
     (a.evidence/'result.json').write_text(json.dumps(result,indent=2),encoding='utf-8');print(json.dumps(result));return 0 if result['outcome']=='pass' else 1
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--build',type=Path,required=True);p.add_argument('--out',type=Path,required=True);p.add_argument('--evidence',type=Path,required=True);p.add_argument('--fixture',type=Path,required=True);sys.exit(main(p.parse_args()))
+    p=argparse.ArgumentParser();p.add_argument('--build',type=Path,required=True);p.add_argument('--out',type=Path,required=True);p.add_argument('--evidence',type=Path,required=True);p.add_argument('--fixture',type=Path,required=True);p.add_argument('--qt-root',default=os.environ.get('LAB1_QT_ROOT'));p.add_argument('--dumpbin',default=os.environ.get('LAB1_DUMPBIN','dumpbin'))
+    a=p.parse_args()
+    if not a.qt_root:p.error('Set LAB1_QT_ROOT or supply --qt-root')
+    sys.exit(main(a))

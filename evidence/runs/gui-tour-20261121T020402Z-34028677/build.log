@@ -1,0 +1,27 @@
+适用于 .NET Framework MSBuild 版本 17.14.23+b0019275e
+
+  Checking Build System
+  Building Custom Rule E:/users/VScodeProject/C++/UCAS-2026-Fall_Software-and-system-security/lab1-sniffer/CMakeLists.txt
+  parser.cpp
+  display_filter.cpp
+  tcp_flow.cpp
+  正在生成代码...
+  lab1_parser.vcxproj -> E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\tour-3d2714f2\b\app\Release\lab1_parser.lib
+  Building Custom Rule E:/users/VScodeProject/C++/UCAS-2026-Fall_Software-and-system-security/lab1-sniffer/build/tour-3d2714f2/CMakeLists.txt
+  gui-tour.cpp
+E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\src\gui.cpp(210,75): warning C4458: “data”的声明隐藏了类成员 [E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\tour-3d2714f2\b\lab1_gui_tour.vcxproj]
+  (编译源文件“../../../probes/recording/gui-tour.cpp”)
+      E:\Anaconda3\Library\include\qt\QtWidgets\qwidget.h(747,18):
+      参见“QWidget::data”的声明
+  
+E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\src\gui.cpp(212,178): warning C4458: “data”的声明隐藏了类成员 [E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\tour-3d2714f2\b\lab1_gui_tour.vcxproj]
+  (编译源文件“../../../probes/recording/gui-tour.cpp”)
+      E:\Anaconda3\Library\include\qt\QtWidgets\qwidget.h(747,18):
+      参见“QWidget::data”的声明
+  
+E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\src\gui.cpp(214,225): warning C4458: “data”的声明隐藏了类成员 [E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\tour-3d2714f2\b\lab1_gui_tour.vcxproj]
+  (编译源文件“../../../probes/recording/gui-tour.cpp”)
+      E:\Anaconda3\Library\include\qt\QtWidgets\qwidget.h(747,18):
+      参见“QWidget::data”的声明
+  
+  lab1_gui_tour.vcxproj -> E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\tour-3d2714f2\b\Release\lab1_gui_tour.exe
