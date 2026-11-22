@@ -1,7 +1,0 @@
-适用于 .NET Framework MSBuild 版本 17.14.23+b0019275e
-
-  Checking Build System
-  Building Custom Rule C:/Users/13174/.codex/visualizations/2026/11/11/01a1caf4-97c7-7a02-a4b5-d8d71424a9ae/a01-env-probe-20261112/CMakeLists.txt
-  probe.cpp
-  a01_probe.vcxproj -> C:\Users\13174\.codex\visualizations\2026\11\11\01a1caf4-97c7-7a02-a4b5-d8d71424a9ae\a01-env-probe-20261112\build\Release\a01_probe.exe
-  Building Custom Rule C:/Users/13174/.codex/visualizations/2026/11/11/01a1caf4-97c7-7a02-a4b5-d8d71424a9ae/a01-env-probe-20261112/CMakeLists.txt

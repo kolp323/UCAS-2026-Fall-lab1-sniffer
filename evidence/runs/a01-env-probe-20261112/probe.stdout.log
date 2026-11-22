@@ -1,6 +1,0 @@
-qt=5.15.2 compiler=1944 arch=x86_64
-capture_library=Npcap version 1.83, based on libpcap version 1.10.5
-interfaces=10 loopback=1
-linktype=0 filter=ip and udp and src host 127.0.0.1 and dst host 127.0.0.1 and src port 62954 and dst port 62953
-sent=3 received=3 captured=3 stats_rc=0 ps_recv=3 ps_drop=0
-qt_platform=windows timer_ticks=3 image_saved=1 result=PASS

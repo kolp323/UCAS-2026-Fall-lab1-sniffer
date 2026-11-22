@@ -1,8 +1,0 @@
-{
-  "name": "qt-main",
-  "version": "5.15.2",
-  "build": "h19c9488_12",
-  "channel": "https://repo.anaconda.com/pkgs/main/win-64",
-  "url": "https://repo.anaconda.com/pkgs/main/win-64/qt-main-5.15.2-h19c9488_12.conda",
-  "sha256": "7c37562689339ea0068149d6783f0b7bef553d5f185d9f516466e746439ac65b"
-}

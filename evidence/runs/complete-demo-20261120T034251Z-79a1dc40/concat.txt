@@ -1,2 +1,0 @@
-file 'execution-log.mp4'
-file 'gui-normalized.mp4'

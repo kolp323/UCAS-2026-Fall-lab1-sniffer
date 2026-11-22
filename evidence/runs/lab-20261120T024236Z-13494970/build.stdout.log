@@ -1,6 +1,0 @@
-适用于 .NET Framework MSBuild 版本 17.14.23+b0019275e
-
-  lab1_parser.vcxproj -> E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\Release\lab1_parser.lib
-  lab1_cli.vcxproj -> E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\Release\lab1_cli.exe
-  lab1_env_probe.vcxproj -> E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\Release\lab1_env_probe.exe
-  lab1_sniffer.vcxproj -> E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\Release\lab1_sniffer.exe

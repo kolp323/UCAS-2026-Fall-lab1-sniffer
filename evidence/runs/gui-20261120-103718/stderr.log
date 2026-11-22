@@ -1,2 +1,0 @@
-Invalid capture filter: can't parse filter expression: syntax error
-QObject::~QObject: Timers cannot be stopped from another thread

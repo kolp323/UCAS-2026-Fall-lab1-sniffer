@@ -1,5 +1,0 @@
-repeat,phase,wall_seconds,peak_sampled_rss_bytes,exit_code,read_count,outcome
-0,pilot,0.7808717000007164,65245184,0,6000,pass
-1,formal,0.732839000003878,67072000,0,6000,pass
-2,formal,0.7762844999961089,65265664,0,6000,pass
-3,formal,0.7058679000037955,65253376,0,6000,pass

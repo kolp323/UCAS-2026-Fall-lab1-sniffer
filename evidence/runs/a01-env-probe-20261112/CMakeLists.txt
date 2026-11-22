@@ -1,8 +1,0 @@
-cmake_minimum_required(VERSION 3.20)
-project(a01_probe LANGUAGES CXX)
-set(CMAKE_CXX_STANDARD 17)
-find_package(Qt5 5.15 REQUIRED COMPONENTS Widgets)
-add_executable(a01_probe probe.cpp)
-target_include_directories(a01_probe PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/npcap-sdk-1.17/Include")
-target_link_libraries(a01_probe PRIVATE Qt5::Widgets "${CMAKE_CURRENT_SOURCE_DIR}/npcap-sdk-1.17/Lib/x64/wpcap.lib" ws2_32 delayimp)
-target_link_options(a01_probe PRIVATE /DELAYLOAD:wpcap.dll)

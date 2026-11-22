@@ -1,6 +1,0 @@
-{
-  "outcome": "pass",
-  "tshark_payload_count": 30,
-  "payloads_match_in_order": true,
-  "pcap_sha256": "eed947bd76d0c4b95e165e552c756629401d7703444e121591d96b1cd079d366"
-}

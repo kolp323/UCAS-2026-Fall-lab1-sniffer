@@ -1,7 +1,0 @@
-{
-  "outcome": "pass",
-  "fresh_source_and_build": true,
-  "commit": "9727f836f99928d83611ebc60de5cf4b1e839e3b",
-  "new_OS": false,
-  "dependency_source": "MSVC2022 and Qt5 installed; Npcap SDK specified explicitly"
-}

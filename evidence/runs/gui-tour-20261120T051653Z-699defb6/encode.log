@@ -1,50 +1,0 @@
-ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
-  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
-  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
-  libavutil      59. 39.100 / 59. 39.100
-  libavcodec     61. 19.101 / 61. 19.101
-  libavformat    61.  7.100 / 61.  7.100
-  libavdevice    61.  3.100 / 61.  3.100
-  libavfilter    10.  4.100 / 10.  4.100
-  libswscale      8.  3.100 /  8.  3.100
-  libswresample   5.  3.100 /  5.  3.100
-  libpostproc    58.  3.100 / 58.  3.100
-Input #0, concat, from 'E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\evidence\runs\gui-tour-20261120T051653Z-699defb6\composition.ffconcat':
-  Duration: N/A, start: 0.000000, bitrate: N/A
-  Stream #0:0: Video: png, rgb24(pc, gbr/unknown/unknown), 1920x1080, 25 fps, 25 tbr, 25 tbn
-Stream mapping:
-  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
-Press [q] to stop, [?] for help
-[libx264 @ 000001203de05b00] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
-[libx264 @ 000001203de05b00] profile High, level 4.0, 4:2:0, 8-bit
-[libx264 @ 000001203de05b00] 264 - core 164 r3204 373697b - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=1 ref=2 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=6 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=34 lookahead_threads=5 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=24 scenecut=40 intra_refresh=0 rc_lookahead=30 rc=crf mbtree=1 crf=21.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
-Output #0, mp4, to 'E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\deliverables\lab1A-demo.mp4':
-  Metadata:
-    encoder         : Lavf61.7.100
-  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, progressive), 1920x1080, q=2-31, 24 fps, 12288 tbn
-      Metadata:
-        encoder         : Lavc61.19.101 libx264
-      Side data:
-        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
-frame=    0 fps=0.0 q=0.0 size=       0KiB time=N/A bitrate=N/A dup=40 drop=0 speed=N/A    frame=   89 fps= 87 q=26.0 size=       0KiB time=00:00:03.62 bitrate=   0.1kbits/s dup=130 drop=0 speed=3.54x    frame=  215 fps=140 q=26.0 size=       0KiB time=00:00:08.87 bitrate=   0.0kbits/s dup=235 drop=0 speed=5.76x    frame=  318 fps=155 q=26.0 size=       0KiB time=00:00:13.16 bitrate=   0.0kbits/s dup=321 drop=0 speed=6.41x    frame=  432 fps=167 q=26.0 size=     256KiB time=00:00:17.91 bitrate= 117.1kbits/s dup=417 drop=0 speed=6.95x    frame=  535 fps=173 q=26.0 size=     256KiB time=00:00:22.20 bitrate=  94.4kbits/s dup=502 drop=0 speed=7.18x    frame=  643 fps=178 q=26.0 size=     256KiB time=00:00:26.70 bitrate=  78.5kbits/s dup=592 drop=0 speed=7.41x    frame=  758 fps=184 q=26.0 size=     512KiB time=00:00:31.50 bitrate= 133.2kbits/s dup=690 drop=0 speed=7.65x    frame=  863 fps=186 q=26.0 size=     512KiB time=00:00:35.87 bitrate= 116.9kbits/s dup=780 drop=0 speed=7.74x    frame=  974 fps=189 q=26.0 size=     768KiB time=00:00:40.50 bitrate= 155.4kbits/s dup=874 drop=0 speed=7.86x    frame= 1094 fps=193 q=26.0 size=     768KiB time=00:00:45.50 bitrate= 138.3kbits/s dup=970 drop=0 speed=8.03x    [vf#0:0 @ 000001203de3b080] More than 1000 frames duplicated
-frame= 1216 fps=197 q=26.0 size=     768KiB time=00:00:50.58 bitrate= 124.4kbits/s dup=1075 drop=0 speed=8.18x    frame= 1343 fps=201 q=26.0 size=    1024KiB time=00:00:55.87 bitrate= 150.1kbits/s dup=1181 drop=0 speed=8.35x    frame= 1472 fps=204 q=26.0 size=    1024KiB time=00:01:01.25 bitrate= 137.0kbits/s dup=1286 drop=0 speed=8.49x    frame= 1598 fps=207 q=26.0 size=    1280KiB time=00:01:06.50 bitrate= 157.7kbits/s dup=1391 drop=0 speed=8.61x    frame= 1662 fps=201 q=26.0 size=    1280KiB time=00:01:09.16 bitrate= 151.6kbits/s dup=1446 drop=0 speed=8.39x    frame= 1692 fps=193 q=26.0 size=    1280KiB time=00:01:10.41 bitrate= 148.9kbits/s dup=1481 drop=0 speed=8.02x    frame= 1737 fps=187 q=26.0 size=    1280KiB time=00:01:12.29 bitrate= 145.1kbits/s dup=1506 drop=0 speed=7.77x    frame= 1762 fps=179 q=26.0 size=    1280KiB time=00:01:13.33 bitrate= 143.0kbits/s dup=1531 drop=0 speed=7.45x    frame= 1796 fps=173 q=26.0 size=    1280KiB time=00:01:14.75 bitrate= 140.3kbits/s dup=1555 drop=0 speed=7.21x    frame= 1825 fps=168 q=26.0 size=    1280KiB time=00:01:15.95 bitrate= 138.1kbits/s dup=1581 drop=0 speed=6.98x    frame= 1857 fps=163 q=26.0 size=    1280KiB time=00:01:17.29 bitrate= 135.7kbits/s dup=1612 drop=0 speed=6.77x    frame= 1887 fps=158 q=26.0 size=    1280KiB time=00:01:18.54 bitrate= 133.5kbits/s dup=1641 drop=0 speed=6.58x    frame= 1905 fps=153 q=26.0 size=    1280KiB time=00:01:19.29 bitrate= 132.2kbits/s dup=1656 drop=0 speed=6.35x    frame= 1937 fps=149 q=26.0 size=    1280KiB time=00:01:20.62 bitrate= 130.1kbits/s dup=1681 drop=0 speed= 6.2x    frame= 1983 fps=146 q=26.0 size=    1536KiB time=00:01:22.54 bitrate= 152.4kbits/s dup=1721 drop=0 speed=6.09x    frame= 2014 fps=143 q=26.0 size=    1536KiB time=00:01:23.83 bitrate= 150.1kbits/s dup=1746 drop=0 speed=5.95x    frame= 2062 fps=141 q=26.0 size=    1536KiB time=00:01:25.83 bitrate= 146.6kbits/s dup=1760 drop=0 speed=5.88x    [mp4 @ 000001203de0d900] Starting second pass: moving the moov atom to the beginning of the file
-[out#0/mp4 @ 000001203de0cb80] video:1683KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.518628%
-frame= 2110 fps=142 q=-1.0 Lsize=    1708KiB time=00:01:27.83 bitrate= 159.3kbits/s dup=1760 drop=0 speed=5.92x    
-[libx264 @ 000001203de05b00] frame I:10    Avg QP: 9.11  size: 97692
-[libx264 @ 000001203de05b00] frame P:532   Avg QP:12.91  size:  1183
-[libx264 @ 000001203de05b00] frame B:1568  Avg QP:13.76  size:    74
-[libx264 @ 000001203de05b00] consecutive B-frames:  0.9%  0.2%  0.0% 99.0%
-[libx264 @ 000001203de05b00] mb I  I16..4: 77.3%  9.4% 13.3%
-[libx264 @ 000001203de05b00] mb P  I16..4:  0.2%  0.1%  0.1%  P16..4:  0.1%  0.0%  0.0%  0.0%  0.0%    skip:99.3%
-[libx264 @ 000001203de05b00] mb B  I16..4:  0.0%  0.0%  0.0%  B16..8:  0.1%  0.0%  0.0%  direct: 0.0%  skip:99.9%  L0:54.5% L1:45.4% BI: 0.1%
-[libx264 @ 000001203de05b00] 8x8 transform intra:11.4% inter:22.9%
-[libx264 @ 000001203de05b00] coded y,uvDC,uvAC intra: 12.1% 17.6% 15.8% inter: 0.0% 0.0% 0.0%
-[libx264 @ 000001203de05b00] i16 v,h,dc,p: 66% 32%  2%  0%
-[libx264 @ 000001203de05b00] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 42% 37% 21%  0%  0%  0%  0%  0%  0%
-[libx264 @ 000001203de05b00] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 31% 36% 12%  2%  3%  3%  4%  3%  5%
-[libx264 @ 000001203de05b00] i8c dc,h,v,p: 64% 28%  7%  1%
-[libx264 @ 000001203de05b00] Weighted P-Frames: Y:0.0% UV:0.0%
-[libx264 @ 000001203de05b00] ref P L0: 85.2% 14.8%
-[libx264 @ 000001203de05b00] ref B L0: 94.8%  5.2%
-[libx264 @ 000001203de05b00] ref B L1: 99.0%  1.0%
-[libx264 @ 000001203de05b00] kb/s:156.73
