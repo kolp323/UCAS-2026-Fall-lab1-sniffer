@@ -26,7 +26,7 @@ def main(a):
     verify=subprocess.run(git+['bundle','verify',str(bundle)],capture_output=True,text=True,errors='replace')
     if verify.returncode:raise RuntimeError(verify.stderr)
     archive=subprocess.check_output(git+['archive','--format=zip','HEAD'])
-    report=ROOT/'deliverables/lab1A-report.pdf';video=ROOT/'deliverables/lab1A-demo.mp4'
+    report=a.report.resolve();video=ROOT/'deliverables/lab1A-demo.mp4'
     for p in (report,video):
         if not p.is_file() or p.stat().st_size==0:raise FileNotFoundError(p)
     text=''.join(page.extract_text() for page in __import__('pypdf').PdfReader(str(report)).pages)
@@ -66,4 +66,4 @@ def main(a):
     check=dest.with_suffix('.validation.json');check.write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps(result,ensure_ascii=False))
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--name',required=True);p.add_argument('--student-id',required=True);p.add_argument('--implementation-commit',default='HEAD');p.add_argument('--evidence-run',action='append',default=[]);main(p.parse_args())
+    p=argparse.ArgumentParser();p.add_argument('--name',required=True);p.add_argument('--student-id',required=True);p.add_argument('--implementation-commit',default='HEAD');p.add_argument('--report',type=Path,default=ROOT/'deliverables/lab1A-report.pdf');p.add_argument('--evidence-run',action='append',default=[]);main(p.parse_args())
