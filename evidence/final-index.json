@@ -1,6 +1,6 @@
 {
   "created_utc": "2026-11-20T03:47:39.854696+00:00",
-  "implementation_commit": "4dbed349019bfda270c255a383980639f3d79e11",
+  "implementation_commit": "0c0efe0baec0a05b31202566417022a97b9d1d14",
   "repository": "https://github.com/kolp323/UCAS-2026-Fall-lab1-sniffer",
   "scope": "1A; Windows same-machine tests; no full stream reconstruction or TLS decryption",
   "results": [
@@ -113,6 +113,26 @@
       "run": "gui-tour-20261121T020853Z-fbfdac85",
       "outcome": "pass",
       "claim": "Final GUI recording, composed from 27 generated mouse clicks. Loopback export independently verified, final capture file replayed for flow."
+    },
+    {
+      "run": "lab-20261122T100625Z-ecd7e6f1",
+      "outcome": "pass",
+      "claim": "120 fixed-input assertions and real UDP loopback smoke test; current interface implementation."
+    },
+    {
+      "run": "review-ui-20261122-final",
+      "outcome": "pass",
+      "claim": "37 real loopback packets, checked TCP and ICMP, exact IPv4 source byte highlight, 11 visible TCP segments, continuous-input stop and both retention limits."
+    },
+    {
+      "run": "review-ui-20261122-portable",
+      "outcome": "pass",
+      "claim": "Current Windows GUI and CLI open fixed input with an isolated same-machine runtime."
+    },
+    {
+      "run": "gui-tour-20261122T100530Z-e4f378b2",
+      "outcome": "pass",
+      "claim": "24 recorded GUI mouse clicks. 30 exported UDP payloads match TShark; full 1080p video decode pass."
     }
   ],
   "boundaries": [
@@ -123,22 +143,22 @@
   ],
   "new_file_notice": "This index and LICENSE did not previously exist.",
   "current_video": {
-    "run_id": "gui-tour-20261121T020853Z-fbfdac85",
+    "run_id": "gui-tour-20261122T100530Z-e4f378b2",
     "path": "deliverables/lab1A-demo.mp4",
-    "sha256": "5f33ef2a3870a0e24e1503580fbc6c4c49df4c021b7b10e4447471a1c834f80f",
-    "duration_seconds": 106.791667,
-    "clicks": 27,
-    "description": "Actual GUI interaction includes compound filtering and the bidirectional flow window."
+    "sha256": "9c1f6737178e58b1eeffda52c356cb8cc112cbedff3edf1fb0ec93a2eaf961c1",
+    "duration_seconds": 76.833333,
+    "clicks": 24,
+    "description": "Live Npcap capture, export, then replay of the checked real TCP/ICMP capture with protocol and byte inspection."
   },
-  "media_revision": "Current GUI walkthrough follows recorded pointer movements and real widget responses. Earlier runs and video backups are retained.",
-  "previous_implementation_commit": "9727f836f99928d83611ebc60de5cf4b1e839e3b",
-  "updated_utc": "2026-11-21T02:14:40.527916+00:00",
+  "media_revision": "The focused GUI tour follows the recorded widget clicks and includes field close-ups. The paper and classroom deck use the same TCP capture.",
+  "previous_implementation_commit": "4dbed349019bfda270c255a383980639f3d79e11",
+  "updated_utc": "2026-11-22T10:11:11.048276+00:00",
   "current_validation": {
-    "regression": "lab-20261121T020736Z-3d27c844/checks/results.json",
-    "local_protocols_gui_and_limits": "review-20261121-final/results.json",
-    "gui_trials_and_flows": "review-20261121-final/gui-review.json",
-    "independent_icmp": "review-20261121-final/icmp-oracle.json",
-    "same_machine_isolated_runtime": "review-20261121-portable/result.json",
+    "regression": "lab-20261122T100625Z-ecd7e6f1/checks/results.json",
+    "local_protocols_gui_and_limits": "review-ui-20261122-final/results.json",
+    "gui_trials_and_flows": "review-ui-20261122-final/gui-review.json",
+    "independent_icmp": "review-ui-20261122-final/icmp-oracle.json",
+    "same_machine_isolated_runtime": "review-ui-20261122-portable/result.json",
     "course_coverage": "docs/lab1a-coverage.md"
   }
 }

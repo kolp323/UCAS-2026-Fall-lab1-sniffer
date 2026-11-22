@@ -1,0 +1,7331 @@
+[
+  {
+    "frame": 0,
+    "source": "raw/frame-00000.png",
+    "elapsed_seconds": 0.233,
+    "caption": "在回环接口上观察本机通信。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 1,
+    "source": "raw/frame-00001.png",
+    "elapsed_seconds": 0.452,
+    "caption": "在回环接口上观察本机通信。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 2,
+    "source": "raw/frame-00002.png",
+    "elapsed_seconds": 0.673,
+    "caption": "在回环接口上观察本机通信。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 3,
+    "source": "raw/frame-00003.png",
+    "elapsed_seconds": 0.892,
+    "caption": "在回环接口上观察本机通信。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 4,
+    "source": "raw/frame-00004.png",
+    "elapsed_seconds": 1.112,
+    "caption": "在回环接口上观察本机通信。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 5,
+    "source": "raw/frame-00005.png",
+    "elapsed_seconds": 1.35,
+    "caption": "在回环接口上观察本机通信。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 6,
+    "source": "raw/frame-00006.png",
+    "elapsed_seconds": 1.553,
+    "caption": "在回环接口上观察本机通信。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 7,
+    "source": "raw/frame-00007.png",
+    "elapsed_seconds": 1.773,
+    "caption": "在回环接口上观察本机通信。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 8,
+    "source": "raw/frame-00008.png",
+    "elapsed_seconds": 1.993,
+    "caption": "在回环接口上观察本机通信。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 9,
+    "source": "raw/frame-00009.png",
+    "elapsed_seconds": 2.214,
+    "caption": "在回环接口上观察本机通信。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 10,
+    "source": "raw/frame-00010.png",
+    "elapsed_seconds": 2.432,
+    "caption": "在回环接口上观察本机通信。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 11,
+    "source": "raw/frame-00011.png",
+    "elapsed_seconds": 2.654,
+    "caption": "在回环接口上观察本机通信。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 12,
+    "source": "raw/frame-00012.png",
+    "elapsed_seconds": 2.873,
+    "caption": "在回环接口上观察本机通信。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 13,
+    "source": "raw/frame-00013.png",
+    "elapsed_seconds": 3.092,
+    "caption": "在回环接口上观察本机通信。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 14,
+    "source": "raw/frame-00014.png",
+    "elapsed_seconds": 3.313,
+    "caption": "在回环接口上观察本机通信。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 15,
+    "source": "raw/frame-00015.png",
+    "elapsed_seconds": 3.532,
+    "caption": "在回环接口上观察本机通信。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 16,
+    "source": "raw/frame-00016.png",
+    "elapsed_seconds": 3.753,
+    "caption": "在回环接口上观察本机通信。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 17,
+    "source": "raw/frame-00017.png",
+    "elapsed_seconds": 3.973,
+    "caption": "在回环接口上观察本机通信。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 18,
+    "source": "raw/frame-00018.png",
+    "elapsed_seconds": 4.192,
+    "caption": "捕获过滤按 UDP 端口选取报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 19,
+    "source": "raw/frame-00019.png",
+    "elapsed_seconds": 4.413,
+    "caption": "捕获过滤按 UDP 端口选取报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 20,
+    "source": "raw/frame-00020.png",
+    "elapsed_seconds": 4.633,
+    "caption": "捕获过滤按 UDP 端口选取报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 21,
+    "source": "raw/frame-00021.png",
+    "elapsed_seconds": 4.852,
+    "caption": "捕获过滤按 UDP 端口选取报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 22,
+    "source": "raw/frame-00022.png",
+    "elapsed_seconds": 5.077,
+    "caption": "捕获过滤按 UDP 端口选取报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 23,
+    "source": "raw/frame-00023.png",
+    "elapsed_seconds": 5.293,
+    "caption": "捕获过滤按 UDP 端口选取报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 24,
+    "source": "raw/frame-00024.png",
+    "elapsed_seconds": 5.515,
+    "caption": "捕获过滤按 UDP 端口选取报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 25,
+    "source": "raw/frame-00025.png",
+    "elapsed_seconds": 5.732,
+    "caption": "捕获过滤按 UDP 端口选取报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 26,
+    "source": "raw/frame-00026.png",
+    "elapsed_seconds": 5.953,
+    "caption": "捕获过滤按 UDP 端口选取报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 27,
+    "source": "raw/frame-00027.png",
+    "elapsed_seconds": 6.173,
+    "caption": "捕获过滤按 UDP 端口选取报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 28,
+    "source": "raw/frame-00028.png",
+    "elapsed_seconds": 6.393,
+    "caption": "捕获过滤按 UDP 端口选取报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 29,
+    "source": "raw/frame-00029.png",
+    "elapsed_seconds": 6.612,
+    "caption": "捕获过滤按 UDP 端口选取报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 30,
+    "source": "raw/frame-00030.png",
+    "elapsed_seconds": 6.835,
+    "caption": "捕获过滤按 UDP 端口选取报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 31,
+    "source": "raw/frame-00031.png",
+    "elapsed_seconds": 7.053,
+    "caption": "捕获过滤按 UDP 端口选取报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 32,
+    "source": "raw/frame-00032.png",
+    "elapsed_seconds": 7.274,
+    "caption": "捕获过滤按 UDP 端口选取报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 33,
+    "source": "raw/frame-00033.png",
+    "elapsed_seconds": 7.496,
+    "caption": "捕获过滤按 UDP 端口选取报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 34,
+    "source": "raw/frame-00034.png",
+    "elapsed_seconds": 7.712,
+    "caption": "捕获过滤按 UDP 端口选取报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 35,
+    "source": "raw/frame-00035.png",
+    "elapsed_seconds": 7.933,
+    "caption": "捕获过滤按 UDP 端口选取报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 36,
+    "source": "raw/frame-00036.png",
+    "elapsed_seconds": 8.152,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 37,
+    "source": "raw/frame-00037.png",
+    "elapsed_seconds": 8.372,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 38,
+    "source": "raw/frame-00038.png",
+    "elapsed_seconds": 8.593,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 39,
+    "source": "raw/frame-00039.png",
+    "elapsed_seconds": 8.812,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 40,
+    "source": "raw/frame-00040.png",
+    "elapsed_seconds": 9.035,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 41,
+    "source": "raw/frame-00041.png",
+    "elapsed_seconds": 9.253,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 42,
+    "source": "raw/frame-00042.png",
+    "elapsed_seconds": 9.473,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 43,
+    "source": "raw/frame-00043.png",
+    "elapsed_seconds": 9.694,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 44,
+    "source": "raw/frame-00044.png",
+    "elapsed_seconds": 9.912,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 45,
+    "source": "raw/frame-00045.png",
+    "elapsed_seconds": 10.132,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 46,
+    "source": "raw/frame-00046.png",
+    "elapsed_seconds": 10.353,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 47,
+    "source": "raw/frame-00047.png",
+    "elapsed_seconds": 10.573,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 48,
+    "source": "raw/frame-00048.png",
+    "elapsed_seconds": 10.8,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 49,
+    "source": "raw/frame-00049.png",
+    "elapsed_seconds": 11.013,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 50,
+    "source": "raw/frame-00050.png",
+    "elapsed_seconds": 11.233,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 51,
+    "source": "raw/frame-00051.png",
+    "elapsed_seconds": 11.453,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 52,
+    "source": "raw/frame-00052.png",
+    "elapsed_seconds": 11.673,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 53,
+    "source": "raw/frame-00053.png",
+    "elapsed_seconds": 11.893,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 54,
+    "source": "raw/frame-00054.png",
+    "elapsed_seconds": 12.113,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 55,
+    "source": "raw/frame-00055.png",
+    "elapsed_seconds": 12.334,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 56,
+    "source": "raw/frame-00056.png",
+    "elapsed_seconds": 12.553,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 57,
+    "source": "raw/frame-00057.png",
+    "elapsed_seconds": 12.773,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 58,
+    "source": "raw/frame-00058.png",
+    "elapsed_seconds": 12.993,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 59,
+    "source": "raw/frame-00059.png",
+    "elapsed_seconds": 13.212,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 60,
+    "source": "raw/frame-00060.png",
+    "elapsed_seconds": 13.433,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 61,
+    "source": "raw/frame-00061.png",
+    "elapsed_seconds": 13.652,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 62,
+    "source": "raw/frame-00062.png",
+    "elapsed_seconds": 13.874,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 63,
+    "source": "raw/frame-00063.png",
+    "elapsed_seconds": 14.092,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 64,
+    "source": "raw/frame-00064.png",
+    "elapsed_seconds": 14.313,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 65,
+    "source": "raw/frame-00065.png",
+    "elapsed_seconds": 14.533,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 66,
+    "source": "raw/frame-00066.png",
+    "elapsed_seconds": 14.752,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 67,
+    "source": "raw/frame-00067.png",
+    "elapsed_seconds": 14.972,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 68,
+    "source": "raw/frame-00068.png",
+    "elapsed_seconds": 15.195,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 69,
+    "source": "raw/frame-00069.png",
+    "elapsed_seconds": 15.418,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 70,
+    "source": "raw/frame-00070.png",
+    "elapsed_seconds": 15.634,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 71,
+    "source": "raw/frame-00071.png",
+    "elapsed_seconds": 15.853,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 72,
+    "source": "raw/frame-00072.png",
+    "elapsed_seconds": 16.073,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 73,
+    "source": "raw/frame-00073.png",
+    "elapsed_seconds": 16.293,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 74,
+    "source": "raw/frame-00074.png",
+    "elapsed_seconds": 16.517,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 75,
+    "source": "raw/frame-00075.png",
+    "elapsed_seconds": 16.732,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 76,
+    "source": "raw/frame-00076.png",
+    "elapsed_seconds": 16.953,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 77,
+    "source": "raw/frame-00077.png",
+    "elapsed_seconds": 17.176,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 78,
+    "source": "raw/frame-00078.png",
+    "elapsed_seconds": 17.395,
+    "caption": "开始捕获，每行显示一个报文。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 79,
+    "source": "raw/frame-00079.png",
+    "elapsed_seconds": 17.613,
+    "caption": "停止捕获，已收到的报文仍可查看。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 80,
+    "source": "raw/frame-00080.png",
+    "elapsed_seconds": 17.835,
+    "caption": "停止捕获，已收到的报文仍可查看。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 81,
+    "source": "raw/frame-00081.png",
+    "elapsed_seconds": 18.053,
+    "caption": "停止捕获，已收到的报文仍可查看。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 82,
+    "source": "raw/frame-00082.png",
+    "elapsed_seconds": 18.273,
+    "caption": "停止捕获，已收到的报文仍可查看。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 83,
+    "source": "raw/frame-00083.png",
+    "elapsed_seconds": 18.492,
+    "caption": "停止捕获，已收到的报文仍可查看。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 84,
+    "source": "raw/frame-00084.png",
+    "elapsed_seconds": 18.713,
+    "caption": "停止捕获，已收到的报文仍可查看。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 85,
+    "source": "raw/frame-00085.png",
+    "elapsed_seconds": 18.933,
+    "caption": "停止捕获，已收到的报文仍可查看。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 86,
+    "source": "raw/frame-00086.png",
+    "elapsed_seconds": 19.156,
+    "caption": "停止捕获，已收到的报文仍可查看。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 87,
+    "source": "raw/frame-00087.png",
+    "elapsed_seconds": 19.375,
+    "caption": "停止捕获，已收到的报文仍可查看。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 88,
+    "source": "raw/frame-00088.png",
+    "elapsed_seconds": 19.596,
+    "caption": "停止捕获，已收到的报文仍可查看。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 89,
+    "source": "raw/frame-00089.png",
+    "elapsed_seconds": 19.813,
+    "caption": "停止捕获，已收到的报文仍可查看。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 90,
+    "source": "raw/frame-00090.png",
+    "elapsed_seconds": 20.033,
+    "caption": "停止捕获，已收到的报文仍可查看。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 91,
+    "source": "raw/frame-00091.png",
+    "elapsed_seconds": 20.253,
+    "caption": "停止捕获，已收到的报文仍可查看。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 92,
+    "source": "raw/frame-00092.png",
+    "elapsed_seconds": 20.473,
+    "caption": "停止捕获，已收到的报文仍可查看。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 93,
+    "source": "raw/frame-00093.png",
+    "elapsed_seconds": 20.695,
+    "caption": "停止捕获，已收到的报文仍可查看。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 94,
+    "source": "raw/frame-00094.png",
+    "elapsed_seconds": 20.914,
+    "caption": "停止捕获，已收到的报文仍可查看。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 95,
+    "source": "raw/frame-00095.png",
+    "elapsed_seconds": 21.132,
+    "caption": "将保留的报文导出为 PCAP。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 96,
+    "source": "raw/frame-00096.png",
+    "elapsed_seconds": 21.353,
+    "caption": "将保留的报文导出为 PCAP。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 97,
+    "source": "raw/frame-00097.png",
+    "elapsed_seconds": 21.573,
+    "caption": "将保留的报文导出为 PCAP。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 98,
+    "source": "raw/frame-00098.png",
+    "elapsed_seconds": 21.9,
+    "caption": "将保留的报文导出为 PCAP。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 99,
+    "source": "raw/frame-00099.png",
+    "elapsed_seconds": 22.296,
+    "caption": "将保留的报文导出为 PCAP。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 100,
+    "source": "raw/frame-00100.png",
+    "elapsed_seconds": 22.452,
+    "caption": "将保留的报文导出为 PCAP。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 101,
+    "source": "raw/frame-00101.png",
+    "elapsed_seconds": 22.672,
+    "caption": "将保留的报文导出为 PCAP。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 102,
+    "source": "raw/frame-00102.png",
+    "elapsed_seconds": 22.894,
+    "caption": "将保留的报文导出为 PCAP。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 103,
+    "source": "raw/frame-00103.png",
+    "elapsed_seconds": 23.114,
+    "caption": "将保留的报文导出为 PCAP。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 104,
+    "source": "raw/frame-00104.png",
+    "elapsed_seconds": 23.333,
+    "caption": "将保留的报文导出为 PCAP。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 105,
+    "source": "raw/frame-00105.png",
+    "elapsed_seconds": 23.553,
+    "caption": "将保留的报文导出为 PCAP。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 106,
+    "source": "raw/frame-00106.png",
+    "elapsed_seconds": 23.773,
+    "caption": "将保留的报文导出为 PCAP。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 107,
+    "source": "raw/frame-00107.png",
+    "elapsed_seconds": 23.993,
+    "caption": "将保留的报文导出为 PCAP。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 108,
+    "source": "raw/frame-00108.png",
+    "elapsed_seconds": 24.213,
+    "caption": "将保留的报文导出为 PCAP。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 109,
+    "source": "raw/frame-00109.png",
+    "elapsed_seconds": 24.433,
+    "caption": "将保留的报文导出为 PCAP。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 110,
+    "source": "raw/frame-00110.png",
+    "elapsed_seconds": 24.653,
+    "caption": "将保留的报文导出为 PCAP。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 111,
+    "source": "raw/frame-00111.png",
+    "elapsed_seconds": 24.873,
+    "caption": "将保留的报文导出为 PCAP。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 112,
+    "source": "raw/frame-00112.png",
+    "elapsed_seconds": 25.093,
+    "caption": "将保留的报文导出为 PCAP。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 113,
+    "source": "raw/frame-00113.png",
+    "elapsed_seconds": 25.312,
+    "caption": "将保留的报文导出为 PCAP。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 114,
+    "source": "raw/frame-00114.png",
+    "elapsed_seconds": 25.532,
+    "caption": "将保留的报文导出为 PCAP。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 115,
+    "source": "raw/frame-00115.png",
+    "elapsed_seconds": 25.753,
+    "caption": "将保留的报文导出为 PCAP。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 116,
+    "source": "raw/frame-00116.png",
+    "elapsed_seconds": 25.974,
+    "caption": "将保留的报文导出为 PCAP。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 117,
+    "source": "raw/frame-00117.png",
+    "elapsed_seconds": 26.193,
+    "caption": "将保留的报文导出为 PCAP。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 118,
+    "source": "raw/frame-00118.png",
+    "elapsed_seconds": 26.412,
+    "caption": "将保留的报文导出为 PCAP。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 119,
+    "source": "raw/frame-00119.png",
+    "elapsed_seconds": 26.635,
+    "caption": "将保留的报文导出为 PCAP。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 120,
+    "source": "raw/frame-00120.png",
+    "elapsed_seconds": 26.856,
+    "caption": "将保留的报文导出为 PCAP。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 121,
+    "source": "raw/frame-00121.png",
+    "elapsed_seconds": 27.073,
+    "caption": "打开一份真实的回环抓包记录。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 122,
+    "source": "raw/frame-00122.png",
+    "elapsed_seconds": 27.292,
+    "caption": "打开一份真实的回环抓包记录。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 123,
+    "source": "raw/frame-00123.png",
+    "elapsed_seconds": 27.513,
+    "caption": "打开一份真实的回环抓包记录。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 124,
+    "source": "raw/frame-00124.png",
+    "elapsed_seconds": 27.735,
+    "caption": "打开一份真实的回环抓包记录。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 125,
+    "source": "raw/frame-00125.png",
+    "elapsed_seconds": 27.954,
+    "caption": "打开一份真实的回环抓包记录。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 126,
+    "source": "raw/frame-00126.png",
+    "elapsed_seconds": 28.173,
+    "caption": "打开一份真实的回环抓包记录。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 127,
+    "source": "raw/frame-00127.png",
+    "elapsed_seconds": 28.393,
+    "caption": "打开一份真实的回环抓包记录。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 128,
+    "source": "raw/frame-00128.png",
+    "elapsed_seconds": 28.612,
+    "caption": "打开一份真实的回环抓包记录。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 129,
+    "source": "raw/frame-00129.png",
+    "elapsed_seconds": 28.833,
+    "caption": "打开一份真实的回环抓包记录。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 130,
+    "source": "raw/frame-00130.png",
+    "elapsed_seconds": 29.055,
+    "caption": "打开一份真实的回环抓包记录。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 131,
+    "source": "raw/frame-00131.png",
+    "elapsed_seconds": 29.273,
+    "caption": "打开一份真实的回环抓包记录。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 132,
+    "source": "raw/frame-00132.png",
+    "elapsed_seconds": 29.492,
+    "caption": "打开一份真实的回环抓包记录。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 133,
+    "source": "raw/frame-00133.png",
+    "elapsed_seconds": 29.714,
+    "caption": "打开一份真实的回环抓包记录。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 134,
+    "source": "raw/frame-00134.png",
+    "elapsed_seconds": 29.934,
+    "caption": "打开一份真实的回环抓包记录。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 135,
+    "source": "raw/frame-00135.png",
+    "elapsed_seconds": 30.152,
+    "caption": "打开一份真实的回环抓包记录。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 136,
+    "source": "raw/frame-00136.png",
+    "elapsed_seconds": 30.372,
+    "caption": "打开一份真实的回环抓包记录。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 137,
+    "source": "raw/frame-00137.png",
+    "elapsed_seconds": 30.596,
+    "caption": "打开一份真实的回环抓包记录。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 138,
+    "source": "raw/frame-00138.png",
+    "elapsed_seconds": 30.813,
+    "caption": "打开一份真实的回环抓包记录。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 139,
+    "source": "raw/frame-00139.png",
+    "elapsed_seconds": 31.032,
+    "caption": "打开一份真实的回环抓包记录。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 140,
+    "source": "raw/frame-00140.png",
+    "elapsed_seconds": 31.253,
+    "caption": "打开一份真实的回环抓包记录。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 141,
+    "source": "raw/frame-00141.png",
+    "elapsed_seconds": 31.473,
+    "caption": "打开一份真实的回环抓包记录。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 142,
+    "source": "raw/frame-00142.png",
+    "elapsed_seconds": 31.693,
+    "caption": "打开一份真实的回环抓包记录。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 143,
+    "source": "raw/frame-00143.png",
+    "elapsed_seconds": 31.913,
+    "caption": "打开一份真实的回环抓包记录。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 144,
+    "source": "raw/frame-00144.png",
+    "elapsed_seconds": 32.132,
+    "caption": "打开一份真实的回环抓包记录。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 145,
+    "source": "raw/frame-00145.png",
+    "elapsed_seconds": 32.354,
+    "caption": "打开一份真实的回环抓包记录。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 146,
+    "source": "raw/frame-00146.png",
+    "elapsed_seconds": 32.573,
+    "caption": "打开一份真实的回环抓包记录。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 147,
+    "source": "raw/frame-00147.png",
+    "elapsed_seconds": 32.792,
+    "caption": "打开一份真实的回环抓包记录。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 148,
+    "source": "raw/frame-00148.png",
+    "elapsed_seconds": 33.015,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 149,
+    "source": "raw/frame-00149.png",
+    "elapsed_seconds": 33.233,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 150,
+    "source": "raw/frame-00150.png",
+    "elapsed_seconds": 33.453,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 151,
+    "source": "raw/frame-00151.png",
+    "elapsed_seconds": 33.673,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 152,
+    "source": "raw/frame-00152.png",
+    "elapsed_seconds": 33.898,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 153,
+    "source": "raw/frame-00153.png",
+    "elapsed_seconds": 34.114,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 154,
+    "source": "raw/frame-00154.png",
+    "elapsed_seconds": 34.332,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 155,
+    "source": "raw/frame-00155.png",
+    "elapsed_seconds": 34.553,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 156,
+    "source": "raw/frame-00156.png",
+    "elapsed_seconds": 34.773,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 157,
+    "source": "raw/frame-00157.png",
+    "elapsed_seconds": 34.995,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 158,
+    "source": "raw/frame-00158.png",
+    "elapsed_seconds": 35.213,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 159,
+    "source": "raw/frame-00159.png",
+    "elapsed_seconds": 35.435,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 160,
+    "source": "raw/frame-00160.png",
+    "elapsed_seconds": 35.653,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 161,
+    "source": "raw/frame-00161.png",
+    "elapsed_seconds": 35.873,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 162,
+    "source": "raw/frame-00162.png",
+    "elapsed_seconds": 36.093,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 163,
+    "source": "raw/frame-00163.png",
+    "elapsed_seconds": 36.312,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 164,
+    "source": "raw/frame-00164.png",
+    "elapsed_seconds": 36.533,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 165,
+    "source": "raw/frame-00165.png",
+    "elapsed_seconds": 36.753,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 166,
+    "source": "raw/frame-00166.png",
+    "elapsed_seconds": 36.973,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 167,
+    "source": "raw/frame-00167.png",
+    "elapsed_seconds": 37.195,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 168,
+    "source": "raw/frame-00168.png",
+    "elapsed_seconds": 37.414,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 169,
+    "source": "raw/frame-00169.png",
+    "elapsed_seconds": 37.633,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 170,
+    "source": "raw/frame-00170.png",
+    "elapsed_seconds": 37.856,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 171,
+    "source": "raw/frame-00171.png",
+    "elapsed_seconds": 38.072,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 172,
+    "source": "raw/frame-00172.png",
+    "elapsed_seconds": 38.292,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 173,
+    "source": "raw/frame-00173.png",
+    "elapsed_seconds": 38.513,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 174,
+    "source": "raw/frame-00174.png",
+    "elapsed_seconds": 38.733,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 175,
+    "source": "raw/frame-00175.png",
+    "elapsed_seconds": 38.953,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 176,
+    "source": "raw/frame-00176.png",
+    "elapsed_seconds": 39.173,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 177,
+    "source": "raw/frame-00177.png",
+    "elapsed_seconds": 39.393,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 178,
+    "source": "raw/frame-00178.png",
+    "elapsed_seconds": 39.615,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 179,
+    "source": "raw/frame-00179.png",
+    "elapsed_seconds": 39.833,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 180,
+    "source": "raw/frame-00180.png",
+    "elapsed_seconds": 40.054,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 181,
+    "source": "raw/frame-00181.png",
+    "elapsed_seconds": 40.274,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 182,
+    "source": "raw/frame-00182.png",
+    "elapsed_seconds": 40.492,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 183,
+    "source": "raw/frame-00183.png",
+    "elapsed_seconds": 40.712,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 184,
+    "source": "raw/frame-00184.png",
+    "elapsed_seconds": 40.935,
+    "caption": "选择 HTTP，查看识别出的请求和响应。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 185,
+    "source": "raw/frame-00185.png",
+    "elapsed_seconds": 41.152,
+    "caption": "选择 IPv4 源地址，右侧高亮对应的四个字节。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 186,
+    "source": "raw/frame-00186.png",
+    "elapsed_seconds": 41.372,
+    "caption": "选择 IPv4 源地址，右侧高亮对应的四个字节。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 187,
+    "source": "raw/frame-00187.png",
+    "elapsed_seconds": 41.593,
+    "caption": "选择 IPv4 源地址，右侧高亮对应的四个字节。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 188,
+    "source": "raw/frame-00188.png",
+    "elapsed_seconds": 41.812,
+    "caption": "选择 IPv4 源地址，右侧高亮对应的四个字节。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 189,
+    "source": "raw/frame-00189.png",
+    "elapsed_seconds": 42.032,
+    "caption": "选择 IPv4 源地址，右侧高亮对应的四个字节。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 190,
+    "source": "raw/frame-00190.png",
+    "elapsed_seconds": 42.253,
+    "caption": "选择 IPv4 源地址，右侧高亮对应的四个字节。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 191,
+    "source": "raw/frame-00191.png",
+    "elapsed_seconds": 42.473,
+    "caption": "选择 IPv4 源地址，右侧高亮对应的四个字节。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 192,
+    "source": "raw/frame-00192.png",
+    "elapsed_seconds": 42.693,
+    "caption": "选择 IPv4 源地址，右侧高亮对应的四个字节。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 193,
+    "source": "raw/frame-00193.png",
+    "elapsed_seconds": 42.913,
+    "caption": "选择 IPv4 源地址，右侧高亮对应的四个字节。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 194,
+    "source": "raw/frame-00194.png",
+    "elapsed_seconds": 43.135,
+    "caption": "选择 IPv4 源地址，右侧高亮对应的四个字节。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 195,
+    "source": "raw/frame-00195.png",
+    "elapsed_seconds": 43.353,
+    "caption": "选择 IPv4 源地址，右侧高亮对应的四个字节。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 196,
+    "source": "raw/frame-00196.png",
+    "elapsed_seconds": 43.573,
+    "caption": "选择 IPv4 源地址，右侧高亮对应的四个字节。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 197,
+    "source": "raw/frame-00197.png",
+    "elapsed_seconds": 43.793,
+    "caption": "选择 IPv4 源地址，右侧高亮对应的四个字节。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 198,
+    "source": "raw/frame-00198.png",
+    "elapsed_seconds": 44.016,
+    "caption": "选择 IPv4 源地址，右侧高亮对应的四个字节。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 199,
+    "source": "raw/frame-00199.png",
+    "elapsed_seconds": 44.232,
+    "caption": "选择 IPv4 源地址，右侧高亮对应的四个字节。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 200,
+    "source": "raw/frame-00200.png",
+    "elapsed_seconds": 44.453,
+    "caption": "选择 IPv4 源地址，右侧高亮对应的四个字节。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 201,
+    "source": "raw/frame-00201.png",
+    "elapsed_seconds": 44.673,
+    "caption": "选择 IPv4 源地址，右侧高亮对应的四个字节。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 202,
+    "source": "raw/frame-00202.png",
+    "elapsed_seconds": 44.893,
+    "caption": "选择 IPv4 源地址，右侧高亮对应的四个字节。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 203,
+    "source": "raw/frame-00203.png",
+    "elapsed_seconds": 45.115,
+    "caption": "选择 IPv4 源地址，右侧高亮对应的四个字节。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 204,
+    "source": "raw/frame-00204.png",
+    "elapsed_seconds": 45.335,
+    "caption": "选择 IPv4 源地址，右侧高亮对应的四个字节。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 205,
+    "source": "raw/frame-00205.png",
+    "elapsed_seconds": 45.553,
+    "caption": "选择 IPv4 源地址，右侧高亮对应的四个字节。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 206,
+    "source": "raw/frame-00206.png",
+    "elapsed_seconds": 45.775,
+    "caption": "选择 IPv4 源地址，右侧高亮对应的四个字节。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 207,
+    "source": "raw/frame-00207.png",
+    "elapsed_seconds": 45.996,
+    "caption": "选择 IPv4 源地址，右侧高亮对应的四个字节。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 208,
+    "source": "raw/frame-00208.png",
+    "elapsed_seconds": 46.217,
+    "caption": "HTTP 请求行包含方法、路径和协议版本。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 209,
+    "source": "raw/frame-00209.png",
+    "elapsed_seconds": 46.434,
+    "caption": "HTTP 请求行包含方法、路径和协议版本。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 210,
+    "source": "raw/frame-00210.png",
+    "elapsed_seconds": 46.654,
+    "caption": "HTTP 请求行包含方法、路径和协议版本。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 211,
+    "source": "raw/frame-00211.png",
+    "elapsed_seconds": 46.873,
+    "caption": "HTTP 请求行包含方法、路径和协议版本。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 212,
+    "source": "raw/frame-00212.png",
+    "elapsed_seconds": 47.094,
+    "caption": "HTTP 请求行包含方法、路径和协议版本。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 213,
+    "source": "raw/frame-00213.png",
+    "elapsed_seconds": 47.312,
+    "caption": "HTTP 请求行包含方法、路径和协议版本。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 214,
+    "source": "raw/frame-00214.png",
+    "elapsed_seconds": 47.532,
+    "caption": "HTTP 请求行包含方法、路径和协议版本。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 215,
+    "source": "raw/frame-00215.png",
+    "elapsed_seconds": 47.753,
+    "caption": "HTTP 请求行包含方法、路径和协议版本。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 216,
+    "source": "raw/frame-00216.png",
+    "elapsed_seconds": 47.972,
+    "caption": "HTTP 请求行包含方法、路径和协议版本。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 217,
+    "source": "raw/frame-00217.png",
+    "elapsed_seconds": 48.192,
+    "caption": "HTTP 请求行包含方法、路径和协议版本。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 218,
+    "source": "raw/frame-00218.png",
+    "elapsed_seconds": 48.412,
+    "caption": "HTTP 请求行包含方法、路径和协议版本。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 219,
+    "source": "raw/frame-00219.png",
+    "elapsed_seconds": 48.634,
+    "caption": "HTTP 请求行包含方法、路径和协议版本。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 220,
+    "source": "raw/frame-00220.png",
+    "elapsed_seconds": 48.854,
+    "caption": "HTTP 请求行包含方法、路径和协议版本。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 221,
+    "source": "raw/frame-00221.png",
+    "elapsed_seconds": 49.073,
+    "caption": "HTTP 请求行包含方法、路径和协议版本。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 222,
+    "source": "raw/frame-00222.png",
+    "elapsed_seconds": 49.293,
+    "caption": "HTTP 请求行包含方法、路径和协议版本。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 223,
+    "source": "raw/frame-00223.png",
+    "elapsed_seconds": 49.512,
+    "caption": "HTTP 请求行包含方法、路径和协议版本。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 224,
+    "source": "raw/frame-00224.png",
+    "elapsed_seconds": 49.732,
+    "caption": "HTTP 请求行包含方法、路径和协议版本。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 225,
+    "source": "raw/frame-00225.png",
+    "elapsed_seconds": 49.953,
+    "caption": "HTTP 请求行包含方法、路径和协议版本。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 226,
+    "source": "raw/frame-00226.png",
+    "elapsed_seconds": 50.173,
+    "caption": "HTTP 请求行包含方法、路径和协议版本。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 227,
+    "source": "raw/frame-00227.png",
+    "elapsed_seconds": 50.394,
+    "caption": "HTTP 请求行包含方法、路径和协议版本。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 228,
+    "source": "raw/frame-00228.png",
+    "elapsed_seconds": 50.613,
+    "caption": "HTTP 请求行包含方法、路径和协议版本。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 229,
+    "source": "raw/frame-00229.png",
+    "elapsed_seconds": 50.833,
+    "caption": "HTTP 请求行包含方法、路径和协议版本。",
+    "detail_crop": true,
+    "origin": [
+      26,
+      255
+    ],
+    "size": [
+      1868,
+      486
+    ],
+    "crop": [
+      9,
+      418,
+      1431,
+      788
+    ]
+  },
+  {
+    "frame": 230,
+    "source": "raw/frame-00230.png",
+    "elapsed_seconds": 51.054,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 231,
+    "source": "raw/frame-00231.png",
+    "elapsed_seconds": 51.276,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 232,
+    "source": "raw/frame-00232.png",
+    "elapsed_seconds": 51.492,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 233,
+    "source": "raw/frame-00233.png",
+    "elapsed_seconds": 51.713,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 234,
+    "source": "raw/frame-00234.png",
+    "elapsed_seconds": 51.934,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 235,
+    "source": "raw/frame-00235.png",
+    "elapsed_seconds": 52.153,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 236,
+    "source": "raw/frame-00236.png",
+    "elapsed_seconds": 52.373,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 237,
+    "source": "raw/frame-00237.png",
+    "elapsed_seconds": 52.593,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 238,
+    "source": "raw/frame-00238.png",
+    "elapsed_seconds": 52.813,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 239,
+    "source": "raw/frame-00239.png",
+    "elapsed_seconds": 53.033,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 240,
+    "source": "raw/frame-00240.png",
+    "elapsed_seconds": 53.253,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 241,
+    "source": "raw/frame-00241.png",
+    "elapsed_seconds": 53.473,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 242,
+    "source": "raw/frame-00242.png",
+    "elapsed_seconds": 53.693,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 243,
+    "source": "raw/frame-00243.png",
+    "elapsed_seconds": 53.918,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 244,
+    "source": "raw/frame-00244.png",
+    "elapsed_seconds": 54.137,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 245,
+    "source": "raw/frame-00245.png",
+    "elapsed_seconds": 54.357,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 246,
+    "source": "raw/frame-00246.png",
+    "elapsed_seconds": 54.579,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 247,
+    "source": "raw/frame-00247.png",
+    "elapsed_seconds": 54.794,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 248,
+    "source": "raw/frame-00248.png",
+    "elapsed_seconds": 55.013,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 249,
+    "source": "raw/frame-00249.png",
+    "elapsed_seconds": 55.232,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 250,
+    "source": "raw/frame-00250.png",
+    "elapsed_seconds": 55.453,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 251,
+    "source": "raw/frame-00251.png",
+    "elapsed_seconds": 55.673,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 252,
+    "source": "raw/frame-00252.png",
+    "elapsed_seconds": 55.895,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 253,
+    "source": "raw/frame-00253.png",
+    "elapsed_seconds": 56.112,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 254,
+    "source": "raw/frame-00254.png",
+    "elapsed_seconds": 56.332,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 255,
+    "source": "raw/frame-00255.png",
+    "elapsed_seconds": 56.552,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 256,
+    "source": "raw/frame-00256.png",
+    "elapsed_seconds": 56.774,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 257,
+    "source": "raw/frame-00257.png",
+    "elapsed_seconds": 56.992,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 258,
+    "source": "raw/frame-00258.png",
+    "elapsed_seconds": 57.213,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 259,
+    "source": "raw/frame-00259.png",
+    "elapsed_seconds": 57.434,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 260,
+    "source": "raw/frame-00260.png",
+    "elapsed_seconds": 57.653,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 261,
+    "source": "raw/frame-00261.png",
+    "elapsed_seconds": 57.873,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 262,
+    "source": "raw/frame-00262.png",
+    "elapsed_seconds": 58.092,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 263,
+    "source": "raw/frame-00263.png",
+    "elapsed_seconds": 58.312,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 264,
+    "source": "raw/frame-00264.png",
+    "elapsed_seconds": 58.533,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 265,
+    "source": "raw/frame-00265.png",
+    "elapsed_seconds": 58.754,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 266,
+    "source": "raw/frame-00266.png",
+    "elapsed_seconds": 58.973,
+    "caption": "切换到 IPv6，查看 IPv6 数据包。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 267,
+    "source": "raw/frame-00267.png",
+    "elapsed_seconds": 59.192,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 268,
+    "source": "raw/frame-00268.png",
+    "elapsed_seconds": 59.417,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 269,
+    "source": "raw/frame-00269.png",
+    "elapsed_seconds": 59.633,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 270,
+    "source": "raw/frame-00270.png",
+    "elapsed_seconds": 59.854,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 271,
+    "source": "raw/frame-00271.png",
+    "elapsed_seconds": 60.073,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 272,
+    "source": "raw/frame-00272.png",
+    "elapsed_seconds": 60.292,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 273,
+    "source": "raw/frame-00273.png",
+    "elapsed_seconds": 60.512,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 274,
+    "source": "raw/frame-00274.png",
+    "elapsed_seconds": 60.733,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 275,
+    "source": "raw/frame-00275.png",
+    "elapsed_seconds": 60.954,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 276,
+    "source": "raw/frame-00276.png",
+    "elapsed_seconds": 61.175,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 277,
+    "source": "raw/frame-00277.png",
+    "elapsed_seconds": 61.393,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 278,
+    "source": "raw/frame-00278.png",
+    "elapsed_seconds": 61.614,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 279,
+    "source": "raw/frame-00279.png",
+    "elapsed_seconds": 61.836,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 280,
+    "source": "raw/frame-00280.png",
+    "elapsed_seconds": 62.056,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 281,
+    "source": "raw/frame-00281.png",
+    "elapsed_seconds": 62.278,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 282,
+    "source": "raw/frame-00282.png",
+    "elapsed_seconds": 62.493,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 283,
+    "source": "raw/frame-00283.png",
+    "elapsed_seconds": 62.715,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 284,
+    "source": "raw/frame-00284.png",
+    "elapsed_seconds": 62.933,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 285,
+    "source": "raw/frame-00285.png",
+    "elapsed_seconds": 63.154,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 286,
+    "source": "raw/frame-00286.png",
+    "elapsed_seconds": 63.372,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 287,
+    "source": "raw/frame-00287.png",
+    "elapsed_seconds": 63.596,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 288,
+    "source": "raw/frame-00288.png",
+    "elapsed_seconds": 63.812,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 289,
+    "source": "raw/frame-00289.png",
+    "elapsed_seconds": 64.033,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 290,
+    "source": "raw/frame-00290.png",
+    "elapsed_seconds": 64.254,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 291,
+    "source": "raw/frame-00291.png",
+    "elapsed_seconds": 64.473,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 292,
+    "source": "raw/frame-00292.png",
+    "elapsed_seconds": 64.693,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 293,
+    "source": "raw/frame-00293.png",
+    "elapsed_seconds": 64.913,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 294,
+    "source": "raw/frame-00294.png",
+    "elapsed_seconds": 65.133,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 295,
+    "source": "raw/frame-00295.png",
+    "elapsed_seconds": 65.352,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 296,
+    "source": "raw/frame-00296.png",
+    "elapsed_seconds": 65.573,
+    "caption": "组合协议和目标端口，定位一条请求。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 297,
+    "source": "raw/frame-00297.png",
+    "elapsed_seconds": 65.793,
+    "caption": "从这条请求打开双向 TCP 流。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 298,
+    "source": "raw/frame-00298.png",
+    "elapsed_seconds": 66.012,
+    "caption": "从这条请求打开双向 TCP 流。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 299,
+    "source": "raw/frame-00299.png",
+    "elapsed_seconds": 66.233,
+    "caption": "从这条请求打开双向 TCP 流。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 300,
+    "source": "raw/frame-00300.png",
+    "elapsed_seconds": 66.489,
+    "caption": "从这条请求打开双向 TCP 流。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 301,
+    "source": "raw/frame-00301.png",
+    "elapsed_seconds": 66.673,
+    "caption": "从这条请求打开双向 TCP 流。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 302,
+    "source": "raw/frame-00302.png",
+    "elapsed_seconds": 66.893,
+    "caption": "从这条请求打开双向 TCP 流。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 303,
+    "source": "raw/frame-00303.png",
+    "elapsed_seconds": 67.113,
+    "caption": "从这条请求打开双向 TCP 流。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 304,
+    "source": "raw/frame-00304.png",
+    "elapsed_seconds": 67.333,
+    "caption": "从这条请求打开双向 TCP 流。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 305,
+    "source": "raw/frame-00305.png",
+    "elapsed_seconds": 67.552,
+    "caption": "从这条请求打开双向 TCP 流。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 306,
+    "source": "raw/frame-00306.png",
+    "elapsed_seconds": 67.774,
+    "caption": "从这条请求打开双向 TCP 流。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 307,
+    "source": "raw/frame-00307.png",
+    "elapsed_seconds": 67.992,
+    "caption": "从这条请求打开双向 TCP 流。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 308,
+    "source": "raw/frame-00308.png",
+    "elapsed_seconds": 68.216,
+    "caption": "从这条请求打开双向 TCP 流。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 309,
+    "source": "raw/frame-00309.png",
+    "elapsed_seconds": 68.433,
+    "caption": "从这条请求打开双向 TCP 流。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 310,
+    "source": "raw/frame-00310.png",
+    "elapsed_seconds": 68.656,
+    "caption": "从这条请求打开双向 TCP 流。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 311,
+    "source": "raw/frame-00311.png",
+    "elapsed_seconds": 68.873,
+    "caption": "从这条请求打开双向 TCP 流。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 312,
+    "source": "raw/frame-00312.png",
+    "elapsed_seconds": 69.093,
+    "caption": "从这条请求打开双向 TCP 流。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 313,
+    "source": "raw/frame-00313.png",
+    "elapsed_seconds": 69.312,
+    "caption": "从这条请求打开双向 TCP 流。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 314,
+    "source": "raw/frame-00314.png",
+    "elapsed_seconds": 69.533,
+    "caption": "从这条请求打开双向 TCP 流。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 315,
+    "source": "raw/frame-00315.png",
+    "elapsed_seconds": 69.754,
+    "caption": "从这条请求打开双向 TCP 流。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 316,
+    "source": "raw/frame-00316.png",
+    "elapsed_seconds": 69.972,
+    "caption": "从这条请求打开双向 TCP 流。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 317,
+    "source": "raw/frame-00317.png",
+    "elapsed_seconds": 70.193,
+    "caption": "从这条请求打开双向 TCP 流。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 318,
+    "source": "raw/frame-00318.png",
+    "elapsed_seconds": 70.413,
+    "caption": "从这条请求打开双向 TCP 流。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 319,
+    "source": "raw/frame-00319.png",
+    "elapsed_seconds": 70.632,
+    "caption": "从这条请求打开双向 TCP 流。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 320,
+    "source": "raw/frame-00320.png",
+    "elapsed_seconds": 70.852,
+    "caption": "从这条请求打开双向 TCP 流。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 321,
+    "source": "raw/frame-00321.png",
+    "elapsed_seconds": 71.072,
+    "caption": "按捕获顺序查看握手、数据和连接关闭。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 322,
+    "source": "raw/frame-00322.png",
+    "elapsed_seconds": 71.293,
+    "caption": "按捕获顺序查看握手、数据和连接关闭。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 323,
+    "source": "raw/frame-00323.png",
+    "elapsed_seconds": 71.512,
+    "caption": "按捕获顺序查看握手、数据和连接关闭。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 324,
+    "source": "raw/frame-00324.png",
+    "elapsed_seconds": 71.735,
+    "caption": "按捕获顺序查看握手、数据和连接关闭。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 325,
+    "source": "raw/frame-00325.png",
+    "elapsed_seconds": 71.952,
+    "caption": "按捕获顺序查看握手、数据和连接关闭。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 326,
+    "source": "raw/frame-00326.png",
+    "elapsed_seconds": 72.173,
+    "caption": "按捕获顺序查看握手、数据和连接关闭。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 327,
+    "source": "raw/frame-00327.png",
+    "elapsed_seconds": 72.393,
+    "caption": "按捕获顺序查看握手、数据和连接关闭。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 328,
+    "source": "raw/frame-00328.png",
+    "elapsed_seconds": 72.616,
+    "caption": "按捕获顺序查看握手、数据和连接关闭。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 329,
+    "source": "raw/frame-00329.png",
+    "elapsed_seconds": 72.836,
+    "caption": "按捕获顺序查看握手、数据和连接关闭。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 330,
+    "source": "raw/frame-00330.png",
+    "elapsed_seconds": 73.052,
+    "caption": "按捕获顺序查看握手、数据和连接关闭。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 331,
+    "source": "raw/frame-00331.png",
+    "elapsed_seconds": 73.273,
+    "caption": "按捕获顺序查看握手、数据和连接关闭。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 332,
+    "source": "raw/frame-00332.png",
+    "elapsed_seconds": 73.492,
+    "caption": "按捕获顺序查看握手、数据和连接关闭。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 333,
+    "source": "raw/frame-00333.png",
+    "elapsed_seconds": 73.713,
+    "caption": "按捕获顺序查看握手、数据和连接关闭。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 334,
+    "source": "raw/frame-00334.png",
+    "elapsed_seconds": 73.932,
+    "caption": "按捕获顺序查看握手、数据和连接关闭。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 335,
+    "source": "raw/frame-00335.png",
+    "elapsed_seconds": 74.153,
+    "caption": "按捕获顺序查看握手、数据和连接关闭。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 336,
+    "source": "raw/frame-00336.png",
+    "elapsed_seconds": 74.372,
+    "caption": "按捕获顺序查看握手、数据和连接关闭。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 337,
+    "source": "raw/frame-00337.png",
+    "elapsed_seconds": 74.593,
+    "caption": "按捕获顺序查看握手、数据和连接关闭。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 338,
+    "source": "raw/frame-00338.png",
+    "elapsed_seconds": 74.813,
+    "caption": "按捕获顺序查看握手、数据和连接关闭。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 339,
+    "source": "raw/frame-00339.png",
+    "elapsed_seconds": 75.034,
+    "caption": "按捕获顺序查看握手、数据和连接关闭。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 340,
+    "source": "raw/frame-00340.png",
+    "elapsed_seconds": 75.252,
+    "caption": "按捕获顺序查看握手、数据和连接关闭。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 341,
+    "source": "raw/frame-00341.png",
+    "elapsed_seconds": 75.472,
+    "caption": "按捕获顺序查看握手、数据和连接关闭。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 342,
+    "source": "raw/frame-00342.png",
+    "elapsed_seconds": 75.695,
+    "caption": "按捕获顺序查看握手、数据和连接关闭。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 343,
+    "source": "raw/frame-00343.png",
+    "elapsed_seconds": 75.915,
+    "caption": "按捕获顺序查看握手、数据和连接关闭。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 344,
+    "source": "raw/frame-00344.png",
+    "elapsed_seconds": 76.136,
+    "caption": "按捕获顺序查看握手、数据和连接关闭。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 345,
+    "source": "raw/frame-00345.png",
+    "elapsed_seconds": 76.355,
+    "caption": "按捕获顺序查看握手、数据和连接关闭。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 346,
+    "source": "raw/frame-00346.png",
+    "elapsed_seconds": 76.573,
+    "caption": "按捕获顺序查看握手、数据和连接关闭。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 347,
+    "source": "raw/frame-00347.png",
+    "elapsed_seconds": 76.792,
+    "caption": "按捕获顺序查看握手、数据和连接关闭。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  },
+  {
+    "frame": 348,
+    "source": "raw/frame-00348.png",
+    "elapsed_seconds": 77.012,
+    "caption": "按捕获顺序查看握手、数据和连接关闭。",
+    "detail_crop": false,
+    "origin": [
+      105,
+      12
+    ],
+    "size": [
+      1709,
+      973
+    ],
+    "crop": [
+      0,
+      0,
+      1440,
+      820
+    ]
+  }
+]

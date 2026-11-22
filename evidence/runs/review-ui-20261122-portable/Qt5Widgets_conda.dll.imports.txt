@@ -1,0 +1,36 @@
+Microsoft (R) COFF/PE Dumper Version 14.44.35219.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file E:\users\VScodeProject\C++\UCAS-2026-Fall_Software-and-system-security\lab1-sniffer\build\ui-portable\Qt5Widgets_conda.dll
+
+File Type: DLL
+
+  Image has the following dependencies:
+
+    Qt5Gui_conda.dll
+    Qt5Core_conda.dll
+    UxTheme.dll
+    dwmapi.dll
+    SHELL32.dll
+    GDI32.dll
+    ole32.dll
+    USER32.dll
+    MSVCP140.dll
+    MSVCP140_1.dll
+    KERNEL32.dll
+    VCRUNTIME140.dll
+    VCRUNTIME140_1.dll
+    api-ms-win-crt-runtime-l1-1-0.dll
+    api-ms-win-crt-string-l1-1-0.dll
+    api-ms-win-crt-heap-l1-1-0.dll
+    api-ms-win-crt-math-l1-1-0.dll
+
+  Summary
+
+       2D000 .data
+       34000 .pdata
+      1A6000 .rdata
+        9000 .reloc
+        1000 .rsrc
+      338000 .text

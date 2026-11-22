@@ -1,0 +1,421 @@
+{
+    "byte_retained": 279,
+    "checks": [
+        {
+            "name": "idle exposes start, export and flow await data",
+            "pass": true
+        },
+        {
+            "name": "repeat SYN stays in occurrence and reused tuple splits",
+            "pass": true
+        },
+        {
+            "name": "RST and partial windows are distinct",
+            "pass": true
+        },
+        {
+            "name": "Npcap loopback available",
+            "pass": true
+        },
+        {
+            "name": "live capture opens",
+            "pass": true
+        },
+        {
+            "name": "active capture exposes stop and locks source controls",
+            "pass": true
+        },
+        {
+            "name": "traffic sender finished",
+            "pass": true
+        },
+        {
+            "name": "export live",
+            "pass": true
+        },
+        {
+            "name": "one HTTP request IPv4",
+            "pass": true
+        },
+        {
+            "name": "observed bidirectional TCP open and close IPv4",
+            "pass": true
+        },
+        {
+            "name": "stopped capture exposes start, export and TCP flow",
+            "pass": true
+        },
+        {
+            "name": "field selection links the byte range to the actual hex text",
+            "pass": true
+        },
+        {
+            "name": "expression screenshot",
+            "pass": true
+        },
+        {
+            "name": "invalid filter preserves the last result",
+            "pass": true
+        },
+        {
+            "name": "all eleven TCP segments visible in the flow dialog",
+            "pass": true
+        },
+        {
+            "name": "visible flow dialog",
+            "pass": true
+        },
+        {
+            "name": "one HTTP request IPv6",
+            "pass": true
+        },
+        {
+            "name": "observed bidirectional TCP open and close IPv6",
+            "pass": true
+        },
+        {
+            "name": "owned UDP sink binds",
+            "pass": true
+        },
+        {
+            "name": "repeated start",
+            "pass": true
+        },
+        {
+            "name": "stop during input keeps capture frozen",
+            "pass": true
+        },
+        {
+            "name": "repeated start",
+            "pass": true
+        },
+        {
+            "name": "stop during input keeps capture frozen",
+            "pass": true
+        },
+        {
+            "name": "repeated start",
+            "pass": true
+        },
+        {
+            "name": "stop during input keeps capture frozen",
+            "pass": true
+        },
+        {
+            "name": "idle stop",
+            "pass": true
+        },
+        {
+            "name": "count-capacity.pcap completion",
+            "pass": true
+        },
+        {
+            "name": "2000 packet limit",
+            "pass": true
+        },
+        {
+            "name": "byte-capacity.pcap completion",
+            "pass": true
+        },
+        {
+            "name": "16 MiB byte limit",
+            "pass": true
+        },
+        {
+            "name": "export is independent of display expression",
+            "pass": true
+        },
+        {
+            "name": "broken-record.pcap completion",
+            "pass": true
+        }
+    ],
+    "count_retained": 2000,
+    "flow_ipv4": {
+        "a": "127.0.0.1:8008",
+        "b": "127.0.0.1:4311",
+        "packets": [
+            6,
+            5
+        ],
+        "payload_bytes": [
+            38,
+            59
+        ],
+        "rows": [
+            {
+                "ack": 0,
+                "direction": 0,
+                "elapsed_us": 0,
+                "event": "SYN",
+                "flags": 2,
+                "id": 1,
+                "payload_bytes": 0,
+                "seq": 1748765812
+            },
+            {
+                "ack": 1748765813,
+                "direction": 1,
+                "elapsed_us": 81,
+                "event": "SYN acknowledged",
+                "flags": 18,
+                "id": 2,
+                "payload_bytes": 0,
+                "seq": 4225661680
+            },
+            {
+                "ack": 4225661681,
+                "direction": 0,
+                "elapsed_us": 146,
+                "event": "Handshake observed",
+                "flags": 16,
+                "id": 3,
+                "payload_bytes": 0,
+                "seq": 1748765813
+            },
+            {
+                "ack": 4225661681,
+                "direction": 0,
+                "elapsed_us": 813,
+                "event": "",
+                "flags": 24,
+                "id": 4,
+                "payload_bytes": 38,
+                "seq": 1748765813
+            },
+            {
+                "ack": 1748765851,
+                "direction": 1,
+                "elapsed_us": 855,
+                "event": "",
+                "flags": 16,
+                "id": 5,
+                "payload_bytes": 0,
+                "seq": 4225661681
+            },
+            {
+                "ack": 1748765851,
+                "direction": 1,
+                "elapsed_us": 916,
+                "event": "",
+                "flags": 24,
+                "id": 6,
+                "payload_bytes": 59,
+                "seq": 4225661681
+            },
+            {
+                "ack": 4225661740,
+                "direction": 0,
+                "elapsed_us": 948,
+                "event": "",
+                "flags": 16,
+                "id": 7,
+                "payload_bytes": 0,
+                "seq": 1748765851
+            },
+            {
+                "ack": 4225661740,
+                "direction": 0,
+                "elapsed_us": 993,
+                "event": "FIN observed",
+                "flags": 17,
+                "id": 8,
+                "payload_bytes": 0,
+                "seq": 1748765851
+            },
+            {
+                "ack": 1748765852,
+                "direction": 1,
+                "elapsed_us": 1028,
+                "event": "",
+                "flags": 16,
+                "id": 9,
+                "payload_bytes": 0,
+                "seq": 4225661740
+            },
+            {
+                "ack": 1748765852,
+                "direction": 1,
+                "elapsed_us": 1078,
+                "event": "FIN observed",
+                "flags": 17,
+                "id": 10,
+                "payload_bytes": 0,
+                "seq": 4225661740
+            },
+            {
+                "ack": 4225661741,
+                "direction": 0,
+                "elapsed_us": 1129,
+                "event": "Close exchange observed",
+                "flags": 16,
+                "id": 11,
+                "payload_bytes": 0,
+                "seq": 1748765852
+            }
+        ],
+        "state": "Close exchange observed"
+    },
+    "flow_ipv6": {
+        "a": "[0:0:0:0:0:0:0:1]:8009",
+        "b": "[0:0:0:0:0:0:0:1]:4312",
+        "packets": [
+            6,
+            5
+        ],
+        "payload_bytes": [
+            39,
+            59
+        ],
+        "rows": [
+            {
+                "ack": 0,
+                "direction": 0,
+                "elapsed_us": 0,
+                "event": "SYN",
+                "flags": 2,
+                "id": 12,
+                "payload_bytes": 0,
+                "seq": 478354879
+            },
+            {
+                "ack": 478354880,
+                "direction": 1,
+                "elapsed_us": 76,
+                "event": "SYN acknowledged",
+                "flags": 18,
+                "id": 13,
+                "payload_bytes": 0,
+                "seq": 1609448924
+            },
+            {
+                "ack": 1609448925,
+                "direction": 0,
+                "elapsed_us": 127,
+                "event": "Handshake observed",
+                "flags": 16,
+                "id": 14,
+                "payload_bytes": 0,
+                "seq": 478354880
+            },
+            {
+                "ack": 1609448925,
+                "direction": 0,
+                "elapsed_us": 10818,
+                "event": "",
+                "flags": 24,
+                "id": 15,
+                "payload_bytes": 39,
+                "seq": 478354880
+            },
+            {
+                "ack": 478354919,
+                "direction": 1,
+                "elapsed_us": 10869,
+                "event": "",
+                "flags": 16,
+                "id": 16,
+                "payload_bytes": 0,
+                "seq": 1609448925
+            },
+            {
+                "ack": 478354919,
+                "direction": 1,
+                "elapsed_us": 10925,
+                "event": "",
+                "flags": 24,
+                "id": 17,
+                "payload_bytes": 59,
+                "seq": 1609448925
+            },
+            {
+                "ack": 1609448984,
+                "direction": 0,
+                "elapsed_us": 10956,
+                "event": "",
+                "flags": 16,
+                "id": 18,
+                "payload_bytes": 0,
+                "seq": 478354919
+            },
+            {
+                "ack": 1609448984,
+                "direction": 0,
+                "elapsed_us": 10997,
+                "event": "FIN observed",
+                "flags": 17,
+                "id": 19,
+                "payload_bytes": 0,
+                "seq": 478354919
+            },
+            {
+                "ack": 478354920,
+                "direction": 1,
+                "elapsed_us": 11029,
+                "event": "",
+                "flags": 16,
+                "id": 20,
+                "payload_bytes": 0,
+                "seq": 1609448984
+            },
+            {
+                "ack": 478354920,
+                "direction": 1,
+                "elapsed_us": 11074,
+                "event": "FIN observed",
+                "flags": 17,
+                "id": 21,
+                "payload_bytes": 0,
+                "seq": 1609448984
+            },
+            {
+                "ack": 1609448985,
+                "direction": 0,
+                "elapsed_us": 11125,
+                "event": "Close exchange observed",
+                "flags": 16,
+                "id": 22,
+                "payload_bytes": 0,
+                "seq": 478354920
+            }
+        ],
+        "state": "Close exchange observed"
+    },
+    "live_packets": 37,
+    "live_retained": 37,
+    "npcap": "Npcap version 1.83, based on libpcap version 1.10.5",
+    "outcome": "pass",
+    "raw_bytes_retained": 16740000,
+    "stop_trials": [
+        {
+            "driver_drop": 0,
+            "driver_stats_available": true,
+            "max_heartbeat_gap_ms": 78,
+            "read_after_wait": 476,
+            "read_at_stop": 476,
+            "sent_after_wait": 563,
+            "sent_at_stop": 480,
+            "stop_ms": 3.1853
+        },
+        {
+            "driver_drop": 0,
+            "driver_stats_available": true,
+            "max_heartbeat_gap_ms": 73,
+            "read_after_wait": 465,
+            "read_at_stop": 465,
+            "sent_after_wait": 557,
+            "sent_at_stop": 475,
+            "stop_ms": 4.5602
+        },
+        {
+            "driver_drop": 0,
+            "driver_stats_available": true,
+            "max_heartbeat_gap_ms": 66,
+            "read_after_wait": 469,
+            "read_at_stop": 469,
+            "sent_after_wait": 561,
+            "sent_at_stop": 478,
+            "stop_ms": 3.6653
+        }
+    ]
+}

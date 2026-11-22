@@ -1,0 +1,207 @@
+{
+  "run_id": "gui-tour-20261122T100530Z-e4f378b2",
+  "outcome": "pass",
+  "gui_source_sha256": "cd9cc35873f8a3257a5e878227045e793493f6b38d44849f0b5b4d26d8cd3828",
+  "harness_sha256": "56a9606969bb900913a9f14f70e0210176b55530b55873c9c61c628fb5da1fb3",
+  "script_sha256": "a3d9125c6f90aefebcb3b981d3ac989f21f105c6f20930c86a9e5e4aeb0002a5",
+  "source_commit": "0c0efe0baec0a05b31202566417022a97b9d1d14",
+  "commands": [
+    {
+      "name": "configure",
+      "argv": [
+        "cmake",
+        "-S",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\tour-6b6cbba9",
+        "-B",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\tour-6b6cbba9\\b",
+        "-G",
+        "Visual Studio 17 2022",
+        "-A",
+        "x64",
+        "-DCMAKE_PREFIX_PATH=E:\\Anaconda3\\Library",
+        "-DNPCAP_SDK_DIR=E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\.deps\\npcap-sdk-1.17"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "build",
+      "argv": [
+        "cmake",
+        "--build",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\tour-6b6cbba9\\b",
+        "--config",
+        "Release",
+        "--target",
+        "lab1_gui_tour"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "gui",
+      "argv": [
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\build\\tour-6b6cbba9\\b\\Release\\lab1_gui_tour.exe",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\gui-tour-20261122T100530Z-e4f378b2",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\gui-tour-20261122T100530Z-e4f378b2\\local-protocols.pcap",
+        "4311"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "encode",
+      "argv": [
+        "E:\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-y",
+        "-f",
+        "concat",
+        "-safe",
+        "0",
+        "-i",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\gui-tour-20261122T100530Z-e4f378b2\\composition.ffconcat",
+        "-vf",
+        "fps=24,ass=evidence/runs/gui-tour-20261122T100530Z-e4f378b2/pointer.ass",
+        "-r",
+        "24",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "fast",
+        "-crf",
+        "21",
+        "-pix_fmt",
+        "yuv420p",
+        "-movflags",
+        "+faststart",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\gui-tour-20261122T100530Z-e4f378b2\\lab1A-demo.mp4"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "decode",
+      "argv": [
+        "E:\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-v",
+        "error",
+        "-xerror",
+        "-i",
+        "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\gui-tour-20261122T100530Z-e4f378b2\\lab1A-demo.mp4",
+        "-f",
+        "null",
+        "-"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "real_input": {
+    "run": "review-ui-20261122-final",
+    "sha256": "304d46fbb7650a729c6bb8165886710636227864e7110f4ba388234d6a3e8139",
+    "server_port": 4311
+  },
+  "keyframes_dir": "keyframes/2a7bc19b",
+  "video_path": "E:\\users\\VScodeProject\\C++\\UCAS-2026-Fall_Software-and-system-security\\lab1-sniffer\\evidence\\runs\\gui-tour-20261122T100530Z-e4f378b2\\lab1A-demo.mp4",
+  "video_sha256": "9c1f6737178e58b1eeffda52c356cb8cc112cbedff3edf1fb0ec93a2eaf961c1",
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "76.833333",
+      "size": "1980478"
+    }
+  },
+  "frame_count": 349,
+  "captions": [
+    [
+      0,
+      4,
+      "",
+      "在回环接口上观察本机通信。"
+    ],
+    [
+      4,
+      8,
+      "",
+      "捕获过滤按 UDP 端口选取报文。"
+    ],
+    [
+      8,
+      17.6,
+      "",
+      "开始捕获，每行显示一个报文。"
+    ],
+    [
+      17.6,
+      21,
+      "",
+      "停止捕获，已收到的报文仍可查看。"
+    ],
+    [
+      21,
+      27,
+      "",
+      "将保留的报文导出为 PCAP。"
+    ],
+    [
+      27,
+      33,
+      "",
+      "打开一份真实的回环抓包记录。"
+    ],
+    [
+      33,
+      41,
+      "",
+      "选择 HTTP，查看识别出的请求和响应。"
+    ],
+    [
+      41,
+      46,
+      "",
+      "选择 IPv4 源地址，右侧高亮对应的四个字节。"
+    ],
+    [
+      46,
+      51,
+      "",
+      "HTTP 请求行包含方法、路径和协议版本。"
+    ],
+    [
+      51,
+      59,
+      "",
+      "切换到 IPv6，查看 IPv6 数据包。"
+    ],
+    [
+      59,
+      65.6,
+      "",
+      "组合协议和目标端口，定位一条请求。"
+    ],
+    [
+      65.6,
+      71,
+      "",
+      "从这条请求打开双向 TCP 流。"
+    ],
+    [
+      71,
+      78,
+      "",
+      "按捕获顺序查看握手、数据和连接关闭。"
+    ]
+  ],
+  "gui": {
+    "sent": 30,
+    "received": 30,
+    "captured": 30
+  },
+  "independent_export": "pass",
+  "pointer_clicks": 24,
+  "form": "GUI widget renders with concise teaching captions and a pointer composed from the mouse events used to operate the widgets."
+}
