@@ -10,3 +10,6 @@
 *.suo
 *.bak
 __pycache__/
+*.log
+*.pcap
+*.pcapng
