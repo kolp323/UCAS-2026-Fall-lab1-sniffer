@@ -30,4 +30,17 @@ $env:QT_QPA_PLATFORM_PLUGIN_PATH = Join-Path $qtRoot 'plugins\platforms'
 .\build\Release\lab1_cli.exe --read .\capture.pcap --display-filter HTTP --json .\result.json
 ~~~
 
+## 按进程观察 TCP 连接
+
+打开 **Process flows…**，输入本机 PID 并点击 **Track PID**。窗口每 250 ms 读取 Windows 的 IPv4 和 IPv6 TCP 连接表，保留端点、状态和观测时间。实时抓包时可以选中一行，点击 **Filter captured endpoints** 查看保留窗口内四元组相同的双向报文。短连接可能落在两次采样之间。同一四元组再次使用时，需要结合观测时间判断归属。
+
+## Wireshark 扩展
+
+插件按 Wireshark 的 TCP 流编号统计两个方向的报文数、载荷字节，以及带 SYN、FIN 和 RST 标志的段数。A 是最先观察到的发送端。重传的载荷按实际出现次数累计。用 Wireshark 4.6.2 打开自己的样本后，在 **Tools → Lab 1A → TCP stream summary** 查看。也可直接运行 TShark。
+
+~~~powershell
+Wireshark.exe -X lua_script:plugins/lab1_tcp.lua -r capture.pcap
+tshark.exe -X lua_script:plugins/lab1_tcp.lua -r capture.pcap -q -z lab1,flows
+~~~
+
 自主源码采用 [MIT 许可](LICENSE)。

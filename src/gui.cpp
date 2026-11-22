@@ -16,6 +16,7 @@
 #include "parser.h"
 #include "display_filter.h"
 #include "tcp_flow.h"
+#include "process_view.h"
 
 namespace {
 constexpr int kRetainedLimit=2000;
@@ -231,6 +232,20 @@ public:
   controls->addWidget(new QLabel("Display filter"),1,2);
   controls->addWidget(displayExpression,1,3);
   controls->addWidget(applyExpression,1,4);
+  auto* processes = new QPushButton("Process flows…");
+  processes->setObjectName("processFlows");
+  processes->setToolTip("Track live Windows TCP connections by local process ID");
+  controls->addWidget(processes,1,5,1,2);
+  connect(processes, &QPushButton::clicked, this, [this]{
+      lab1::ProcessView::MatchPackets match;
+      if (cap) match = [this](const QString& expression){
+          display->setCurrentText("ALL");
+          displayExpression->setText(expression);
+          applyDisplayExpression();
+      };
+      lab1::ProcessView dialog(this, match);
+      dialog.exec();
+  });
   layout->addWidget(toolbar);
 
   model=new PacketModel(this);
