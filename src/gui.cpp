@@ -378,6 +378,8 @@ public:
   auto* rows=new QTableWidget(flow.rows.size(),8);
   rows->setHorizontalHeaderLabels({"No.","Time (ms)","Direction","Flags","Seq","Ack","Payload B","Event"});
   configureTable(rows);
+  rows->verticalHeader()->setMinimumSectionSize(22);
+  rows->verticalHeader()->setDefaultSectionSize(28);
   for(int i=0;i<flow.rows.size();++i){
    const auto& r=flow.rows[i];
    const QStringList cells={QString::number(r.id),QString::number((r.micros-flow.rows.first().micros)/1000.0,'f',3),
@@ -401,6 +403,7 @@ public:
   auto* close=new QPushButton("Close");
   layout->addWidget(close,0,Qt::AlignRight);
   connect(close,&QPushButton::clicked,&dialog,&QDialog::accept);
+  close->setFocus();
   dialog.exec();
  }
  void clearDetails(){fields->setRowCount(0);hex->clear();byteRange->clear();byteRange->setToolTip(QString());flowButton->setEnabled(false);hex->setExtraSelections({});highlightedField.clear();highlightedHex.clear();highlightedOffset=-1;highlightedLength=0;}

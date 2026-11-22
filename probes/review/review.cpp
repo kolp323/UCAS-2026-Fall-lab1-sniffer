@@ -137,6 +137,9 @@ int main(int argc, char** argv) {
     if (!flow4.rows.isEmpty()) {
         QTimer::singleShot(180, &w, [&] {
             auto* d = qobject_cast<QDialog*>(QApplication::activeModalWidget());
+            const auto* rows=d?d->findChild<QTableWidget*>():nullptr;
+            check("all eleven TCP segments visible in the flow dialog",
+                  rows && rows->rowCount()==11 && rows->verticalScrollBar()->maximum()==0);
             check("visible flow dialog", d && d->grab().save(dir+"/tcp-flow.png"));
             if (d) d->accept();
         });
