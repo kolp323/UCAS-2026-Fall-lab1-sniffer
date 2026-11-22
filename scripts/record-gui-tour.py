@@ -1,5 +1,5 @@
 """Record the real GUI via an isolated harness, then add concise teaching captions."""
-import datetime,hashlib,json,math,os,shutil,struct,subprocess,sys,uuid
+import datetime,hashlib,json,math,os,shutil,subprocess,sys,uuid
 from bisect import bisect_right
 from pathlib import Path
 from PIL import Image,ImageDraw,ImageFont
@@ -24,6 +24,21 @@ CAPTIONS=[
 (89,94,'14  组合显示条件','组合协议、IP 版本和目标端口，保留指定的 HTTP 请求。'),
 (94,101,'15  查看双向 TCP 流','从一个报文找到同一连接的双方、方向和载荷字节数。'),
 (101,107,'15  阅读连接过程','按时间看握手、数据段和连接关闭。')]
+COMPACT_CAPTIONS=[
+ (0,4,'在回环接口上观察本机通信。'),
+ (4,8,'捕获过滤按 UDP 端口选取报文。'),
+ (8,17.6,'开始捕获，每行显示一个报文。'),
+ (17.6,21,'停止捕获，已收到的报文仍可查看。'),
+ (21,27,'将保留的报文导出为 PCAP。'),
+ (27,33,'打开一份真实的回环抓包记录。'),
+ (33,41,'选择 HTTP，查看识别出的请求和响应。'),
+ (41,46,'选择 IPv4 源地址，右侧高亮对应的四个字节。'),
+ (46,51,'HTTP 请求行包含方法、路径和协议版本。'),
+ (51,59,'切换到 IPv6，查看 IPv6 数据包。'),
+ (59,65.6,'组合协议和目标端口，定位一条请求。'),
+ (65.6,71,'从这条请求打开双向 TCP 流。'),
+ (71,78,'按捕获顺序查看握手、数据和连接关闭。'),
+]
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 FPS = 24
 
@@ -90,21 +105,40 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text"""]
 
 def compose(run,tour,manifest,execute,save):
   duration_seconds = round(tour['duration_ms']/1000)
-  captions = CAPTIONS if duration_seconds>=100 else CAPTIONS[:13]+[(84,88,'捕获 → 筛选 → 分析 → 保存','捕获、筛选、查看字段，再把数据保存下来。')]
+  compact = tour.get("caption_profile")=="compact"
+  captions = [(a,b,"",line) for a,b,line in COMPACT_CAPTIONS] if compact else CAPTIONS if duration_seconds>=100 else CAPTIONS[:13]+[(84,88,'捕获 → 筛选 → 分析 → 保存','捕获、筛选、查看字段，再把数据保存下来。')]
   (run/'captions.json').write_text(json.dumps(captions,ensure_ascii=False,indent=2),encoding='utf-8')
   raw=tour['frames'];composed=run/('composed-'+uuid.uuid4().hex[:8]);composed.mkdir();timeline=[];concat=[]
   font=ImageFont.truetype(str(Path(os.environ.get('SYSTEMROOT',r'C:\Windows'))/'Fonts/msyh.ttc'),34);small=ImageFont.truetype(str(Path(os.environ.get('SYSTEMROOT',r'C:\Windows'))/'Fonts/msyh.ttc'),25);subtitle=ImageFont.truetype(str(Path(os.environ.get('SYSTEMROOT',r'C:\Windows'))/'Fonts/msyh.ttc'),37)
   for j,f in enumerate(raw):
    elapsed=f['elapsed_ms']/1000;cap=next((c for c in captions if c[0]<=elapsed<c[1]),captions[-1])
    im=Image.new('RGB',(1920,1080),'#edf2f6');d=ImageDraw.Draw(im)
-   d.text((48,18),'实验 1A · 网络嗅探器',font=font,fill='#16354b');d.text((1220,25),cap[2],font=small,fill='#246978')
+   if not compact:
+    d.text((48,18),'实验 1A · 网络嗅探器',font=font,fill='#16354b')
+    d.text((1220,25),cap[2],font=small,fill='#246978')
    img=Image.open(run/f['file']).convert('RGB')
-   zoom = 56 <= elapsed < 72
-   crop = (20, tour.get('detail_top', 568)-8, min(1260,img.width), img.height-12) if zoom else (0,0,img.width,img.height)
+   zoom = 41.9 <= elapsed < 51 if compact else 56 <= elapsed < 72
+   if zoom and compact:
+    crop=(9,tour['detail_top']-37,img.width-9,img.height-32)
+   elif zoom:
+    crop=(20,tour.get('detail_top',568)-8,min(1260,img.width),img.height-12)
+   else:
+    crop=(0,0,img.width,img.height)
    img=img.crop(crop)
-   maxw,maxh=(1824,880);scale=min(maxw/img.width,maxh/img.height);size=(round(img.width*scale),round(img.height*scale));img=img.resize(size,Image.Resampling.LANCZOS)
-   x=(1920-size[0])//2;y=78+(880-size[1])//2;im.paste(img,(x,y))
-   d.rectangle((0,975,1920,1080),fill='#17384b');bbox=d.textbbox((0,0),cap[3],font=subtitle);d.text(((1920-(bbox[2]-bbox[0]))//2,1002),cap[3],font=subtitle,fill='white')
+   maxw,maxh=(1868,973) if compact else (1824,880)
+   scale=min(maxw/img.width,maxh/img.height)
+   size=(round(img.width*scale),round(img.height*scale))
+   img=img.resize(size,Image.Resampling.LANCZOS)
+   x=(1920-size[0])//2
+   y=(12 if compact else 78)+(maxh-size[1])//2
+   im.paste(img,(x,y))
+   if compact:
+    d.rectangle((0,997,1920,1080),fill='#1f2937')
+    d.text((960,1036),cap[3],font=subtitle,fill='white',anchor='mm')
+   else:
+    d.rectangle((0,975,1920,1080),fill='#17384b')
+    bbox=d.textbbox((0,0),cap[3],font=subtitle)
+    d.text(((1920-(bbox[2]-bbox[0]))//2,1002),cap[3],font=subtitle,fill='white')
    dest=composed/f'frame-{j:05d}.png';im.save(dest,compress_level=3)
    nexttime=raw[j+1]['elapsed_ms']/1000 if j+1<len(raw) else duration_seconds
    duration=max(.01,nexttime-elapsed)
@@ -129,7 +163,8 @@ def compose(run,tour,manifest,execute,save):
   execute('decode',[FF,'-v','error','-xerror','-i',out,'-f','null','-'])
   keydir=run/'keyframes'/uuid.uuid4().hex[:8];keydir.mkdir(parents=True);manifest['keyframes_dir']=keydir.relative_to(run).as_posix()
   first=raw[0]['elapsed_ms']/1000
-  samples=[4,16,22,33,40,46,59,67,75,82]+([93.6,98.5,104] if duration_seconds>=100 else [])
+  samples=([3,12,20,24,29,38,43,48,54,63,70,74] if compact else
+           [4,16,22,33,40,46,59,67,75,82]+([93.6,98.5,104] if duration_seconds>=100 else []))
   if tour.get('clicks'):
    samples.extend(p.get('pressed_ms',p['elapsed_ms'])/1000-first+0.075 for p in tour['clicks']
                   if p['action'] in {'choose loopback','click start','confirm export PCAP',
@@ -165,7 +200,7 @@ capture_target(lab1_gui_tour)
   env['QT_QPA_PLATFORM_PLUGIN_PATH']=str(qt/'plugins/platforms')
  prefixes=['-DCMAKE_PREFIX_PATH='+str(qt)] if qt else []
  sdk=Path(env.get('LAB1_NPCAP_SDK',ROOT/'.deps/npcap-sdk-1.17')).resolve()
- manifest={'run_id':run.name,'outcome':'incomplete','gui_source_sha256':sha(ROOT/'src/gui.cpp'),'harness_sha256':sha(ROOT/'probes/recording/gui-tour.cpp'),'script_sha256':sha(Path(__file__)),'production_gui_unchanged':True,'commands':[]}
+ manifest={'run_id':run.name,'outcome':'incomplete','gui_source_sha256':sha(ROOT/'src/gui.cpp'),'harness_sha256':sha(ROOT/'probes/recording/gui-tour.cpp'),'script_sha256':sha(Path(__file__)),'source_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'commands':[]}
  def save(): (run/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
  def execute(name,cmd,timeout=180):
   manifest['commands'].append({'name':name,'argv':[str(x) for x in cmd]});save()
@@ -176,15 +211,6 @@ capture_target(lab1_gui_tour)
  try:
   execute('configure',['cmake','-S',work,'-B',work/'b','-G','Visual Studio 17 2022','-A','x64',*prefixes,'-DNPCAP_SDK_DIR='+str(sdk)])
   execute('build',['cmake','--build',work/'b','--config','Release','--target','lab1_gui_tour'])
-  data=(ROOT/'fixtures/v2/ethernet.pcap').read_bytes();expected=json.loads((ROOT/'fixtures/v2/expected.json').read_text());selected=[f['number'] for f in expected['files']['ethernet.pcap']['frames'] if f['expected'].get('status')=='valid']
-  records=[];pos=24;i=1
-  while pos<len(data):
-   n=struct.unpack_from('<I',data,pos+8)[0]
-   if i in selected: records.append(data[pos:pos+16+n])
-   pos+=16+n;i+=1
-  assert len(records)==10
-  sample=run/'protocol-demo.pcap';sample.write_bytes(data[:24]+b''.join(records))
-  manifest['sample']={'source':'fixtures/v2/ethernet.pcap','source_sha256':hashlib.sha256(data).hexdigest(),'source_frames':selected,'sha256':sha(sample),'count':len(records)};save()
   real=run/'local-protocols.pcap'
   review=Path(review).resolve()
   verified=json.loads((review/'results.json').read_text(encoding='utf-8'))
@@ -193,7 +219,7 @@ capture_target(lab1_gui_tour)
   server_port=json.loads((review/'socket-oracle.json').read_text(encoding='utf-8'))[0]['server']
   assert sha(real)==verified['sha256'][real.name]
   manifest['real_input']={'run':review.name,'sha256':sha(real),'server_port':server_port};save()
-  execute('gui',[work/'b/Release/lab1_gui_tour.exe',run,sample,real,str(server_port)],timeout=145)
+  execute('gui',[work/'b/Release/lab1_gui_tour.exe',run,real,str(server_port)],timeout=145)
   tour=json.loads((run/'tour.json').read_text(encoding='utf-8'));assert tour['outcome']=='pass'
   check=subprocess.run([TS,'-r',str(run/'live-export.pcap'),'-T','fields','-e','udp.payload'],capture_output=True,check=True)
   payloads=check.stdout.decode().splitlines();assert payloads==tour['payloads_hex'] and len(payloads)==30

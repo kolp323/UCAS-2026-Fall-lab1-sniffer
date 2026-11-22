@@ -50,6 +50,9 @@ int main(int argc, char** argv) {
         checks.append(QJsonObject{{"name", name}, {"pass", ok}});
         pass &= ok;
     };
+    check("idle exposes start, export and flow await data",
+          w.startButton->isVisible() && !w.stopButton->isVisible()
+          && !w.saveButton->isEnabled() && !w.flowButton->isEnabled());
     // Deliberately reuse the same endpoints after an observed reset.
     QVector<lab1::Packet> vector;
     for (int i=0;i<5;++i) {
@@ -78,6 +81,8 @@ int main(int argc, char** argv) {
     w.captureFilter->setText(liveBpf);
     w.startButton->click();
     check("live capture opens", w.cap != nullptr);
+    check("active capture exposes stop and locks source controls",
+          w.stopButton->isVisible() && !w.startButton->isVisible() && !w.openButton->isEnabled());
     if (w.cap) {
         QFile ready(dir+"/ready");
         if (ready.open(QIODevice::WriteOnly)) ready.close();
@@ -103,7 +108,26 @@ int main(int argc, char** argv) {
     };
     const auto flow4 = selectRequest(http4, "IPv4");
     const int matched = w.model->rowCount();
+    check("stopped capture exposes start, export and TCP flow",
+          w.startButton->isVisible() && !w.stopButton->isVisible()
+          && w.saveButton->isEnabled() && w.flowButton->isEnabled());
+    for (int row=0; row<w.fields->rowCount(); ++row) {
+        auto* field=w.fields->item(row,0);
+        if (field->text()=="ip.src") {
+            w.fields->scrollToItem(field,QAbstractItemView::PositionAtCenter);
+            w.fields->setCurrentCell(row,0);
+            break;
+        }
+    }
+    const auto selections=w.hex->extraSelections();
+    check("field selection links the byte range to the actual hex text",
+          w.highlightedField=="ip.src" && w.highlightedOffset==16 && w.highlightedLength==4
+          && w.byteRange->text()=="[16, 20)" && selections.size()==1
+          && selections.first().cursor.selectedText()=="7f 00 00 01");
+    const auto paneSizes=w.panes->sizes();
+    w.panes->setSizes({160,515});
     check("expression screenshot", w.grab().save(dir+"/expression.png"));
+    w.panes->setSizes(paneSizes);
     w.displayExpression->setText("HTTP AND (");
     w.applyExpression->click();
     check("invalid filter preserves the last result",

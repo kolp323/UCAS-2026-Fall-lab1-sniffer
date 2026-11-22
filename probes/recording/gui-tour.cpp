@@ -21,9 +21,9 @@ int main(int argc, char** argv) {
  QApplication app(argc, argv);
  char err[PCAP_ERRBUF_SIZE]{};
  if (pcap_init(PCAP_CHAR_ENC_UTF_8, err) != 0) return 2;
- const QString out = app.arguments().value(1), sample = app.arguments().value(2);
- const QString liveSample=app.arguments().value(3), serverPort=app.arguments().value(4);
- if (out.isEmpty() || sample.isEmpty() || liveSample.isEmpty() || serverPort.isEmpty()) return 2;
+ const QString out=app.arguments().value(1);
+ const QString liveSample=app.arguments().value(2), serverPort=app.arguments().value(3);
+ if (out.isEmpty() || liveSample.isEmpty() || serverPort.isEmpty()) return 2;
  QDir().mkpath(out + "/raw");
 
  Window w;
@@ -249,7 +249,7 @@ int main(int argc, char** argv) {
    if (w.interfaces->itemData(i).toString().contains("NPF_Loopback")) found = i;
   combo(w.interfaces, found, "choose loopback");
  });
- at(6250, [&] {
+ at(3800, [&] {
   click("focus capture filter", w.captureFilter, QPoint(110, w.captureFilter->height()/2), [&] {
    const QString expression = "udp port " + QString::number(receiver->localPort());
    type(w.captureFilter, expression, [&, expression] {
@@ -258,52 +258,50 @@ int main(int argc, char** argv) {
    });
   });
  });
- at(12200, [&] { button("click start", w.startButton); });
- at(13280, [&] { check("capture active", w.cap != nullptr); });
- for (int i = 0; i < 30; ++i) at(13400+i*335, [&, i] {
-  const QByteArray bytes = "LAB1 GUI DEMO / packet " + QByteArray::number(i+1);
+ at(8000, [&] { button("click start", w.startButton); });
+ at(9100, [&] { check("capture active", w.cap != nullptr); });
+ for (int i = 0; i < 30; ++i) at(9250+i*250, [&, i] {
+  const QByteArray bytes = "Lab 1A datagram " + QByteArray::number(i+1);
   if (sender->writeDatagram(bytes, QHostAddress::LocalHost, receiver->localPort()) == bytes.size()) ++sent;
   sentPayloads.append(QString::fromLatin1(bytes.toHex()));
  });
- at(19400, [&] { packet(4, "select live packet"); });
- at(25300, [&] { button("click stop", w.stopButton); });
- at(28000, [&] {
+ at(13800, [&] { packet(4, "select live packet"); });
+ at(17600, [&] { button("click stop", w.stopButton); });
+ at(19500, [&] {
   liveCaptured = w.captured;
   check("30 datagrams sent received captured", sent == 30 && received == 30 && w.captured == 30);
   check("capture stopped", w.cap == nullptr);
   note("capture stopped");
  });
- at(31200, [&] { dialog(w.saveButton, out+"/live-export.pcap", "export PCAP", true); });
- at(36700, [&] {
+ at(21000, [&] { dialog(w.saveButton, out+"/live-export.pcap", "export PCAP", true); });
+ at(26300, [&] {
   check("export exists", QFileInfo::exists(out+"/live-export.pcap"));
   note("export completed");
  });
- at(37150, [&] { dialog(w.openButton, sample, "open sample", false); });
- at(41800, [&] {
-  check("sample loaded", w.offlineLoaded && w.model->records.size() == 10);
-  note("sample loaded");
+ at(27100, [&] { dialog(w.openButton, liveSample, "open real TCP capture", false); });
+ at(32200, [&] {
+  check("real capture loaded", w.offlineLoaded && w.model->records.size()==37);
+  note("real capture loaded");
  });
  auto filter = [&](const QString& name) {
   combo(w.display, w.display->findText(name), "display filter " + name);
  };
- at(43200, [&] { filter("HTTP"); });
- at(46800, [&] { check("one HTTP row", w.model->rowCount() == 1); });
- at(49300, [&] { packet(0, "select HTTP packet"); });
- at(56240, [&] { field("ip.src", "c0000201"); });
- at(64240, [&] { field("http.start_line", "474554202f6c616220485454502f312e31"); });
- at(72300, [&] { filter("IPV6"); });
- at(76800, [&] { check("four IPv6 rows", w.model->rowCount() == 4); });
- at(78300, [&] { filter("ALL"); });
- at(81800, [&] { check("all ten sample rows", w.model->rowCount() == 10); });
- at(84000, [&] { dialog(w.openButton, liveSample, "open real TCP capture", false); });
- at(88700, [&] {
-  check("real capture loaded", w.offlineLoaded && w.model->records.size()>=22);
+ at(33200, [&] { filter("HTTP"); });
+ at(36500, [&] { check("four HTTP packets", w.model->rowCount()==4); });
+ at(37200, [&] { packet(0, "select HTTP packet"); });
+ at(41200, [&] { field("ip.src", "7f000001"); });
+ at(46200, [&] { field("http.start_line", "474554202f6c616220485454502f312e31"); });
+ at(51200, [&] { filter("IPV6"); });
+ at(54500, [&] { check("thirteen IPv6 packets", w.model->rowCount()==13); });
+ at(55200, [&] { filter("ALL"); });
+ at(58300, [&] { check("all thirty-seven packets", w.model->rowCount()==37); });
+ at(59000, [&] {
   click("focus display expression",w.displayExpression,QPoint(90,w.displayExpression->height()/2),[&]{
-   const QString expression="HTTP AND (IPV4 OR IPV6) AND tcp.dstport == "+serverPort;
+   const QString expression="HTTP AND IPV4 AND tcp.dstport == "+serverPort;
    type(w.displayExpression,expression,[&]{button("apply compound display filter",w.applyExpression);});
   });
  });
- at(94000, [&] {
+ at(65600, [&] {
   check("compound expression selects one request",w.model->rowCount()==1);
   check("flow has observed close",w.selectedFlow().state=="Close exchange observed");
   click("show TCP flow",w.flowButton,w.flowButton->rect().center(),{},[&]{
@@ -314,19 +312,19 @@ int main(int argc, char** argv) {
    });
   });
  });
- at(107000, [&] {
+ at(77100, [&] {
   if(auto* d=qobject_cast<QDialog*>(QApplication::activeModalWidget()))d->accept();
   record.stop();
   QMetaObject::invokeMethod(worker, [] {}, Qt::BlockingQueuedConnection);
   frameWriter.quit();
   frameWriter.wait();
   check("save all frames", failedSaves.load() == 0);
-  check("all twenty-seven clicks recorded", clicks.size() == 27);
+  check("all twenty-four clicks recorded", clicks.size() == 24);
   const int detailTop = w.fields->mapTo(&w, QPoint()).y();
   saveJson(out+"/tour.json", QJsonObject{{"outcome", failed ? "fail" : "pass"},
    {"sent", sent}, {"received", received}, {"captured", double(liveCaptured)}, {"payloads_hex", sentPayloads},
    {"events", events}, {"frames", frames}, {"checks", checks}, {"duration_ms", double(clock.elapsed())},
-   {"pointer", pointer}, {"clicks", clicks}, {"detail_top", detailTop},
+   {"pointer", pointer}, {"clicks", clicks}, {"detail_top", detailTop}, {"caption_profile", "compact"},
    {"provenance", "Production Window driven by Qt mouse move, press and release events; same coordinates used to render the recorded pointer."}});
   app.exit(failed ? 1 : 0);
  });
